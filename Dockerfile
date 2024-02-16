@@ -1,5 +1,5 @@
+FROM public.ecr.aws/docker/library/python:3.11
 #FROM python:3.11-slim
-FROM public.ecr.aws/docker/library/python:3.10
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
@@ -10,8 +10,8 @@ WORKDIR /albukhari
 RUN pip install --upgrade pip && \
     apt-get update
 
-COPY requirements.txt /albukhari/
-RUN pip install -r requirements.txt
+COPY requirements/base.txt /albukhari/
+RUN pip install -r /albukhari/base.txt
 
 COPY . .
 
