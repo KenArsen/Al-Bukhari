@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'apps.common.apps.CommonConfig',
     'apps.event.apps.EventConfig',
     'apps.image.apps.ImageConfig',
+    'apps.user.apps.UserConfig',
 ]
 
 MIDDLEWARE = [
@@ -44,13 +45,13 @@ MIDDLEWARE = [
 ]
 if DEBUG:
     INSTALLED_APPS += ['debug_toolbar', 'silk']
-    MIDDLEWARE += ['silk.middleware.SilkyMiddleware', 'debug_toolbar.middleware.DebugToolbarMiddleware',]
+    MIDDLEWARE += ['silk.middleware.SilkyMiddleware', 'debug_toolbar.middleware.DebugToolbarMiddleware', ]
     INTERNAL_IPS = [
         "127.0.0.1",
     ]
 
-
 ROOT_URLCONF = 'config.urls'
+AUTH_USER_MODEL = 'user.User'
 
 TEMPLATES = [
     {
@@ -69,6 +70,13 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 DATABASES = {
     'default': {
