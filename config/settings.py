@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from environs import Env
+from datetime import timedelta
 from corsheaders.defaults import default_headers
 
 env = Env()
@@ -96,6 +97,23 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(hours=24),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=12),
+    "ROTATE_REFRESH_TOKENS": False,
+    "BLACKLIST_AFTER_ROTATION": False,
+    "UPDATE_LAST_LOGIN": False,
+    "JWT_ALLOW_REFRESH": True,
+    "JWT_EXPIRATION_DELTA": timedelta(hours=24),
+    "JWT_REFRESH_EXPIRATION_DELTA": timedelta(days=14),
+}
 
 SWAGGER_SETTINGS = {
     "SECURITY_DEFINITIONS": {

@@ -1,4 +1,4 @@
-from rest_framework import views
+from rest_framework import views, permissions
 from rest_framework.response import Response
 from rest_framework import status
 from drf_yasg.utils import swagger_auto_schema
@@ -39,6 +39,8 @@ class EventRetrieveView(views.APIView):
 
 
 class EventCreateView(views.APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
     @swagger_auto_schema(
         request_body=openapi.Schema(
             type=openapi.TYPE_OBJECT,
@@ -53,7 +55,7 @@ class EventCreateView(views.APIView):
                                        description='Date of the event'),
                 'address': openapi.Schema(type=openapi.TYPE_STRING, description='Address of the event'),
                 'images': openapi.Schema(type=openapi.TYPE_ARRAY, items=openapi.Schema(type=openapi.TYPE_FILE),
-                                        description='Image of the event')
+                                         description='Image of the event')
             }
         ),
         responses={201: EventSerializer()},
@@ -67,6 +69,8 @@ class EventCreateView(views.APIView):
 
 
 class EventUpdateView(views.APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
     @swagger_auto_schema(
         request_body=openapi.Schema(
             type=openapi.TYPE_OBJECT,
@@ -81,7 +85,7 @@ class EventUpdateView(views.APIView):
                                        description='Date of the event'),
                 'address': openapi.Schema(type=openapi.TYPE_STRING, description='Address of the event'),
                 'images': openapi.Schema(type=openapi.TYPE_ARRAY, items=openapi.Schema(type=openapi.TYPE_FILE),
-                                        description='Image of the event')
+                                         description='Image of the event')
             }
         ),
         responses={200: EventSerializer()},
@@ -95,6 +99,8 @@ class EventUpdateView(views.APIView):
 
 
 class EventDeleteView(views.APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
     @swagger_auto_schema(
         responses={204: 'No content'},
         tags=["Event"],

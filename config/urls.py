@@ -7,6 +7,10 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 
 
 class HealthCheckView(APIView):
@@ -25,6 +29,12 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include("apps.api.urls")),
     path("api/v1/healthcheck/", HealthCheckView.as_view(), name="healthcheck"),
+]
+
+# token
+urlpatterns += [
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
 
 if settings.DEBUG:
