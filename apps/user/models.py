@@ -2,6 +2,7 @@ from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager, Permi
 from django.db import models
 from apps.common.base import BaseModel
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth.hashers import make_password
 
 
 class UserManager(BaseUserManager):
@@ -11,7 +12,7 @@ class UserManager(BaseUserManager):
             raise TypeError('Users must have an email address.')
 
         user = self.model(email=self.normalize_email(email), **extra_fields)
-        user.set_password(password)
+        user.password = make_password(password)  # Используем make_password для шифрования пароля
         user.save()
         return user
 
@@ -22,17 +23,18 @@ class UserManager(BaseUserManager):
         user = self.create_user(email, password)
         user.is_superuser = True
         user.is_staff = True
+        user.is_active = True
         user.save()
         return user
 
 
-class User(BaseModel, AbstractBaseUser, PermissionsMixin,):
+class User(BaseModel, AbstractBaseUser, PermissionsMixin, ):
     email = models.EmailField(max_length=255, unique=True, db_index=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    EMAIL_FIELD = 'email'
 
     objects = UserManager()
 
