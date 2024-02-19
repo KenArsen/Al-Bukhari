@@ -1,4 +1,5 @@
 from rest_framework import views, permissions
+from apps.common.permissions import IsAdmin
 from rest_framework.response import Response
 from rest_framework import status
 from drf_yasg.utils import swagger_auto_schema
@@ -31,7 +32,7 @@ class EventRetrieveView(views.APIView):
         responses={200: EventSerializer()},
         tags=["Event"],
         operation_summary="Retrieve an event",
-        operation_description="Retrieve detailed information about a specific event"
+        operation_description="Retrieve detailed information about a specific event",
     )
     def get(self, request, pk=None):
         service = EventRetrieveService.get_event(pk=pk)
@@ -39,7 +40,7 @@ class EventRetrieveView(views.APIView):
 
 
 class EventCreateView(views.APIView):
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated, IsAdmin]
 
     @swagger_auto_schema(
         request_body=openapi.Schema(
@@ -69,7 +70,7 @@ class EventCreateView(views.APIView):
 
 
 class EventUpdateView(views.APIView):
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated, IsAdmin]
 
     @swagger_auto_schema(
         request_body=openapi.Schema(
@@ -99,7 +100,7 @@ class EventUpdateView(views.APIView):
 
 
 class EventDeleteView(views.APIView):
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated, IsAdmin]
 
     @swagger_auto_schema(
         responses={204: 'No content'},
