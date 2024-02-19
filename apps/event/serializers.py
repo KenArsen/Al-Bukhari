@@ -8,4 +8,8 @@ class EventSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Event
+<<<<<<< HEAD
         fields = ('title', 'organizer', 'email', 'phone', 'more', 'date', 'address', 'images')
+=======
+        fields = ("title", "organizer", "email", "phone", "more", "date", "address", "images")
+>>>>>>> 24677ec (added STATICFILES_DIRS)
