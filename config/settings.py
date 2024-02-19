@@ -15,6 +15,8 @@ SECRET_KEY = env.str('SECRET_KEY')
 DEBUG = env.bool('DEBUG', default=False)
 
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['*'])
+PROTOCOL = env.str('PROTOCOL', default='http')
+DOMAIN_NAME = env.str('DOMAIN_NAME', default='localhost:8000')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -128,9 +130,8 @@ SWAGGER_SETTINGS = {
 
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
-    "https://albukhari.inclusivetec.com",
-    "http://localhost:8000",
-    "http://127.0.0.1:3000",
+    f"{PROTOCOL}://{DOMAIN_NAME}",
+    f"{PROTOCOL}://{DOMAIN_NAME}",
 ]
 CORS_ALLOW_HEADERS = (
     *default_headers,
