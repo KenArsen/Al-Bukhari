@@ -97,6 +97,17 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+SWAGGER_SETTINGS = {
+    "SECURITY_DEFINITIONS": {
+        "api_key": {
+            "type": "apiKey",
+            "description": "Type in the *'Value'* input box below: **'Bearer &lt;JWT&gt;'**, where JWT is the token",
+            "in": "header",
+            "name": "Authorization",
+        },
+    },
+}
+
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
     "https://albukhari.inclusivetec.com",
@@ -107,6 +118,11 @@ CORS_ALLOW_HEADERS = (
     *default_headers,
     "Timezone",
 )
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://albukhari.inclusivetec.com',
+    'https://*.127.0.0.1'
+]
 
 LANGUAGE_CODE = 'en-us'
 
