@@ -20,11 +20,7 @@ class EventListView(views.APIView):
         responses={200: EventSerializer(many=True)},
         tags=["Event"],
         operation_summary="List events",
-<<<<<<< HEAD
         operation_description="Get a list of all events"
-=======
-        operation_description="Get a list of all events",
->>>>>>> 24677ec (added STATICFILES_DIRS)
     )
     def get(self, request):
         service = EventListService.get_events()
@@ -49,7 +45,6 @@ class EventCreateView(views.APIView):
     @swagger_auto_schema(
         request_body=openapi.Schema(
             type=openapi.TYPE_OBJECT,
-<<<<<<< HEAD
             required=['title', 'organizer', 'email', 'phone', 'more', 'date', 'address', 'images'],
             properties={
                 'title': openapi.Schema(type=openapi.TYPE_STRING, description='Title of the event'),
@@ -68,30 +63,6 @@ class EventCreateView(views.APIView):
         tags=['Event'],
         operation_summary="Create an event",
         operation_description="Create a new event with the provided data"
-=======
-            required=["title", "organizer", "email", "phone", "more", "date", "address", "images"],
-            properties={
-                "title": openapi.Schema(type=openapi.TYPE_STRING, description="Title of the event"),
-                "organizer": openapi.Schema(type=openapi.TYPE_STRING, description="Organizer of the event"),
-                "email": openapi.Schema(type=openapi.TYPE_STRING, description="Email of the event"),
-                "phone": openapi.Schema(type=openapi.TYPE_STRING, description="Phone of the event"),
-                "more": openapi.Schema(type=openapi.TYPE_STRING, description="More of the event"),
-                "date": openapi.Schema(
-                    type=openapi.TYPE_STRING, format=openapi.FORMAT_DATETIME, description="Date of the event"
-                ),
-                "address": openapi.Schema(type=openapi.TYPE_STRING, description="Address of the event"),
-                "images": openapi.Schema(
-                    type=openapi.TYPE_ARRAY,
-                    items=openapi.Schema(type=openapi.TYPE_FILE),
-                    description="Image of the event",
-                ),
-            },
-        ),
-        responses={201: EventSerializer()},
-        tags=["Event"],
-        operation_summary="Create an event",
-        operation_description="Create a new event with the provided data",
->>>>>>> 24677ec (added STATICFILES_DIRS)
     )
     def post(self, request):
         service, status = EventCreateService.create_event(event=request)
@@ -104,7 +75,6 @@ class EventUpdateView(views.APIView):
     @swagger_auto_schema(
         request_body=openapi.Schema(
             type=openapi.TYPE_OBJECT,
-<<<<<<< HEAD
             required=['title', 'organizer', 'email', 'phone', 'more', 'date', 'address', 'images'],
             properties={
                 'title': openapi.Schema(type=openapi.TYPE_STRING, description='Title of the event'),
@@ -123,30 +93,6 @@ class EventUpdateView(views.APIView):
         tags=['Event'],
         operation_summary="Update an event",
         operation_description="Update an existing event with the provided data"
-=======
-            required=["title", "organizer", "email", "phone", "more", "date", "address", "images"],
-            properties={
-                "title": openapi.Schema(type=openapi.TYPE_STRING, description="Title of the event"),
-                "organizer": openapi.Schema(type=openapi.TYPE_STRING, description="Organizer of the event"),
-                "email": openapi.Schema(type=openapi.TYPE_STRING, description="Email of the event"),
-                "phone": openapi.Schema(type=openapi.TYPE_STRING, description="Phone of the event"),
-                "more": openapi.Schema(type=openapi.TYPE_STRING, description="More of the event"),
-                "date": openapi.Schema(
-                    type=openapi.TYPE_STRING, format=openapi.FORMAT_DATETIME, description="Date of the event"
-                ),
-                "address": openapi.Schema(type=openapi.TYPE_STRING, description="Address of the event"),
-                "images": openapi.Schema(
-                    type=openapi.TYPE_ARRAY,
-                    items=openapi.Schema(type=openapi.TYPE_FILE),
-                    description="Image of the event",
-                ),
-            },
-        ),
-        responses={200: EventSerializer()},
-        tags=["Event"],
-        operation_summary="Update an event",
-        operation_description="Update an existing event with the provided data",
->>>>>>> 24677ec (added STATICFILES_DIRS)
     )
     def put(self, request, pk):
         service, status = EventUpdateService.update_event(event_data=request.data, pk=pk)
@@ -157,17 +103,10 @@ class EventDeleteView(views.APIView):
     permission_classes = [permissions.IsAuthenticated, IsAdmin]
 
     @swagger_auto_schema(
-<<<<<<< HEAD
         responses={204: 'No content'},
         tags=["Event"],
         operation_summary="Delete an event",
         operation_description="Delete an existing event"
-=======
-        responses={204: "No content"},
-        tags=["Event"],
-        operation_summary="Delete an event",
-        operation_description="Delete an existing event",
->>>>>>> 24677ec (added STATICFILES_DIRS)
     )
     def delete(self, request, pk):
         service = EventDeleteService.delete_event(pk)
