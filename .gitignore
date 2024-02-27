@@ -11,6 +11,7 @@ docker-compose.yml
 
 # Backup files # 
 *.bak
+.albkhri/
 staticfiles/
 
 # If you are using PyCharm # 
