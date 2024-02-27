@@ -18,9 +18,12 @@ schema_view = get_schema_view(
     permission_classes=[permissions.IsAuthenticated],
 )
 
+app_name = "api"
+
 urlpatterns = [
-    path("v1/events/", include("apps.event.api.v1.urls")),
-    path("v1/images/", include("apps.image.api.v1.urls")),
+    path("v1/events/", include("apps.event.api.v1.urls", namespace="events")),
+    path("v1/images/", include("apps.image.api.v1.urls", namespace="images")),
+    path("v1/educations/", include("apps.education.api.v1.urls", namespace="educations")),
 ]
 
 # swagger

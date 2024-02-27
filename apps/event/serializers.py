@@ -1,4 +1,5 @@
 from rest_framework import serializers
+
 from apps.event.models import Event
 from apps.image.serializers import ImageSerializer
 
@@ -8,4 +9,4 @@ class EventSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Event
-        fields = ('title', 'organizer', 'email', 'phone', 'more', 'date', 'address', 'images')
+        fields = ("title", "organizer", "email", "phone", "more", "date", "address", "images")

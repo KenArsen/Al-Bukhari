@@ -11,10 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-<<<<<<< HEAD
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
-=======
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
->>>>>>> 24677ec (added STATICFILES_DIRS)
 
 application = get_asgi_application()

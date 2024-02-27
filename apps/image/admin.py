@@ -1,6 +1,7 @@
 from django.contrib import admin
-from apps.image.models import Image
+
 from apps.event.models import Event
+from apps.image.models import Image
 
 
 class EventInline(admin.TabularInline):

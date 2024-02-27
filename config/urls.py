@@ -27,14 +27,14 @@ class HealthCheckView(APIView):
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/", include("apps.api.urls")),
+    path("api/", include("apps.api.urls", namespace="api")),
     path("api/v1/healthcheck/", HealthCheckView.as_view(), name="healthcheck"),
 ]
 
 # token
 urlpatterns += [
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path("api/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path("api/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
 ]
 
 if settings.DEBUG:

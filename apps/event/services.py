@@ -29,9 +29,9 @@ class EventCreateService:
         event_serializer = EventSerializer(data=event_data)
         if event_serializer.is_valid():
             event_instance = event_serializer.save()
-            images = event.FILES.getlist('images')
+            images = event.FILES.getlist("images")
             for image in images:
-                image_serializer = ImageSerializer(data={'image': image})
+                image_serializer = ImageSerializer(data={"image": image})
                 if image_serializer.is_valid():
                     image_instance = image_serializer.save()
                     event_instance.images.add(image_instance)
@@ -51,10 +51,10 @@ class EventUpdateService:
         if event_serializer.is_valid():
             event_instance = event_serializer.save()
 
-            images_data = event_data.getlist('images', [])
+            images_data = event_data.getlist("images", [])
             for image_data in images_data:
                 # Если передается id изображения, оно может быть удалено из связи
-                image_id = image_data.get('id')
+                image_id = image_data.get("id")
                 if image_id:
                     try:
                         image_instance = Image.objects.get(id=image_id)

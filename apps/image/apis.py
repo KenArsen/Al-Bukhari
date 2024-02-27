@@ -1,10 +1,9 @@
-from rest_framework import viewsets, permissions
+from drf_yasg.utils import swagger_auto_schema
+from rest_framework import permissions, viewsets
 
 from apps.common.permissions import IsAdmin
-
 from apps.image.repositories import ImageRepository
 from apps.image.serializers import ImageSerializer
-from drf_yasg.utils import swagger_auto_schema
 
 
 class ImageViewSet(viewsets.ModelViewSet):
@@ -13,7 +12,7 @@ class ImageViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated, IsAdmin]
 
     @swagger_auto_schema(
-        tags=['Images'],
+        tags=["Images"],
         operation_summary="Retrieve a list of all images",
         operation_description="Returns a list of all images.",
         responses={200: ImageSerializer(many=True)},
@@ -22,7 +21,7 @@ class ImageViewSet(viewsets.ModelViewSet):
         return super().list(request, *args, **kwargs)
 
     @swagger_auto_schema(
-        tags=['Images'],
+        tags=["Images"],
         operation_summary="Retrieve details of a specific image",
         operation_description="Returns the details of a specific image.",
         responses={200: ImageSerializer()},
@@ -31,7 +30,7 @@ class ImageViewSet(viewsets.ModelViewSet):
         return super().retrieve(request, *args, **kwargs)
 
     @swagger_auto_schema(
-        tags=['Images'],
+        tags=["Images"],
         operation_summary="Create a new image",
         operation_description="Creates a new image.",
         request_body=ImageSerializer,
@@ -41,7 +40,7 @@ class ImageViewSet(viewsets.ModelViewSet):
         return super().create(request, *args, **kwargs)
 
     @swagger_auto_schema(
-        tags=['Images'],
+        tags=["Images"],
         operation_summary="Update an existing image",
         operation_description="Updates an existing image.",
         request_body=ImageSerializer,
@@ -51,7 +50,7 @@ class ImageViewSet(viewsets.ModelViewSet):
         return super().update(request, *args, **kwargs)
 
     @swagger_auto_schema(
-        tags=['Images'],
+        tags=["Images"],
         operation_summary="Update partial fields of an existing image",
         operation_description="Updates partial fields of an existing image.",
         request_body=ImageSerializer,
@@ -61,7 +60,7 @@ class ImageViewSet(viewsets.ModelViewSet):
         return super().partial_update(request, *args, **kwargs)
 
     @swagger_auto_schema(
-        tags=['Images'],
+        tags=["Images"],
         operation_summary="Delete an existing image",
         operation_description="Deletes an existing image.",
         responses={204: "No Content"},

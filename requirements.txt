@@ -1,1 +1,1 @@
-requirements/base.txt
+-r requirements/local.txt

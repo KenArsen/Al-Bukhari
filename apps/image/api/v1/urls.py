@@ -3,6 +3,8 @@ from rest_framework import routers
 
 from apps.image import apis
 
+app_name = "images"
+
 router = routers.DefaultRouter()
 
 router.register(r"", apis.ImageViewSet)
