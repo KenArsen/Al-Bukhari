@@ -1,8 +1,6 @@
 from rest_framework import serializers
-from apps.education.models.namaz_model import (
-    GhuslAndTaharat,
-    Namaz,
-)
+
+from apps.education.models.namaz_model import GhuslAndTaharat, Namaz
 
 
 class GhuslAndTaharatSerializer(serializers.ModelSerializer):

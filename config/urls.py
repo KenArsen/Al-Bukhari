@@ -26,6 +26,7 @@ class HealthCheckView(APIView):
 
 
 urlpatterns = [
+    path("ckeditor5/", include("django_ckeditor_5.urls")),
     path("admin/", admin.site.urls),
     path("api/", include("apps.api.urls", namespace="api")),
     path("api/v1/healthcheck/", HealthCheckView.as_view(), name="healthcheck"),

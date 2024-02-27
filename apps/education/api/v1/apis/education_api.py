@@ -1,10 +1,10 @@
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework import generics, permissions, status, views
 from rest_framework.response import Response
-from drf_yasg.utils import swagger_auto_schema
 
 from apps.common.permissions import IsAdmin
-from apps.education.models.education_model import Education
 from apps.education.api.v1.serializers.educaton_serializer import EducationSerializer
+from apps.education.models.education_model import Education
 
 
 class EducationListAPI(views.APIView):

@@ -1,17 +1,14 @@
-from django.urls import path, include
+from django.urls import path
 from rest_framework import routers
-from apps.education.api.v1.apis.education_api import (
-    EducationListAPI,
-    EducationDetailAPI,
-    EducationCreateAPI,
-    EducationUpdateAPI,
-    EducationDeleteAPI,
-)
 
-from apps.education.api.v1.apis.namaz_api import (
-    GhuslAndTaharatViewSet,
-    NamazViewSet,
+from apps.education.api.v1.apis.education_api import (
+    EducationCreateAPI,
+    EducationDeleteAPI,
+    EducationDetailAPI,
+    EducationListAPI,
+    EducationUpdateAPI,
 )
+from apps.education.api.v1.apis.namaz_api import GhuslAndTaharatViewSet, NamazViewSet
 
 app_name = "educations"
 

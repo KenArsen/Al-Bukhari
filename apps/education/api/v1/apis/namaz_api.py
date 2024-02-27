@@ -1,12 +1,12 @@
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework import viewsets
 from rest_framework.response import Response
-from drf_yasg.utils import swagger_auto_schema
 
-from apps.education.models.namaz_model import GhuslAndTaharat, Namaz
 from apps.education.api.v1.serializers.namaz_serializer import (
     GhuslAndTaharatSerializer,
     NamazSerializer,
 )
+from apps.education.models.namaz_model import GhuslAndTaharat, Namaz
 
 
 class GhuslAndTaharatViewSet(viewsets.ModelViewSet):

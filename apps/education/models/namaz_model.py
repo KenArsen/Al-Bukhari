@@ -1,10 +1,11 @@
-from apps.common.base import BaseModel
 from django.db import models
-from ckeditor.fields import RichTextField
+from django_ckeditor_5.fields import CKEditor5Field
+
+from apps.common.base import BaseModel
 
 
 class GhuslAndTaharat(BaseModel):
-    content = RichTextField()
+    content = CKEditor5Field("Content", config_name="extends")
     audio = models.FileField(upload_to="education/audio", null=True, blank=True)
 
     def __str__(self):
