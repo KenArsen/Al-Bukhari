@@ -15,8 +15,6 @@ SECRET_KEY = env.str("SECRET_KEY")
 DEBUG = env.bool("DEBUG", default=False)
 
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["*"])
-PROTOCOL = env.str("PROTOCOL", default="http")
-DOMAIN_NAME = env.str("DOMAIN_NAME", default="localhost:8000")
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -131,8 +129,9 @@ SWAGGER_SETTINGS = {
 
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
-    f"{PROTOCOL}://{DOMAIN_NAME}",
-    f"{PROTOCOL}://{DOMAIN_NAME}",
+    "http://localhost:8000",
+    "https://albukhari.inclusivetec.com",
+    "http://localhost:3000",
 ]
 CORS_ALLOW_HEADERS = (
     *default_headers,
@@ -268,8 +267,3 @@ CKEDITOR_5_CONFIGS = {
 }
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-# Stripe
-STRIPE_PUBLIC_KEY = env.str("STRIPE_PUBLIC_KEY")
-STRIPE_SECRET_KEY = env.str("STRIPE_SECRET_KEY")
-STRIPE_WEBHOOK_SECRET = env.str("STRIPE_WEBHOOK_SECRET")
