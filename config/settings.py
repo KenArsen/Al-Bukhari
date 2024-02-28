@@ -38,7 +38,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -139,7 +138,10 @@ CORS_ALLOW_HEADERS = (
     "Timezone",
 )
 
-CSRF_TRUSTED_ORIGINS = ["https://albukhari.inclusivetec.com", "https://*.127.0.0.1"]
+CSRF_TRUSTED_ORIGINS = [
+    "https://albukhari.inclusivetec.com",
+    "https://*.127.0.0.1",
+]
 
 LANGUAGE_CODE = "en-us"
 
@@ -150,8 +152,11 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = "static/"
-STATIC_ROOT = BASE_DIR / 'static'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+STATIC_ROOT = BASE_DIR / "static"
+STATICFILES_FINDERS = [
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+]
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
