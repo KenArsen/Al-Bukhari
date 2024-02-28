@@ -1,4 +1,6 @@
-from django.urls import include, path
+from django.conf import settings
+from django.urls import include, path, re_path
+from django.views.static import serve
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from rest_framework import permissions
@@ -24,6 +26,20 @@ urlpatterns = [
     path("v1/events/", include("apps.event.api.v1.urls", namespace="events")),
     path("v1/images/", include("apps.image.api.v1.urls", namespace="images")),
     path("v1/educations/", include("apps.education.api.v1.urls", namespace="educations")),
+]
+
+# libraries
+urlpatterns += [
+    re_path(
+        r"^static/(?P<path>.*)$",
+        serve,
+        {"document_root": settings.STATIC_ROOT, "show_indexes": settings.DEBUG},
+    ),
+    re_path(
+        r"^api/v1/media/(?P<path>.*)$",
+        serve,
+        {"document_root": settings.MEDIA_ROOT, "show_indexes": settings.DEBUG},
+    ),
 ]
 
 # swagger
