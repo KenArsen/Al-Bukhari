@@ -16,7 +16,6 @@ RUN pip install -r /albukhari/base.txt
 COPY . .
 
 EXPOSE 8000
-RUN if [ ! -d "static" ]; then mkdir "static"; fi
 
 COPY entrypoint.sh .
 RUN chmod +x entrypoint.sh
