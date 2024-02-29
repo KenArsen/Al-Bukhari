@@ -4,11 +4,10 @@ from rest_framework.response import Response
 
 from apps.common.permissions import IsAdmin
 from apps.education.api.v1.serializers.educaton_serializer import EducationSerializer
-from apps.education.models.education_model import Education
+from apps.education.repositories import EducationRepository
 
 
-class EducationListAPI(views.APIView):
-    queryset = Education.objects.all()
+class EducationListAPI(generics.ListAPIView):
     serializer_class = EducationSerializer
 
     @swagger_auto_schema(
@@ -17,14 +16,12 @@ class EducationListAPI(views.APIView):
         operation_summary="List educations",
         operation_description="Get a list of all educations",
     )
-    def get(self, request):
-        educations = self.queryset
-        serializer = self.serializer_class(educations, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+    def get_queryset(self):
+        educations = EducationRepository().get_educations()
+        return educations
 
 
-class EducationDetailAPI(views.APIView):
-    queryset = Education.objects.all()
+class EducationDetailAPI(generics.RetrieveAPIView):
     serializer_class = EducationSerializer
 
     @swagger_auto_schema(
@@ -33,14 +30,12 @@ class EducationDetailAPI(views.APIView):
         operation_summary="Retrieve an education",
         operation_description="Retrieve detailed information about a specific education",
     )
-    def get(self, request, pk=None):
-        education = generics.get_object_or_404(self.queryset, pk=pk)
-        serializer = self.serializer_class(education)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+    def get_object(self):
+        education = EducationRepository().get_education_by_id(education_id=self.kwargs.get("pk"))
+        return education
 
 
 class EducationCreateAPI(views.APIView):
-    queryset = Education.objects.all()
     serializer_class = EducationSerializer
     permission_classes = [permissions.IsAuthenticated, IsAdmin]
 
@@ -60,7 +55,7 @@ class EducationCreateAPI(views.APIView):
 
 
 class EducationUpdateAPI(views.APIView):
-    queryset = Education.objects.all()
+    queryset = EducationRepository().get_educations()
     serializer_class = EducationSerializer
     permission_classes = [permissions.IsAuthenticated, IsAdmin]
 
@@ -96,7 +91,7 @@ class EducationUpdateAPI(views.APIView):
 
 
 class EducationDeleteAPI(views.APIView):
-    queryset = Education.objects.all()
+    queryset = EducationRepository().get_educations()
     serializer_class = EducationSerializer
     permission_classes = [permissions.IsAuthenticated, IsAdmin]
 

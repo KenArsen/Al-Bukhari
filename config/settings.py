@@ -162,11 +162,13 @@ if USE_S3:
     MEDIA_URL = f"https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/media/"
 else:
     STATIC_URL = "static/"
-    STATIC_ROOT = BASE_DIR / "static"
+    STATIC_ROOT = BASE_DIR / "staticfiles"
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
     MEDIA_URL = "media/"
     MEDIA_ROOT = BASE_DIR / "media"
+
+# STATICFILES_DIRS = [BASE_DIR / "static"]
 
 customColorPalette = [
     {"color": "hsl(4, 90%, 58%)", "label": "Red"},

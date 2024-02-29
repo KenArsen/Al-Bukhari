@@ -4,7 +4,7 @@ from rest_framework import permissions, status, views
 from rest_framework.response import Response
 
 from apps.common.permissions import IsAdmin
-from apps.event.serializers import EventSerializer
+from apps.event.api.v1.serializers import EventSerializer
 from apps.event.services import (
     EventCreateService,
     EventDeleteService,

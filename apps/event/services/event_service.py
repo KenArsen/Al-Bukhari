@@ -1,7 +1,7 @@
 from rest_framework import status
 
+from apps.event.api.v1.serializers.event_serializer import EventSerializer
 from apps.event.repositories import EventRepository
-from apps.event.serializers import EventSerializer
 from apps.image.models import Image
 from apps.image.serializers import ImageSerializer
 
@@ -37,7 +37,6 @@ class EventCreateService:
                     event_instance.images.add(image_instance)
                 else:
                     return image_serializer.errors, status.HTTP_400_BAD_REQUEST
-
             return event_serializer.data, status.HTTP_201_CREATED
         else:
             return event_serializer.errors, status.HTTP_400_BAD_REQUEST
@@ -50,7 +49,6 @@ class EventUpdateService:
         event_serializer = EventSerializer(instance, data=event_data)
         if event_serializer.is_valid():
             event_instance = event_serializer.save()
-
             images_data = event_data.getlist("images", [])
             for image_data in images_data:
                 # Если передается id изображения, оно может быть удалено из связи
@@ -61,7 +59,6 @@ class EventUpdateService:
                         event_instance.images.remove(image_instance)
                     except Image.DoesNotExist:
                         pass
-
                 # Создание или обновление изображений
                 image_serializer = ImageSerializer(data=image_data)
                 if image_serializer.is_valid():
@@ -69,7 +66,6 @@ class EventUpdateService:
                     event_instance.images.add(image_instance)
                 else:
                     return image_serializer.errors, status.HTTP_400_BAD_REQUEST
-
             return event_serializer.data, None
         else:
             return event_serializer.errors, status.HTTP_400_BAD_REQUEST
