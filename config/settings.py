@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     "apps.image.apps.ImageConfig",
     "apps.user.apps.UserConfig",
     "apps.education.apps.EducationConfig",
+    "apps.about_us.apps.AboutUsConfig",
 ]
 
 MIDDLEWARE = [
