@@ -7,32 +7,30 @@ from apps.education.api.v1.serializers.educaton_serializer import EducationSeria
 from apps.education.repositories import EducationRepository
 
 
-class EducationListAPI(generics.ListAPIView):
-    serializer_class = EducationSerializer
-
+class EducationListAPI(views.APIView):
     @swagger_auto_schema(
         responses={200: EducationSerializer(many=True)},
         tags=["Education"],
         operation_summary="List educations",
         operation_description="Get a list of all educations",
     )
-    def get_queryset(self):
+    def get(self, request):
         educations = EducationRepository().get_educations()
-        return educations
+        serializer = EducationSerializer(educations, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-class EducationDetailAPI(generics.RetrieveAPIView):
-    serializer_class = EducationSerializer
-
+class EducationDetailAPI(views.APIView):
     @swagger_auto_schema(
         responses={200: EducationSerializer()},
         tags=["Education"],
         operation_summary="Retrieve an education",
         operation_description="Retrieve detailed information about a specific education",
     )
-    def get_object(self):
-        education = EducationRepository().get_education_by_id(education_id=self.kwargs.get("pk"))
-        return education
+    def get(self, request, pk):
+        education = EducationRepository().get_education_by_id(education_id=pk)
+        serializer = EducationSerializer(education)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 class EducationCreateAPI(views.APIView):

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Form</title>
+    <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+<h2>Make a Donation</h2>
+<form id="donation-form">
+    <label for="category">Category:</label>
+        <select name="category" id="category">
+            <option value="GDAS">General Donation Auto selected</option>
+            <option value="GDSMF">General Donation(Sadaqa fund)</option>
+            <option value="ZAKAT">Zakat</option>
+            <option value="FITRA">Fitra</option>
+        </select>
+
+    <label for="frequency">Frequency:</label>
+        <select name="frequency" id="frequency">
+            <option value="ONE TIME">one time</option>
+            <option value="MONTHLY">monthly</option>
+            <option value="WEEKLY">weekly</option>
+            <option value="DAILY">daily</option>
+        </select>
+
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name" required><br><br>
+
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name" required><br><br>
+
+    <label for="phone_number">Phone Number:</label>
+    <input type="text" id="phone_number" name="phone_number" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" required><br><br>
+
+    <label for="address_1">Addres 1:</label>
+    <input type="text" id="address_1" name="address_1" required><br><br>
+
+    <label for="address_2">Addres 2:</label>
+    <input type="text" id="address_2" name="address_2"><br><br>
+
+    <label for="country">Country:</label>
+    <input type="text" id="country" name="country" required><br><br>
+
+    <label for="state">State:</label>
+    <input type="text" id="state" name="state" required><br><br>
+
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" required><br><br>
+
+    <label for="zip_code">Zip Code:</label>
+    <input type="text" id="zip_code" name="zip_code" required><br><br>
+
+    <label for="amount">Amount:</label>
+    <input type="text" id="amount" name="amount" required><br><br>
+
+    <label for="card-element">Credit or debit card:</label>
+    <div id="card-element">
+        <!-- Stripe Elements будет монтировать элемент ввода карты сюда -->
+    </div>
+    <div id="card-errors" role="alert"></div>
+    <br><br>
+
+    <button id="submit-donation">Submit Donation</button>
+</form>
+<script src="{% static 'js/checkout.js' %}"></script>

@@ -29,11 +29,11 @@ INSTALLED_APPS = [
     "corsheaders",
     "django_ckeditor_5",
     # apps
-    "apps.common.apps.CommonConfig",
     "apps.event.apps.EventConfig",
     "apps.image.apps.ImageConfig",
     "apps.user.apps.UserConfig",
     "apps.education.apps.EducationConfig",
+    "apps.donation.apps.DonationConfig",
 ]
 
 MIDDLEWARE = [
@@ -168,7 +168,7 @@ else:
     MEDIA_URL = "media/"
     MEDIA_ROOT = BASE_DIR / "media"
 
-# STATICFILES_DIRS = [BASE_DIR / "static"]
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
 customColorPalette = [
     {"color": "hsl(4, 90%, 58%)", "label": "Red"},

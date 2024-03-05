@@ -13,7 +13,7 @@ docker-compose.yml
 *.bak
 .albkhri/
 staticfiles/
-static/
+.jshintrc
 
 # If you are using PyCharm # 
 # User-specific stuff
