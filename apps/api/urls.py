@@ -26,6 +26,7 @@ urlpatterns = [
     path("v1/events/", include("apps.event.api.v1.urls", namespace="events")),
     path("v1/images/", include("apps.image.api.v1.urls", namespace="images")),
     path("v1/educations/", include("apps.education.api.v1.urls", namespace="educations")),
+    path("v1/about_us/", include("apps.us.api.v1.urls", namespace="about_us"))
 ]
 
 # libraries
