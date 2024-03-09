@@ -5,12 +5,14 @@ from .education_api import (
     EducationListAPI,
     EducationUpdateAPI,
 )
-from .namaz_api import (
+from .ghusl_and_taharat_apis import (
     GhuslAndTaharatCreateAPI,
     GhuslAndTaharatDeleteAPI,
     GhuslAndTaharatDetailAPI,
     GhuslAndTaharatListAPI,
     GhuslAndTaharatUpdateAPI,
+)
+from .namaz_api import (
     NamazCreateAPI,
     NamazDeleteAPI,
     NamazDetailAPI,

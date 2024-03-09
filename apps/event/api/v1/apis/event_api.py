@@ -1,44 +1,33 @@
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from rest_framework import permissions, status, views
+from rest_framework import generics, permissions, status, views
 from rest_framework.response import Response
 
 from apps.common.permissions import IsAdmin
 from apps.event.api.v1.serializers import EventSerializer
-from apps.event.services import (
-    EventCreateService,
-    EventDeleteService,
-    EventListService,
-    EventRetrieveService,
-    EventUpdateService,
-)
+from apps.event.models import Event
+from apps.event.repositories import EventRepository
+from apps.image.services import ImageService
 
 
-class EventListView(views.APIView):
+class EventListAPI(generics.ListAPIView):
+    queryset = EventRepository.get_all()
+    serializer_class = EventSerializer
+
     @swagger_auto_schema(
         responses={200: EventSerializer(many=True)},
         tags=["Event"],
         operation_summary="List events",
         operation_description="Get a list of all events",
     )
-    def get(self, request):
-        service = EventListService.get_events()
-        return Response(service, status=status.HTTP_200_OK)
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
 
 
-class EventRetrieveView(views.APIView):
-    @swagger_auto_schema(
-        responses={200: EventSerializer()},
-        tags=["Event"],
-        operation_summary="Retrieve an event",
-        operation_description="Retrieve detailed information about a specific event",
-    )
-    def get(self, request, pk=None):
-        service = EventRetrieveService.get_event(pk=pk)
-        return Response(service, status=status.HTTP_200_OK)
-
-
-class EventCreateView(views.APIView):
+class EventCreateAPI(generics.CreateAPIView):
+    queryset = EventRepository.get_all()
+    serializer_class = EventSerializer
+    service = ImageService(serializer=EventSerializer)
     permission_classes = [permissions.IsAuthenticated, IsAdmin]
 
     @swagger_auto_schema(
@@ -67,13 +56,28 @@ class EventCreateView(views.APIView):
         operation_summary="Create an event",
         operation_description="Create a new event with the provided data",
     )
-    def post(self, request):
-        service, status = EventCreateService.create_event(event=request)
-        return Response(service, status=status)
+    def post(self, request, *args, **kwargs):
+        serializer = self.service.create_image(request=request)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
-class EventUpdateView(views.APIView):
+class EventRetrieveAPI(generics.RetrieveAPIView):
+    queryset = EventRepository.get_all()
+    serializer_class = EventSerializer
+
+    @swagger_auto_schema(
+        responses={200: EventSerializer()},
+        tags=["Event"],
+        operation_summary="Retrieve an event",
+        operation_description="Retrieve detailed information about a specific event",
+    )
+    def get(self, request, *args, **kwargs):
+        return self.retrieve(request, *args, **kwargs)
+
+
+class EventUpdateAPI(views.APIView):
     permission_classes = [permissions.IsAuthenticated, IsAdmin]
+    service = ImageService(serializer=EventSerializer, repository=EventRepository)
 
     @swagger_auto_schema(
         request_body=openapi.Schema(
@@ -102,11 +106,13 @@ class EventUpdateView(views.APIView):
         operation_description="Update an existing event with the provided data",
     )
     def put(self, request, pk):
-        service, status = EventUpdateService.update_event(event_data=request.data, pk=pk)
-        return Response(service, status=status)
+        serializer = self.service.update_image(request=request, pk=pk)
+        return Response(serializer.data)
 
 
-class EventDeleteView(views.APIView):
+class EventDeleteAPI(generics.DestroyAPIView):
+    queryset = EventRepository.get_all()
+    service = ImageService(repository=EventRepository, obj=Event)
     permission_classes = [permissions.IsAuthenticated, IsAdmin]
 
     @swagger_auto_schema(
@@ -115,6 +121,6 @@ class EventDeleteView(views.APIView):
         operation_summary="Delete an event",
         operation_description="Delete an existing event",
     )
-    def delete(self, request, pk):
-        service = EventDeleteService.delete_event(pk)
-        return Response(service)
+    def delete(self, request, *args, **kwargs):
+        self.service.delete_image(pk=kwargs.get("pk"))
+        return self.destroy(request, *args, **kwargs)

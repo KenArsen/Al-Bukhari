@@ -14,7 +14,7 @@ class Education(BaseModel):
 
     category = models.CharField(max_length=255, choices=Category.choices, default=Category.NAMAZ_TRAINING)
     content = CKEditor5Field("Content", config_name="extends")
-    audio = models.FileField(upload_to="audio/", null=True, blank=True)
+    audio = models.FileField(upload_to="audio/", null=True, blank=True, max_length=255)
 
     def __str__(self):
         return f"{self.category}"

@@ -1,1 +1,2 @@
 from .education_repository import EducationRepository
+from .namaz_repository import NamazRepository

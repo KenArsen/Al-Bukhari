@@ -1,5 +1,6 @@
 from django.db import models
 from django_ckeditor_5.fields import CKEditor5Field
+from rest_framework.exceptions import ValidationError
 
 from apps.common.base import BaseModel
 from apps.image.models import Image
@@ -11,6 +12,10 @@ class GhuslAndTaharat(BaseModel):
 
     def __str__(self):
         return f"{self.__class__.__name__}"
+
+    def clean(self):
+        if len(str(self.audio)) > 10:
+            raise ValidationError({"audio": "Длина аудиофайла не должна превышать 255 символов."})
 
 
 class Namaz(BaseModel):
@@ -27,10 +32,17 @@ class Namaz(BaseModel):
         choices=NamazType.choices,
         default=NamazType.FAJR,
     )
-    photo = models.ManyToManyField(Image, related_name="namaz_images")
+    images = models.ManyToManyField(Image, related_name="namaz_images", max_length=255)
     explanation_text = models.TextField()
     sura_text = models.TextField()
     audio = models.FileField(upload_to="audio/", max_length=255)
 
     def __str__(self):
         return f"{self.namaz_type}"
+
+    def clean(self):
+        if len(str(self.images)) > 255:
+            raise ValidationError({"images": "Длина изображений не должна превышать 255 символов."})
+
+        if len(str(self.audio)) > 255:
+            raise ValidationError({"audio": "Длина аудиофайла не должна превышать 255 символов."})
