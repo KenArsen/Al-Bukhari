@@ -1,21 +1,26 @@
 from django.urls import path
-from rest_framework import routers
 
-from apps.education.api.v1.apis.education_api import (
+from apps.education.api.v1.apis import (
     EducationCreateAPI,
     EducationDeleteAPI,
     EducationDetailAPI,
     EducationListAPI,
     EducationUpdateAPI,
+    GhuslAndTaharatCreateAPI,
+    GhuslAndTaharatDeleteAPI,
+    GhuslAndTaharatDetailAPI,
+    GhuslAndTaharatListAPI,
+    GhuslAndTaharatUpdateAPI,
+    NamazCreateAPI,
+    NamazDeleteAPI,
+    NamazDetailAPI,
+    NamazListAPI,
+    NamazUpdateAPI,
 )
-from apps.education.api.v1.apis.namaz_api import GhuslAndTaharatViewSet, NamazViewSet
 
 app_name = "educations"
 
-router = routers.DefaultRouter()
-router.register(r"namaz", NamazViewSet)
-router.register(r"ghusl_and_taharat", GhuslAndTaharatViewSet)
-
+# educations
 urlpatterns = [
     path("", EducationListAPI.as_view(), name="education-list"),
     path("create/", EducationCreateAPI.as_view(), name="education-create"),
@@ -24,4 +29,20 @@ urlpatterns = [
     path("<int:pk>/delete/", EducationDeleteAPI.as_view(), name="education-delete"),
 ]
 
-urlpatterns += router.urls
+# GhuslAndTahara
+urlpatterns += [
+    path("ghusl_and_taharat/", GhuslAndTaharatListAPI.as_view(), name="ghusl_and_taharat-list"),
+    path("ghusl_and_taharat/create/", GhuslAndTaharatCreateAPI.as_view(), name="ghusl_and_taharat-create"),
+    path("ghusl_and_taharat/<int:pk>/", GhuslAndTaharatDetailAPI.as_view(), name="ghusl_and_taharat-detail"),
+    path("ghusl_and_taharat/<int:pk>/update/", GhuslAndTaharatUpdateAPI.as_view(), name="ghusl_and_taharat-update"),
+    path("ghusl_and_taharat/<int:pk>/delete/", GhuslAndTaharatDeleteAPI.as_view(), name="ghusl_and_taharat-delete"),
+]
+
+# Namaz
+urlpatterns += [
+    path("namaz/", NamazListAPI.as_view(), name="namaz-list"),
+    path("namaz/create/", NamazCreateAPI.as_view(), name="namaz-create"),
+    path("namaz/<int:pk>/", NamazDetailAPI.as_view(), name="namaz-detail"),
+    path("namaz/<int:pk>/update/", NamazUpdateAPI.as_view(), name="namaz-update"),
+    path("namaz/<int:pk>/delete/", NamazDeleteAPI.as_view(), name="namaz-delete"),
+]

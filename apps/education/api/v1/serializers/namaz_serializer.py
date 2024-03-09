@@ -9,7 +9,7 @@ class GhuslAndTaharatSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class NamazSerializer(serializers.Serializer):
+class NamazSerializer(serializers.ModelSerializer):
     class Meta:
         model = Namaz
         fields = "__all__"
