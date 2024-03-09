@@ -4,6 +4,7 @@ from django.views.static import serve
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from rest_framework import permissions
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 # from rest_framework.authentication import SessionAuthentication
 
@@ -29,7 +30,7 @@ urlpatterns = [
     path("v1/images/", include("apps.image.api.v1.urls", namespace="images")),
     path("v1/educations/", include("apps.education.api.v1.urls", namespace="educations")),
     path("v1/donations/", include("apps.donation.api.v1.urls", namespace="donations")),
-    path("v1/about_us/", include("apps.us.api.v1.urls", namespace="about_us"))
+    path("v1/about_us/", include("apps.us.api.v1.urls", namespace="about_us")),
 ]
 
 # libraries
@@ -44,6 +45,12 @@ urlpatterns += [
         serve,
         {"document_root": settings.MEDIA_ROOT, "show_indexes": settings.DEBUG},
     ),
+]
+
+# token
+urlpatterns += [
+    path("v1/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path("v1/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
 ]
 
 # swagger

@@ -9,4 +9,3 @@ class AboutRepository:
     @classmethod
     def get_about_id(cls, about_id):
         return About.objects.get(id=about_id)
-

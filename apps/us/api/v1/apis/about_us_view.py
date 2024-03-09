@@ -1,12 +1,12 @@
-from rest_framework import views, status
-from rest_framework.response import Response
 from drf_yasg.utils import swagger_auto_schema
+from rest_framework import status, views
+from rest_framework.response import Response
 
 from apps.us.api.v1.serializers.about_serializer import AboutUsSerializer
 from apps.us.api.v1.services.about_services import (
-    AboutListService,
     AboutCreateService,
     AboutDeleteService,
+    AboutListService,
     AboutRetrieveService,
     AboutUpdateService,
 )
@@ -19,7 +19,10 @@ class AboutListView(views.APIView):
         operation_summary="List About us",
         operation_description="Get a list of all About",
     )
-    def get(self, request,):
+    def get(
+        self,
+        request,
+    ):
         about = AboutListService.get_about()
         return Response(about, status=status.HTTP_200_OK)
 
@@ -42,7 +45,6 @@ class AboutCreateView(views.APIView):
         tags=["Abot us"],
         operation_summary="Create an About us",
         operation_description="Create information about a specific about us",
-
     )
     def post(self, request):
         about = AboutCreateService.create_about(data=request.data)
@@ -73,8 +75,3 @@ class AboutDeleteView(views.APIView):
     def delete(self, request, pk):
         service = AboutDeleteService.delete_about(pk)
         return Response(service)
-
-
-
-
-

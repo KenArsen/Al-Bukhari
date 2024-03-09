@@ -1,7 +1,7 @@
+from rest_framework import status
+
 from apps.us.api.v1.repositories.about_repository import AboutRepository
 from apps.us.api.v1.serializers.about_serializer import AboutUsSerializer
-
-from rest_framework import status
 
 
 class AboutListService:
@@ -48,5 +48,3 @@ class AboutDeleteService:
             return status.HTTP_204_NO_CONTENT
 
         return status.HTTP_404_NOT_FOUND
-
-
