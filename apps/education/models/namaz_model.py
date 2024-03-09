@@ -6,7 +6,7 @@ from apps.common.base import BaseModel
 
 class GhuslAndTaharat(BaseModel):
     content = CKEditor5Field("Content", config_name="extends")
-    audio = models.FileField(upload_to="education/audio", null=True, blank=True)
+    audio = models.FileField(upload_to="audio/", null=True, blank=True)
 
     def __str__(self):
         return f"{self.__class__.__name__}"
@@ -29,7 +29,7 @@ class Namaz(BaseModel):
     photo = models.ManyToManyField("image.Image", related_name="namaz_images")
     explanation_text = models.TextField()
     sura_text = models.TextField()
-    audio_file = models.FileField(upload_to="namaz_audio/")
+    audio = models.FileField(upload_to="audio/")
 
     def __str__(self):
         return f"{self.namaz_type}"
