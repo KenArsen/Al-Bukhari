@@ -4,7 +4,7 @@ from apps.common.base import BaseModel
 
 
 class About(BaseModel):
-    about = CKEditor5Field("Content", config_name="extends")
+    content = CKEditor5Field("Content", config_name="extends")
 
     def __str__(self):
         return f"{self.id}"
