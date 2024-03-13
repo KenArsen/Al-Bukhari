@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from apps.us.models.about_model import About
+from apps.us.models import About
 
 
 class AboutUsSerializer(serializers.ModelSerializer):

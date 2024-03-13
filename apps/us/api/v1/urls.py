@@ -12,6 +12,7 @@ from apps.us.api.v1.apis import (
     ContactDetailAPI,
     ContactListAPI,
     ContactUpdateAPI,
+    SendEmailAPI,
     UrlVewSet,
 )
 
@@ -36,6 +37,7 @@ urlpatterns += [
     path("contacts/<int:pk>/", ContactDetailAPI.as_view(), name="contact-detail"),
     path("contacts/<int:pk>/update/", ContactUpdateAPI.as_view(), name="contact-update"),
     path("contacts/<int:pk>/delete/", ContactDeleteAPI.as_view(), name="contact-delete"),
+    path("contacts/send/", SendEmailAPI.as_view(), name="email-send"),
 ]
 
 urlpatterns += router.urls

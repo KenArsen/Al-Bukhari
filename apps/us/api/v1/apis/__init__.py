@@ -11,5 +11,6 @@ from .contact_apis import (
     ContactDetailAPI,
     ContactListAPI,
     ContactUpdateAPI,
+    SendEmailAPI,
     UrlVewSet,
 )
