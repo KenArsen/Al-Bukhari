@@ -1,7 +1,7 @@
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework import permissions, viewsets
 
-from apps.common.permissions import IsAdmin
+from apps.common import IsAdmin
 from apps.image.repositories import ImageRepository
 from apps.image.serializers import ImageSerializer
 

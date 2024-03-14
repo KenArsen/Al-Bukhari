@@ -1,6 +1,7 @@
 from drf_yasg.utils import swagger_auto_schema
-from rest_framework import generics
+from rest_framework import generics, permissions
 
+from apps.common import IsAdmin
 from apps.us.api.v1.serializers import AboutUsSerializer
 from apps.us.models import About
 
@@ -34,6 +35,7 @@ class AboutDetailAPI(generics.RetrieveAPIView):
 class AboutCreateAPI(generics.CreateAPIView):
     queryset = About.objects.all()
     serializer_class = AboutUsSerializer
+    permission_classes = [permissions.IsAuthenticated, IsAdmin]
 
     @swagger_auto_schema(
         request_body=AboutUsSerializer,
@@ -48,6 +50,7 @@ class AboutCreateAPI(generics.CreateAPIView):
 class AboutUpdateAPI(generics.UpdateAPIView):
     queryset = About.objects.all()
     serializer_class = AboutUsSerializer
+    permission_classes = [permissions.IsAuthenticated, IsAdmin]
 
     @swagger_auto_schema(
         request_body=AboutUsSerializer,
@@ -71,6 +74,7 @@ class AboutUpdateAPI(generics.UpdateAPIView):
 class AboutDeleteAPI(generics.DestroyAPIView):
     queryset = About.objects.all()
     serializer_class = AboutUsSerializer
+    permission_classes = [permissions.IsAuthenticated, IsAdmin]
 
     @swagger_auto_schema(
         responses={204: "No content"},

@@ -1,6 +1,7 @@
 from drf_yasg.utils import swagger_auto_schema
-from rest_framework import generics
+from rest_framework import generics, permissions
 
+from apps.common import IsAdmin
 from apps.education.api.v1.serializers import GhuslAndTaharatSerializer
 from apps.education.models import GhuslAndTaharat
 
@@ -22,6 +23,7 @@ class GhuslAndTaharatListAPI(generics.ListAPIView):
 class GhuslAndTaharatCreateAPI(generics.CreateAPIView):
     queryset = GhuslAndTaharat.objects.all()
     serializer_class = GhuslAndTaharatSerializer
+    permission_classes = [permissions.IsAuthenticated, IsAdmin]
 
     @swagger_auto_schema(
         request_body=GhuslAndTaharatSerializer,
@@ -51,6 +53,7 @@ class GhuslAndTaharatDetailAPI(generics.RetrieveAPIView):
 class GhuslAndTaharatUpdateAPI(generics.UpdateAPIView):
     queryset = GhuslAndTaharat.objects.all()
     serializer_class = GhuslAndTaharatSerializer
+    permission_classes = [permissions.IsAuthenticated, IsAdmin]
 
     @swagger_auto_schema(
         request_body=GhuslAndTaharatSerializer,
@@ -76,6 +79,7 @@ class GhuslAndTaharatUpdateAPI(generics.UpdateAPIView):
 class GhuslAndTaharatDeleteAPI(generics.DestroyAPIView):
     queryset = GhuslAndTaharat.objects.all()
     serializer_class = GhuslAndTaharatSerializer
+    permission_classes = [permissions.IsAuthenticated, IsAdmin]
 
     @swagger_auto_schema(
         responses={204: "No content"},

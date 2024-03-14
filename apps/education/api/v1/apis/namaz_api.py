@@ -1,7 +1,8 @@
 from drf_yasg.utils import swagger_auto_schema
-from rest_framework import generics, status
+from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 
+from apps.common import IsAdmin
 from apps.education.api.v1.serializers import NamazSerializer
 from apps.education.models import Namaz
 from apps.education.repositories import NamazRepository
@@ -25,6 +26,7 @@ class NamazListAPI(generics.ListAPIView):
 class NamazCreateAPI(generics.CreateAPIView):
     queryset = NamazRepository().get_all()
     serializer_class = NamazSerializer
+    permission_classes = [permissions.IsAuthenticated, IsAdmin]
     service = ImageService(serializer=NamazSerializer)
 
     @swagger_auto_schema(
@@ -57,6 +59,7 @@ class NamazDetailAPI(generics.RetrieveAPIView):
 class NamazUpdateAPI(generics.UpdateAPIView):
     queryset = NamazRepository().get_all()
     serializer_class = NamazSerializer
+    permission_classes = [permissions.IsAuthenticated, IsAdmin]
     service = ImageService(serializer=NamazSerializer, repository=NamazRepository)
 
     @swagger_auto_schema(
@@ -85,6 +88,7 @@ class NamazUpdateAPI(generics.UpdateAPIView):
 class NamazDeleteAPI(generics.DestroyAPIView):
     queryset = NamazRepository().get_all()
     serializer_class = NamazSerializer
+    permission_classes = [permissions.IsAuthenticated, IsAdmin]
     service = ImageService(repository=NamazRepository, obj=Namaz)
 
     @swagger_auto_schema(

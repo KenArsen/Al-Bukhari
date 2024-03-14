@@ -12,7 +12,6 @@ class EducationListAPI(views.APIView):
         responses={200: EducationSerializer(many=True)},
         tags=["Education"],
         operation_summary="List educations",
-        operation_description="Get a list of all educations",
     )
     def get(self, request):
         educations = EducationRepository().get_educations()
@@ -25,7 +24,6 @@ class EducationDetailAPI(views.APIView):
         responses={200: EducationSerializer()},
         tags=["Education"],
         operation_summary="Retrieve an education",
-        operation_description="Retrieve detailed information about a specific education",
     )
     def get(self, request, pk):
         education = EducationRepository().get_education_by_id(education_id=pk)
@@ -41,8 +39,7 @@ class EducationCreateAPI(views.APIView):
         request_body=EducationSerializer,
         responses={201: EducationSerializer()},
         tags=["Education"],
-        operation_summary="Create an education",
-        operation_description="Create a new education with the provided data",
+        operation_summary="Create a new education",
     )
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
@@ -62,7 +59,6 @@ class EducationUpdateAPI(views.APIView):
         responses={200: EducationSerializer()},
         tags=["Education"],
         operation_summary="Update an education",
-        operation_description="Update an existing education with the provided data",
     )
     def put(self, request, pk):
         education = generics.get_object_or_404(self.queryset, pk=pk)
@@ -77,7 +73,6 @@ class EducationUpdateAPI(views.APIView):
         responses={200: EducationSerializer()},
         tags=["Education"],
         operation_summary="Partial Update an education",
-        operation_description="Partially update an existing education with the provided data",
     )
     def patch(self, request, pk):
         education = generics.get_object_or_404(self.queryset, pk=pk)
@@ -97,7 +92,6 @@ class EducationDeleteAPI(views.APIView):
         responses={204: "No content"},
         tags=["Education"],
         operation_summary="Delete an education",
-        operation_description="Delete an existing education",
     )
     def delete(self, request, pk):
         education = generics.get_object_or_404(self.queryset, pk=pk)
