@@ -2,7 +2,7 @@ from drf_yasg.utils import swagger_auto_schema
 from rest_framework import generics, permissions, status, views, viewsets
 from rest_framework.response import Response
 
-from apps.common import IsAdmin
+from apps.common import IsSuperAdmin
 from apps.common.tasks import send
 from apps.us.api.v1.serializers import ContactSerializer, UrlSerializer
 from apps.us.models import Contact, Url
@@ -11,7 +11,7 @@ from apps.us.models import Contact, Url
 class UrlVewSet(viewsets.ModelViewSet):
     queryset = Url.objects.all()
     serializer_class = UrlSerializer
-    permission_classes = [permissions.IsAuthenticated, IsAdmin]
+    permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
 
 class ContactListAPI(generics.ListAPIView):
@@ -30,7 +30,7 @@ class ContactListAPI(generics.ListAPIView):
 class ContactCreateAPI(generics.CreateAPIView):
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
-    permission_classes = [permissions.IsAuthenticated, IsAdmin]
+    permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     @swagger_auto_schema(
         responses={201: ContactSerializer()},
@@ -57,7 +57,7 @@ class ContactDetailAPI(generics.RetrieveAPIView):
 class ContactUpdateAPI(generics.UpdateAPIView):
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
-    permission_classes = [permissions.IsAuthenticated, IsAdmin]
+    permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     @swagger_auto_schema(
         responses={200: ContactSerializer()},
@@ -79,7 +79,7 @@ class ContactUpdateAPI(generics.UpdateAPIView):
 class ContactDeleteAPI(generics.DestroyAPIView):
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
-    permission_classes = [permissions.IsAuthenticated, IsAdmin]
+    permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     @swagger_auto_schema(
         responses={204: "No content"},

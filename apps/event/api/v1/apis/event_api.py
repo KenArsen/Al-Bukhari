@@ -3,7 +3,7 @@ from drf_yasg.utils import swagger_auto_schema
 from rest_framework import generics, permissions, status, views
 from rest_framework.response import Response
 
-from apps.common.permissions import IsAdmin
+from apps.common.permissions import IsSuperAdmin
 from apps.event.api.v1.serializers import EventSerializer
 from apps.event.models import Event
 from apps.event.repositories import EventRepository
@@ -28,7 +28,7 @@ class EventCreateAPI(generics.CreateAPIView):
     queryset = EventRepository.get_all()
     serializer_class = EventSerializer
     service = ImageService(serializer=EventSerializer)
-    permission_classes = [permissions.IsAuthenticated, IsAdmin]
+    permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     @swagger_auto_schema(
         request_body=openapi.Schema(
@@ -76,7 +76,7 @@ class EventRetrieveAPI(generics.RetrieveAPIView):
 
 
 class EventUpdateAPI(views.APIView):
-    permission_classes = [permissions.IsAuthenticated, IsAdmin]
+    permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
     service = ImageService(serializer=EventSerializer, repository=EventRepository)
 
     @swagger_auto_schema(
@@ -113,7 +113,7 @@ class EventUpdateAPI(views.APIView):
 class EventDeleteAPI(generics.DestroyAPIView):
     queryset = EventRepository.get_all()
     service = ImageService(repository=EventRepository, obj=Event)
-    permission_classes = [permissions.IsAuthenticated, IsAdmin]
+    permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     @swagger_auto_schema(
         responses={204: "No content"},

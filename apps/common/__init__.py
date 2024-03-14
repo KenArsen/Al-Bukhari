@@ -1,2 +1,2 @@
 from .base import BaseModel
-from .permissions import IsAdmin
+from .permissions import IsSuperAdmin

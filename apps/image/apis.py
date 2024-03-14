@@ -1,7 +1,7 @@
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework import permissions, viewsets
 
-from apps.common import IsAdmin
+from apps.common import IsSuperAdmin
 from apps.image.repositories import ImageRepository
 from apps.image.serializers import ImageSerializer
 
@@ -9,7 +9,7 @@ from apps.image.serializers import ImageSerializer
 class ImageViewSet(viewsets.ModelViewSet):
     queryset = ImageRepository.get_images()
     serializer_class = ImageSerializer
-    permission_classes = [permissions.IsAuthenticated, IsAdmin]
+    permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     @swagger_auto_schema(
         tags=["Images"],

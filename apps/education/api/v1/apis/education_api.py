@@ -2,7 +2,7 @@ from drf_yasg.utils import swagger_auto_schema
 from rest_framework import generics, permissions, status, views
 from rest_framework.response import Response
 
-from apps.common.permissions import IsAdmin
+from apps.common.permissions import IsSuperAdmin
 from apps.education.api.v1.serializers.educaton_serializer import EducationSerializer
 from apps.education.repositories import EducationRepository
 
@@ -33,7 +33,7 @@ class EducationDetailAPI(views.APIView):
 
 class EducationCreateAPI(views.APIView):
     serializer_class = EducationSerializer
-    permission_classes = [permissions.IsAuthenticated, IsAdmin]
+    permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     @swagger_auto_schema(
         request_body=EducationSerializer,
@@ -52,7 +52,7 @@ class EducationCreateAPI(views.APIView):
 class EducationUpdateAPI(views.APIView):
     queryset = EducationRepository().get_educations()
     serializer_class = EducationSerializer
-    permission_classes = [permissions.IsAuthenticated, IsAdmin]
+    permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     @swagger_auto_schema(
         request_body=EducationSerializer,
@@ -86,7 +86,7 @@ class EducationUpdateAPI(views.APIView):
 class EducationDeleteAPI(views.APIView):
     queryset = EducationRepository().get_educations()
     serializer_class = EducationSerializer
-    permission_classes = [permissions.IsAuthenticated, IsAdmin]
+    permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     @swagger_auto_schema(
         responses={204: "No content"},
