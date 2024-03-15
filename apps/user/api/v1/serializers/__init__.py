@@ -1,15 +1,11 @@
-from .auth_serializer import (
+from .user_serializer import (
     SendPasswordResetEmailSerializer,
     UserChangePasswordSerializer,
+    UserDetailSerializer,
+    UserListSerializer,
     UserLoginSerializer,
     UserPasswordResetSerializer,
-    UserRegistrationSerializer,
-)
-from .user_serializer import (
     UserProfileSerializer,
-    UserListSerializer,
-    UserCreateSerializer,
-    UserDetailSerializer,
+    UserRegistrationSerializer,
     UserUpdateSerializer,
-    OrderDetailCustomerSerializer,
 )
