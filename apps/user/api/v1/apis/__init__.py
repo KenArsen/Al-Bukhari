@@ -1,8 +1,9 @@
-from .user_apis import (
+from .auth_apis import (
     SendPasswordResetEmailAPI,
     UserChangePasswordAPI,
     UserLoginAPI,
     UserPasswordResetAPI,
-    UserProfileAPI,
     UserRegistrationAPI,
 )
+
+from .user_apis import UserViewSet
