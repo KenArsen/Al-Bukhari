@@ -1,37 +1,39 @@
 from drf_yasg.utils import swagger_auto_schema
-from rest_framework import generics, permissions, status, views
-from rest_framework.response import Response
+from rest_framework import generics, permissions
 
 from apps.common.permissions import IsSuperAdmin
 from apps.education.api.v1.serializers.educaton_serializer import EducationSerializer
-from apps.education.repositories import EducationRepository
+from apps.education.models import Education
 
 
-class EducationListAPI(views.APIView):
+class EducationListAPI(generics.ListAPIView):
+    queryset = Education.objects.all()
+    serializer_class = EducationSerializer
+
     @swagger_auto_schema(
         responses={200: EducationSerializer(many=True)},
         tags=["Education"],
         operation_summary="List educations",
     )
-    def get(self, request):
-        educations = EducationRepository().get_educations()
-        serializer = EducationSerializer(educations, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
 
 
-class EducationDetailAPI(views.APIView):
+class EducationDetailAPI(generics.RetrieveAPIView):
+    queryset = Education.objects.all()
+    serializer_class = EducationSerializer
+
     @swagger_auto_schema(
         responses={200: EducationSerializer()},
         tags=["Education"],
         operation_summary="Retrieve an education",
     )
-    def get(self, request, pk):
-        education = EducationRepository().get_education_by_id(education_id=pk)
-        serializer = EducationSerializer(education)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+    def get(self, request, *args, **kwargs):
+        return self.retrieve(request, *args, **kwargs)
 
 
-class EducationCreateAPI(views.APIView):
+class EducationCreateAPI(generics.CreateAPIView):
+    queryset = Education.objects.all()
     serializer_class = EducationSerializer
     permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
@@ -41,16 +43,12 @@ class EducationCreateAPI(views.APIView):
         tags=["Education"],
         operation_summary="Create a new education",
     )
-    def post(self, request):
-        serializer = self.serializer_class(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
 
 
-class EducationUpdateAPI(views.APIView):
-    queryset = EducationRepository().get_educations()
+class EducationUpdateAPI(generics.UpdateAPIView):
+    queryset = Education.objects.all()
     serializer_class = EducationSerializer
     permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
@@ -60,13 +58,8 @@ class EducationUpdateAPI(views.APIView):
         tags=["Education"],
         operation_summary="Update an education",
     )
-    def put(self, request, pk):
-        education = generics.get_object_or_404(self.queryset, pk=pk)
-        serializer = self.serializer_class(education, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def put(self, request, *args, **kwargs):
+        return self.update(request, *args, **kwargs)
 
     @swagger_auto_schema(
         request_body=EducationSerializer,
@@ -74,17 +67,12 @@ class EducationUpdateAPI(views.APIView):
         tags=["Education"],
         operation_summary="Partial Update an education",
     )
-    def patch(self, request, pk):
-        education = generics.get_object_or_404(self.queryset, pk=pk)
-        serializer = self.serializer_class(education, data=request.data, partial=True)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def patch(self, request, *args, **kwargs):
+        return self.partial_update(request, *args, **kwargs)
 
 
-class EducationDeleteAPI(views.APIView):
-    queryset = EducationRepository().get_educations()
+class EducationDeleteAPI(generics.DestroyAPIView):
+    queryset = Education.objects.all()
     serializer_class = EducationSerializer
     permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
@@ -93,7 +81,5 @@ class EducationDeleteAPI(views.APIView):
         tags=["Education"],
         operation_summary="Delete an education",
     )
-    def delete(self, request, pk):
-        education = generics.get_object_or_404(self.queryset, pk=pk)
-        education.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+    def delete(self, request, *args, **kwargs):
+        return self.destroy(request, *args, **kwargs)

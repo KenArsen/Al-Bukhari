@@ -33,7 +33,6 @@ INSTALLED_APPS = [
     "celery",
     # apps
     "apps.event.apps.EventConfig",
-    "apps.image.apps.ImageConfig",
     "apps.user.apps.UserConfig",
     "apps.education.apps.EducationConfig",
     "apps.donation.apps.DonationConfig",

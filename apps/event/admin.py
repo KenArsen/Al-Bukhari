@@ -1,10 +1,10 @@
 from django.contrib import admin
 
-from apps.event.models import Event
+from apps.event.models import Event, EventImage
 
 
-class ImageInline(admin.TabularInline):
-    model = Event.images.through
+class EventImageInline(admin.TabularInline):
+    model = EventImage
     extra = 1
 
 
@@ -14,5 +14,4 @@ class AdminEvent(admin.ModelAdmin):
     list_display_links = ("title",)
     fields = ("title", "organizer", "email", "phone", "more", "date", "address")
     readonly_fields = ("created_at", "updated_at")
-    inlines = [ImageInline]
-    filter_horizontal = ("images",)
+    inlines = [EventImageInline]

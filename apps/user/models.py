@@ -11,7 +11,7 @@ from apps.common.base import BaseModel
 
 
 class UserManager(BaseUserManager):
-    def create_user(self, email, first_name, last_name, password=None, password2=None, **extra_fields):
+    def create_user(self, email, first_name=None, last_name=None, password=None, password2=None, **extra_fields):
         if email is None:
             raise TypeError("Users must have an email address.")
 
@@ -22,7 +22,7 @@ class UserManager(BaseUserManager):
         user.save()
         return user
 
-    def create_superuser(self, email, first_name, last_name, password=None, password2=None):
+    def create_superuser(self, email, first_name=None, last_name=None, password=None, password2=None):
         if password is None:
             raise TypeError("Superusers must have a password.")
 

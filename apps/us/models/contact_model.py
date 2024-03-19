@@ -14,8 +14,8 @@ class Url(models.Model):
 
 
 class Contact(BaseModel):
-    image1 = models.ImageField(upload_to="images/us/", default=True, null=True)
-    image2 = models.ImageField(upload_to="images/us/", default=True, null=True)
+    image1 = models.ImageField(upload_to="contact/", default=True, null=True)
+    image2 = models.ImageField(upload_to="contact/", default=True, null=True)
 
     def __str__(self):
         return f" Image ID: {self.id}"
