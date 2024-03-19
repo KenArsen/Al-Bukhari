@@ -9,11 +9,17 @@ class ImageReadSerializer(serializers.ModelSerializer):
         model = NamazImage
         fields = "__all__"
 
+    def get_image_url(self, obj):
+        return obj.image.url if obj.image else None
+
 
 class ImageWriteSerializer(serializers.ModelSerializer):
     class Meta:
         model = NamazImage
         fields = "__all__"
+
+    def get_image_url(self, obj):
+        return obj.image.url if obj.image else None
 
 
 class NamazSerializer(serializers.ModelSerializer):
@@ -25,26 +31,28 @@ class NamazSerializer(serializers.ModelSerializer):
 
 
 class NamazCreateUpdateSerializer(serializers.ModelSerializer):
-    images = ImageWriteSerializer(many=True)
+    images = ImageWriteSerializer(many=True, read_only=True)
 
     class Meta:
         model = Namaz
         fields = ("id", "namaz_type", "explanation_text", "sura_text", "audio", "images")
 
     def create(self, validated_data):
-        images_data = validated_data.pop("images", [])
+        request = self.context.get("request")
+        images_data = request.FILES.getlist("images", [])
         namaz = Namaz.objects.create(**validated_data)
         for image_data in images_data:
-            NamazImage.objects.create(namaz=namaz, **image_data)
+            NamazImage.objects.create(namaz=namaz, image=image_data)
         return namaz
 
     def update(self, instance, validated_data):
-        images_data = validated_data.pop("images", [])
+        request = self.context.get("request")
+        images_data = request.FILES.getlist("images", [])
         instance = super().update(instance, validated_data)
 
         instance.images.all().delete()
         for image_data in images_data:
-            NamazImage.objects.create(namaz=instance, **image_data)
+            NamazImage.objects.create(namaz=instance, image=image_data)
         return instance
 
     def validate(self, data):
