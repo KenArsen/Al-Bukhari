@@ -4,26 +4,32 @@ from rest_framework.exceptions import ValidationError
 from apps.education.models import Namaz, NamazImage
 
 
-class ImageSerializer(serializers.ModelSerializer):
+class ImageReadSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = NamazImage
+        fields = "__all__"
+
+
+class ImageWriteSerializer(serializers.ModelSerializer):
     class Meta:
         model = NamazImage
         fields = "__all__"
 
 
 class NamazSerializer(serializers.ModelSerializer):
-    images = ImageSerializer(many=True)
+    images = ImageReadSerializer(many=True, read_only=True)
 
     class Meta:
         model = Namaz
-        fields = ("id", "namaz_type", "images", "explanation_text", "sura_text", "audio")
+        fields = ("id", "namaz_type", "explanation_text", "sura_text", "audio", "images")
 
 
 class NamazCreateUpdateSerializer(serializers.ModelSerializer):
-    images = ImageSerializer(many=True, required=False)
+    images = ImageWriteSerializer(many=True)
 
     class Meta:
         model = Namaz
-        fields = ("id", "namaz_type", "images", "explanation_text", "sura_text", "audio")
+        fields = ("id", "namaz_type", "explanation_text", "sura_text", "audio", "images")
 
     def create(self, validated_data):
         images_data = validated_data.pop("images", [])
@@ -42,9 +48,6 @@ class NamazCreateUpdateSerializer(serializers.ModelSerializer):
         return instance
 
     def validate(self, data):
-        if len(str(data.get("images"))) > 255:
-            raise ValidationError({"images": "Длина изображений не должна превышать 255 символов."})
-
         if len(str(data.get("audio"))) > 255:
             raise ValidationError({"audio": "Длина аудиофайла не должна превышать 255 символов."})
         return data

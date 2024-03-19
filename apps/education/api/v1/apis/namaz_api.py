@@ -17,7 +17,6 @@ class NamazListAPI(generics.ListAPIView):
         responses={200: NamazSerializer(many=True)},
         tags=["Namaz"],
         operation_summary="List Namaz",
-        operation_description="Get a list of all Namaz",
     )
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)

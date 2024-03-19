@@ -39,9 +39,6 @@ class Namaz(BaseModel):
         return f"{self.namaz_type}"
 
     def clean(self):
-        if len(str(self.images)) > 255:
-            raise ValidationError({"images": "Длина изображений не должна превышать 255 символов."})
-
         if len(str(self.audio)) > 255:
             raise ValidationError({"audio": "Длина аудиофайла не должна превышать 255 символов."})
 
@@ -52,3 +49,7 @@ class NamazImage(models.Model):
 
     def __str__(self):
         return f"ID: {self.id} - {self.image.name[:20]}"
+
+    def clean(self):
+        if len(str(self.image)) > 255:
+            raise ValidationError({"image": "Длина изображений не должна превышать 255 символов."})

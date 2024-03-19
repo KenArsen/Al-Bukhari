@@ -14,7 +14,6 @@ class GhuslAndTaharatListAPI(generics.ListAPIView):
         responses={200: GhuslAndTaharatSerializer(many=True)},
         tags=["GhuslAndTaharat"],
         operation_summary="List GhuslAndTaharat",
-        operation_description="Get a list of all GhuslAndTaharat",
     )
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)
@@ -30,7 +29,6 @@ class GhuslAndTaharatCreateAPI(generics.CreateAPIView):
         responses={201: GhuslAndTaharatSerializer()},
         tags=["GhuslAndTaharat"],
         operation_summary="Create GhuslAndTaharat",
-        operation_description="Create a new GhuslAndTaharat with the provided data",
     )
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
@@ -44,7 +42,6 @@ class GhuslAndTaharatDetailAPI(generics.RetrieveAPIView):
         responses={200: GhuslAndTaharatSerializer()},
         tags=["GhuslAndTaharat"],
         operation_summary="Retrieve GhuslAndTaharat",
-        operation_description="Retrieve detailed information about a specific GhuslAndTaharat",
     )
     def get(self, request, *args, **kwargs):
         return self.retrieve(request, *args, **kwargs)
@@ -60,7 +57,6 @@ class GhuslAndTaharatUpdateAPI(generics.UpdateAPIView):
         responses={200: GhuslAndTaharatSerializer()},
         tags=["GhuslAndTaharat"],
         operation_summary="Update GhuslAndTaharat",
-        operation_description="Update an existing GhuslAndTaharat with the provided data",
     )
     def put(self, request, *args, **kwargs):
         return self.update(request, *args, **kwargs)
@@ -70,7 +66,6 @@ class GhuslAndTaharatUpdateAPI(generics.UpdateAPIView):
         responses={200: GhuslAndTaharatSerializer()},
         tags=["GhuslAndTaharat"],
         operation_summary="Partial Update GhuslAndTaharat",
-        operation_description="Update some fields of an existing GhuslAndTaharat with the provided data",
     )
     def patch(self, request, *args, **kwargs):
         return self.partial_update(request, *args, **kwargs)
@@ -85,7 +80,6 @@ class GhuslAndTaharatDeleteAPI(generics.DestroyAPIView):
         responses={204: "No content"},
         tags=["GhuslAndTaharat"],
         operation_summary="Delete GhuslAndTaharat",
-        operation_description="Delete an existing GhuslAndTaharat",
     )
     def delete(self, request, *args, **kwargs):
         return self.destroy(request, *args, **kwargs)
