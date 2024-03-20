@@ -25,7 +25,7 @@ class NamazListAPI(generics.ListAPIView):
 class NamazCreateAPI(generics.CreateAPIView):
     queryset = Namaz.objects.all()
     serializer_class = NamazCreateUpdateSerializer
-    # permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
+    permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     @swagger_auto_schema(
         request_body=NamazCreateUpdateSerializer,
