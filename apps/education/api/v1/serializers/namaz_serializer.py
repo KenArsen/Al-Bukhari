@@ -4,7 +4,16 @@ from rest_framework.exceptions import ValidationError
 from apps.education.models import Namaz, NamazImage
 
 
-class ImageSerializer(serializers.ModelSerializer):
+class ImageReadSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = NamazImage
+        fields = "__all__"
+
+    def get_image_url(self, obj):
+        return obj.image.url if obj.image else None
+
+
+class ImageWriteSerializer(serializers.ModelSerializer):
     class Meta:
         model = NamazImage
         fields = "__all__"
@@ -14,7 +23,7 @@ class ImageSerializer(serializers.ModelSerializer):
 
 
 class NamazSerializer(serializers.ModelSerializer):
-    images = ImageSerializer(many=True, read_only=True)
+    images = ImageReadSerializer(many=True, read_only=True)
 
     class Meta:
         model = Namaz
@@ -22,7 +31,7 @@ class NamazSerializer(serializers.ModelSerializer):
 
 
 class NamazCreateUpdateSerializer(serializers.ModelSerializer):
-    images = ImageSerializer(many=True, read_only=True)
+    images = ImageWriteSerializer(many=True, read_only=True)
 
     class Meta:
         model = Namaz
