@@ -59,6 +59,6 @@ class NamazCreateUpdateSerializer(serializers.ModelSerializer):
         if len(str(data.get("audio"))) > 255:
             raise ValidationError({"audio": "Длина аудиофайла не должна превышать 255 символов."})
 
-        if str(data.get("gender")) not in ["M", "F"]:
-            raise ValidationError({"gender": "Поле 'gender' должно иметь значение 'M'(Male) или 'F'(Female)."})
+        if str(data.get("gender")) not in ["male", "female"]:
+            raise ValidationError({"gender": "Поле 'gender' должно иметь значение 'male' или 'female'"})
         return data
