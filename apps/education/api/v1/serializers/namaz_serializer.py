@@ -27,7 +27,7 @@ class NamazSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Namaz
-        fields = ("id", "namaz_type", "explanation_text", "sura_text", "audio", "images")
+        fields = ("id", "namaz_type", "gender", "explanation_text", "sura_text", "audio", "images")
 
 
 class NamazCreateUpdateSerializer(serializers.ModelSerializer):
@@ -35,7 +35,7 @@ class NamazCreateUpdateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Namaz
-        fields = ("id", "namaz_type", "explanation_text", "sura_text", "audio", "images")
+        fields = ("id", "namaz_type", "gender", "explanation_text", "sura_text", "audio", "images")
 
     def create(self, validated_data):
         request = self.context.get("request")
@@ -58,4 +58,7 @@ class NamazCreateUpdateSerializer(serializers.ModelSerializer):
     def validate(self, data):
         if len(str(data.get("audio"))) > 255:
             raise ValidationError({"audio": "Длина аудиофайла не должна превышать 255 символов."})
+
+        if str(data.get("gender")) not in ["M", "F"]:
+            raise ValidationError({"gender": "Поле 'gender' должно иметь значение 'M'(Male) или 'F'(Female)."})
         return data

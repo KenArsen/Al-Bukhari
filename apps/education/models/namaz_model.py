@@ -31,6 +31,7 @@ class Namaz(BaseModel):
         choices=NamazType.choices,
         default=NamazType.FAJR,
     )
+    gender = models.CharField(max_length=1, default='M')
     explanation_text = models.CharField(max_length=255)
     sura_text = models.TextField()
     audio = models.FileField(upload_to="audio/", max_length=255)
@@ -41,6 +42,9 @@ class Namaz(BaseModel):
     def clean(self):
         if len(str(self.audio)) > 255:
             raise ValidationError({"audio": "Длина аудиофайла не должна превышать 255 символов."})
+
+        if self.gender not in ["M", "F"]:
+            raise ValidationError({"gender": "Поле 'gender' должно иметь значение 'M'(Male) или 'F'(Female)."})
 
 
 class NamazImage(models.Model):
