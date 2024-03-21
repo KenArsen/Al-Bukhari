@@ -47,7 +47,7 @@ class NamazCreateUpdateSerializer(serializers.ModelSerializer):
         namaz = Namaz.objects.create(**validated_data)
         for image_data in images_data:
             image = Image.open(image_data)
-            resized_image = image.resize((300, 200))
+            resized_image = image.resize((400, 300))
             output = io.BytesIO()
             resized_image.save(output, format="PNG")
             output.seek(0)
@@ -64,7 +64,7 @@ class NamazCreateUpdateSerializer(serializers.ModelSerializer):
         instance.images.all().delete()
         for image_data in images_data:
             image = Image.open(image_data)
-            resized_image = image.resize((300, 200))
+            resized_image = image.resize((400, 300))
             output = io.BytesIO()
             resized_image.save(output, format="PNG")
             output.seek(0)
