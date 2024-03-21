@@ -27,11 +27,11 @@ class Namaz(BaseModel):
         VITR = "VITR", "VITR"
 
     namaz_type = models.CharField(max_length=255, choices=NamazType.choices, default=NamazType.FAJR)
-    gender = models.CharField(max_length=255, default='male')
+    gender = models.CharField(max_length=255, default="male")
     prayer_part1 = models.CharField(max_length=255)
-    prayer_part2 = models.TextField(default='')
-    transcription = models.TextField(default='')
-    arab = models.TextField(default='')
+    prayer_part2 = models.TextField(default="")
+    transcription = models.TextField(default="")
+    arab = models.TextField(default="")
     audio = models.FileField(upload_to="audio/", max_length=255)
 
     def __str__(self):

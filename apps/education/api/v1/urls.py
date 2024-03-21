@@ -17,6 +17,7 @@ from apps.education.api.v1.apis import (
     NamazListAPI,
     NamazUpdateAPI,
 )
+from apps.education.api.v1.apis.resize_image_apis import ResizeImageView
 
 app_name = "educations"
 
@@ -45,4 +46,5 @@ urlpatterns += [
     path("namaz/<int:pk>/", NamazDetailAPI.as_view(), name="namaz-detail"),
     path("namaz/<int:pk>/update/", NamazUpdateAPI.as_view(), name="namaz-update"),
     path("namaz/<int:pk>/delete/", NamazDeleteAPI.as_view(), name="namaz-delete"),
+    path("namaz/resize-images/", ResizeImageView.as_view(), name="resize-images"),
 ]

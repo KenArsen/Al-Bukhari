@@ -1,3 +1,7 @@
+import io
+
+from django.core.files.uploadedfile import InMemoryUploadedFile
+from PIL import Image
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 
@@ -27,7 +31,7 @@ class NamazSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Namaz
-        fields = '__all__'
+        fields = "__all__"
 
 
 class NamazCreateUpdateSerializer(serializers.ModelSerializer):
@@ -35,14 +39,21 @@ class NamazCreateUpdateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Namaz
-        exclude = ('id',)
+        exclude = ("id",)
 
     def create(self, validated_data):
         request = self.context.get("request")
         images_data = request.FILES.getlist("images", [])
         namaz = Namaz.objects.create(**validated_data)
         for image_data in images_data:
-            NamazImage.objects.create(namaz=namaz, image=image_data)
+            image = Image.open(image_data)
+            resized_image = image.resize((300, 200))
+            output = io.BytesIO()
+            resized_image.save(output, format="PNG")
+            output.seek(0)
+            image_name = image_data.name
+            image_file = InMemoryUploadedFile(output, None, image_name, "image/png", output.getbuffer().nbytes, None)
+            NamazImage.objects.create(namaz=namaz, image=image_file)
         return namaz
 
     def update(self, instance, validated_data):
@@ -52,7 +63,14 @@ class NamazCreateUpdateSerializer(serializers.ModelSerializer):
 
         instance.images.all().delete()
         for image_data in images_data:
-            NamazImage.objects.create(namaz=instance, image=image_data)
+            image = Image.open(image_data)
+            resized_image = image.resize((300, 200))
+            output = io.BytesIO()
+            resized_image.save(output, format="PNG")
+            output.seek(0)
+            image_name = image_data.name
+            image_file = InMemoryUploadedFile(output, None, image_name, "image/png", output.getbuffer().nbytes, None)
+            NamazImage.objects.create(namaz=instance, image=image_file)
         return instance
 
     def validate(self, data):
