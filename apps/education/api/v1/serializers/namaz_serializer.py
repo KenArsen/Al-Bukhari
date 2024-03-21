@@ -27,7 +27,7 @@ class NamazSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Namaz
-        fields = ("id", "namaz_type", "gender", "explanation_text", "sura_text", "audio", "images")
+        fields = '__all__'
 
 
 class NamazCreateUpdateSerializer(serializers.ModelSerializer):
@@ -35,7 +35,7 @@ class NamazCreateUpdateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Namaz
-        fields = ("id", "namaz_type", "gender", "explanation_text", "sura_text", "audio", "images")
+        exclude = ('id',)
 
     def create(self, validated_data):
         request = self.context.get("request")
