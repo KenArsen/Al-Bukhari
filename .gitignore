@@ -98,7 +98,6 @@ coverage.xml
 # pyenv 
 .python-version
 test_1.py
-images.json
 
 # SageMath parsed files
 *.sage.py 
