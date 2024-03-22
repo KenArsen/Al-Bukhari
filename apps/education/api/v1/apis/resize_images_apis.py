@@ -1,8 +1,11 @@
+import json
+from subprocess import PIPE, Popen
+
 from PIL import Image
 from rest_framework import status
-import subprocess
 from rest_framework.response import Response
 from rest_framework.views import APIView
+
 from apps.education.models import NamazImage
 
 
@@ -28,18 +31,15 @@ class ResizeImagesAPI(APIView):
         return Response("Images resized successfully", status=status.HTTP_200_OK)
 
 
-import json
-from rest_framework.response import Response
-from rest_framework.views import APIView
-from subprocess import Popen, PIPE
-
-
 class DumpDataAPIView(APIView):
     def get(self, request):
         try:
             # Выполнение команды dumpdata
-            process = Popen(["./manage.py", "dumpdata", "--format", "json", "--indent", "4", "education.Namaz"],
-                            stdout=PIPE, stderr=PIPE)
+            process = Popen(
+                ["./manage.py", "dumpdata", "--format", "json", "--indent", "4", "education.Namaz"],
+                stdout=PIPE,
+                stderr=PIPE,
+            )
             stdout, stderr = process.communicate()
             if process.returncode != 0:
                 raise Exception(stderr.decode())
@@ -48,6 +48,22 @@ class DumpDataAPIView(APIView):
             json_data = stdout.decode()
 
             response_data = {"data": json.loads(json_data)}
+            return Response(response_data)
+        except Exception as e:
+            response_data = {"success": False, "error": str(e)}
+            return Response(response_data, status=500)
+
+
+class LoadDataAPIView(APIView):
+    def get(self, request):
+        try:
+            # Загрузка данных из файла JSON в базу данных
+            process = Popen(["./manage.py", "loaddata", "namaz.json"], stdout=PIPE, stderr=PIPE)
+            stdout, stderr = process.communicate()
+            if process.returncode != 0:
+                raise Exception(stderr.decode())
+
+            response_data = {"success": True, "message": "Data loaded successfully."}
             return Response(response_data)
         except Exception as e:
             response_data = {"success": False, "error": str(e)}
