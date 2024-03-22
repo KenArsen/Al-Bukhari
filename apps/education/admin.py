@@ -12,6 +12,11 @@ class NamazImageInline(admin.TabularInline):
     extra = 1
 
 
+@admin.register(NamazImage)
+class NamazImageAdmin(admin.ModelAdmin):
+    list_display = ('id', 'namaz', 'image')
+
+
 @admin.register(Namaz)
 class NamazAdmin(admin.ModelAdmin):
     list_display = ("id", "namaz_type", "gender", "prayer_part1")

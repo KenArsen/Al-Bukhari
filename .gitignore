@@ -96,7 +96,9 @@ coverage.xml
 .ipynb_checkpoints 
 
 # pyenv 
-.python-version 
+.python-version
+test_1.py
+images.json
 
 # SageMath parsed files
 *.sage.py 
