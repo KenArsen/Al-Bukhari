@@ -27,7 +27,7 @@ class NamazSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Namaz
-        fields = "__all__"
+        exclude = ("created_at", "updated_at")
 
 
 class NamazCreateUpdateSerializer(serializers.ModelSerializer):
@@ -35,7 +35,7 @@ class NamazCreateUpdateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Namaz
-        exclude = ("id",)
+        exclude = ("id", "created_at", "updated_at")
 
     def create(self, validated_data):
         request = self.context.get("request")
