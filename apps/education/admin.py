@@ -5,5 +5,15 @@ from apps.education.models.namaz_model import GhuslAndTaharat, Namaz, NamazImage
 
 admin.site.register(Education)
 admin.site.register(GhuslAndTaharat)
-admin.site.register(Namaz)
-admin.site.register(NamazImage)
+
+
+class NamazImageInline(admin.TabularInline):
+    model = NamazImage
+    extra = 1
+
+
+@admin.register(Namaz)
+class NamazAdmin(admin.ModelAdmin):
+    list_display = ("id", "namaz_type", "prayer_part1")
+    list_display_links = ("id", "namaz_type")
+    inlines = [NamazImageInline]
