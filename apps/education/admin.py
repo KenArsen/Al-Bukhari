@@ -14,6 +14,6 @@ class NamazImageInline(admin.TabularInline):
 
 @admin.register(Namaz)
 class NamazAdmin(admin.ModelAdmin):
-    list_display = ("id", "namaz_type", "prayer_part1")
+    list_display = ("id", "namaz_type", "gender", "prayer_part1")
     list_display_links = ("id", "namaz_type")
     inlines = [NamazImageInline]
