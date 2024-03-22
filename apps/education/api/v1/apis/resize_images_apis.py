@@ -54,7 +54,47 @@ class DumpDataAPIView(APIView):
             return Response(response_data, status=500)
 
 
+class ImageDumpDataAPIView(APIView):
+    def get(self, request):
+        try:
+            # Выполнение команды dumpdata
+            process = Popen(
+                ["./manage.py", "dumpdata", "--format", "json", "--indent", "4", "--natural-foreign",
+                 "education.NamazImage"],
+                stdout=PIPE,
+                stderr=PIPE,
+            )
+            stdout, stderr = process.communicate()
+            if process.returncode != 0:
+                raise Exception(stderr.decode())
+
+            # Получаем данные JSON из вывода команды
+            json_data = stdout.decode()
+
+            response_data = {"data": json.loads(json_data)}
+            return Response(response_data)
+        except Exception as e:
+            response_data = {"success": False, "error": str(e)}
+            return Response(response_data, status=500)
+
+
 class LoadDataAPIView(APIView):
+    def get(self, request):
+        try:
+            # Загрузка данных из файла JSON в базу данных
+            process = Popen(["./manage.py", "loaddata", "namaz.json"], stdout=PIPE, stderr=PIPE)
+            stdout, stderr = process.communicate()
+            if process.returncode != 0:
+                raise Exception(stderr.decode())
+
+            response_data = {"success": True, "message": "Data loaded successfully."}
+            return Response(response_data)
+        except Exception as e:
+            response_data = {"success": False, "error": str(e)}
+            return Response(response_data, status=500)
+
+
+class ImageLoadDataAPIView(APIView):
     def get(self, request):
         try:
             # Загрузка данных из файла JSON в базу данных

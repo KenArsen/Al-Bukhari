@@ -21,6 +21,8 @@ from apps.education.api.v1.apis import (
 from apps.education.api.v1.apis.resize_images_apis import (
     DumpDataAPIView,
     LoadDataAPIView,
+    ImageDumpDataAPIView,
+    ImageLoadDataAPIView
 )
 
 app_name = "educations"
@@ -53,4 +55,6 @@ urlpatterns += [
     path("namaz/resize_images/", ResizeImagesAPI.as_view(), name="namaz-resize-images"),
     path("namaz/dumpdata/", DumpDataAPIView.as_view(), name="dump-data"),
     path("namaz/loaddata/", LoadDataAPIView.as_view(), name="load-data"),
+    path("namaz/images/dumpdata/", ImageDumpDataAPIView.as_view(), name="images-dump-data"),
+    path("namaz/images/loaddata/", ImageLoadDataAPIView.as_view(), name="images-load-data"),
 ]
