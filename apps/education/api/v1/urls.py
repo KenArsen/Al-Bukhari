@@ -20,9 +20,9 @@ from apps.education.api.v1.apis import (
 )
 from apps.education.api.v1.apis.resize_images_apis import (
     DumpDataAPIView,
-    LoadDataAPIView,
     ImageDumpDataAPIView,
-    ImageLoadDataAPIView
+    ImageLoadDataAPIView,
+    LoadDataAPIView,
 )
 
 app_name = "educations"

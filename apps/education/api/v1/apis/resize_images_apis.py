@@ -59,8 +59,16 @@ class ImageDumpDataAPIView(APIView):
         try:
             # Выполнение команды dumpdata
             process = Popen(
-                ["./manage.py", "dumpdata", "--format", "json", "--indent", "4", "--natural-foreign",
-                 "education.NamazImage"],
+                [
+                    "./manage.py",
+                    "dumpdata",
+                    "--format",
+                    "json",
+                    "--indent",
+                    "4",
+                    "--natural-foreign",
+                    "education.NamazImage",
+                ],
                 stdout=PIPE,
                 stderr=PIPE,
             )

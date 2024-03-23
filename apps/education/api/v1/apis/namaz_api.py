@@ -10,7 +10,6 @@ from apps.education.models import Namaz
 
 
 class NamazListAPI(generics.ListAPIView):
-    queryset = Namaz.objects.all()
     serializer_class = NamazSerializer
 
     @swagger_auto_schema(
@@ -18,14 +17,25 @@ class NamazListAPI(generics.ListAPIView):
         tags=["Namaz"],
         operation_summary="List Namaz",
     )
-    def get(self, request, *args, **kwargs):
-        return self.list(request, *args, **kwargs)
+    def get_queryset(self):
+        queryset = Namaz.objects.all()
+        namaz_type = self.request.data.get("namaz_type", None)
+        gender = self.request.data.get("gender", None)
+
+        if namaz_type and gender:
+            return queryset.filter(namaz_type=namaz_type, gender=gender)
+        elif namaz_type:
+            return queryset.filter(namaz_type=namaz_type)
+        elif gender:
+            return queryset.filter(gender=gender)
+        else:
+            return queryset
 
 
 class NamazCreateAPI(generics.CreateAPIView):
     queryset = Namaz.objects.all()
     serializer_class = NamazCreateUpdateSerializer
-    # permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
+    permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     @swagger_auto_schema(
         request_body=NamazCreateUpdateSerializer,
