@@ -1,11 +1,11 @@
 [
   {
     "model": "education.namaz",
-    "pk": 109,
+    "pk": 145,
     "fields": {
       "created_at": "2024-03-21T06:40:48.616Z",
       "updated_at": "2024-03-22T11:35:07.746Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "male",
       "prayer_part1": "Takbiratul Ihram 1 rakat",
       "prayer_part2": "Turning in the direction of the qibla, the Muslim raises his palms to ear level and pronounces the first takbir:",
@@ -16,11 +16,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 110,
+    "pk": 146,
     "fields": {
       "created_at": "2024-03-21T08:19:13.999Z",
       "updated_at": "2024-03-21T10:15:06.657Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "male",
       "prayer_part1": "Standing (Al-Qayyam) 1 rakat",
       "prayer_part2": "In this position, the opening dua \" sana \" (\" Subhanaka \") is recited first. Then you should recite the formula for asking for protection from Satan. Then  the basmala is read.",
@@ -31,11 +31,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 111,
+    "pk": 147,
     "fields": {
       "created_at": "2024-03-21T08:22:16.625Z",
       "updated_at": "2024-03-21T10:15:23.806Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "male",
       "prayer_part1": "Reading (qiraat) 1 rakat",
       "prayer_part2": "Then the worshiper recites Surah Al-Fatiha . At the end of Surah Al-Fatiha, the worshiper says \u201cAmin\u201d ( \u201cAmin\u201d  is pronounced quietly ).",
@@ -46,11 +46,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 112,
+    "pk": 148,
     "fields": {
       "created_at": "2024-03-21T08:24:31.003Z",
       "updated_at": "2024-03-21T10:15:45.968Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "male",
       "prayer_part1": "Bowing (ruku) 1 rakat",
       "prayer_part2": "At the end of the reading of the additional sura, the worshiper pronounces the takbir: \u201cAllahu Akbar\u201d , and makes a bow - ruk . While in the hand, it is advisable to quietly pronounce the praise of Allah three times: \u201cSubhana robbiyal-\u02bcazim . \u201d",
@@ -61,11 +61,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 113,
+    "pk": 149,
     "fields": {
       "created_at": "2024-03-21T08:27:12.429Z",
       "updated_at": "2024-03-21T10:16:08.400Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "male",
       "prayer_part1": "Straightening 1 rakat",
       "prayer_part2": "Starting to straighten up after bowing from the waist, the worshiper says: \u201cSami Allahu liman hamidah\u201d until he returns to a vertical position. Having straightened up completely, he says: \u201cRobbana (ua) lakal-hamd . \u201d",
@@ -76,11 +76,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 114,
+    "pk": 150,
     "fields": {
       "created_at": "2024-03-21T08:29:04.002Z",
       "updated_at": "2024-03-21T10:16:26.215Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "male",
       "prayer_part1": "Prostration (sujood) 1 rukat",
       "prayer_part2": "The person praying says the takbir: \u201cAllahu Akbar ,\u201d and first kneels down, then puts his palms down, then touches the floor with the tip of his nose, and then with his forehead. In this position, it is advisable to quietly pronounce the words of praise to Allah three times: \u201cSubhana robbiyal-a\u02bcla\u201d , calmly and without haste.",
@@ -91,11 +91,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 115,
+    "pk": 151,
     "fields": {
       "created_at": "2024-03-21T08:36:22.505Z",
       "updated_at": "2024-03-21T12:06:28.281Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "male",
       "prayer_part1": "Seat 1 rukat",
       "prayer_part2": "After the sajdah, the worshiper sits down, saying \u201cAllahu Akbar\u201d , and remains in this position for some time.",
@@ -106,11 +106,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 116,
+    "pk": 152,
     "fields": {
       "created_at": "2024-03-21T08:38:12.589Z",
       "updated_at": "2024-03-21T10:17:52.176Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "male",
       "prayer_part1": "Second prostration (sujood) 1 rakat",
       "prayer_part2": "Then the worshiper again pronounces the takbir \u201cAllahu Akbar\u201d and performs the second sujud. It is performed exactly the same as the first one.\u2028After the second bow to the ground, the worshiper returns to a vertical position.",
@@ -121,11 +121,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 117,
+    "pk": 153,
     "fields": {
       "created_at": "2024-03-22T07:04:24.131Z",
       "updated_at": "2024-03-22T07:04:24.131Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "male",
       "prayer_part1": "Standing (Al-Qayyam) 2 rakat",
       "prayer_part2": "Returning to the qyyama position, you should read:",
@@ -136,11 +136,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 118,
+    "pk": 154,
     "fields": {
       "created_at": "2024-03-22T07:05:24.147Z",
       "updated_at": "2024-03-22T07:05:24.147Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "male",
       "prayer_part1": "Reading (qiraat) 2 rakat",
       "prayer_part2": "After this, you need to read Surah Al-Fatiha , and after it - any surah or verses of the Koran.",
@@ -151,11 +151,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 119,
+    "pk": 155,
     "fields": {
       "created_at": "2024-03-22T07:06:27.079Z",
       "updated_at": "2024-03-22T07:06:27.079Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "male",
       "prayer_part1": "Bowing (ruka) 2 rakat",
       "prayer_part2": "Having completed the reading of the second sura, the worshiper pronounces the takbir: \u201cAllahu Akbar\u201d , and makes a bow (hand). In the ruku position, the worshiper says three times:",
@@ -166,11 +166,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 120,
+    "pk": 156,
     "fields": {
       "created_at": "2024-03-22T07:07:44.087Z",
       "updated_at": "2024-03-22T07:07:44.087Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "male",
       "prayer_part1": "Straightening 2 rakat",
       "prayer_part2": "Starting to straighten up after bowing from the waist, the worshiper says: \u201cSami Allahu liman hamidah\u201d until he returns to a vertical position.   Having straightened up completely, he says: \u201cRobbana (ua) lakal-hamd . \u201d",
@@ -181,11 +181,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 121,
+    "pk": 157,
     "fields": {
       "created_at": "2024-03-22T07:09:25.929Z",
       "updated_at": "2024-03-22T07:09:25.929Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "male",
       "prayer_part1": "Prostration (sujood) 2 rakat",
       "prayer_part2": "Then the worshiper bows to the ground (sajdah). In this position he says three times:",
@@ -196,11 +196,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 122,
+    "pk": 158,
     "fields": {
       "created_at": "2024-03-22T07:10:19.485Z",
       "updated_at": "2024-03-22T07:10:19.485Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "male",
       "prayer_part1": "Seat 2 rakat",
       "prayer_part2": "After the sajdah, the worshiper sits down, saying \u201cAllahu Akbar\u201d , and remains in this position for some time.",
@@ -211,11 +211,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 123,
+    "pk": 159,
     "fields": {
       "created_at": "2024-03-22T07:11:34.028Z",
       "updated_at": "2024-03-22T07:11:34.028Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "male",
       "prayer_part1": "Second prostration (sujood) 1 rakat",
       "prayer_part2": "Then the worshiper again pronounces the takbir \u201cAllahu Akbar\u201d and performs the second sujud. It is performed exactly the same as the first one.\u2028\u2028After the second bow to the ground, the worshiper returns to a vertical position.",
@@ -226,11 +226,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 124,
+    "pk": 160,
     "fields": {
       "created_at": "2024-03-22T07:12:34.980Z",
       "updated_at": "2024-03-22T07:12:34.980Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "male",
       "prayer_part1": "Tashahhud 2 rakat",
       "prayer_part2": "After making the second sajdah, the worshiper sits on his hips in the same way as in the interval between two prostrations and reads tashahhud . After reciting the tashahhud, the worshiper recites salavat . Then it is advisable to make dua in Arabic without raising your hands.   While reading the Tashahhud with the words: \u201c Ashhadu alla ilaha ,\u201d the worshiper raises the index finger of his right hand and points it towards the qibla (but not up!), and lowers it with the words \u201c Illallah .\u201d When raising the index finger, the thumb and middle fingers close into a ring, and the little finger and ring finger bend. When the finger is lowered, the palm should be straightened and placed in the same position (at the edge of the knee) as before the finger was raised. You should not move your index finger or keep it raised throughout the entire recitation of the Tashahhud.",
@@ -241,11 +241,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 125,
+    "pk": 161,
     "fields": {
       "created_at": "2024-03-22T07:13:45.389Z",
       "updated_at": "2024-03-22T07:13:45.389Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "male",
       "prayer_part1": "Salam 2 rakat",
       "prayer_part2": "After reading salawat and dua, the worshiper turns his head to the right and says salam (or taslim ). Then, turning his head to the left, he says salam a second time. At the same time, the worshiper looks at the edge of his shoulder.",
@@ -256,11 +256,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 126,
+    "pk": 162,
     "fields": {
       "created_at": "2024-03-22T07:15:06.180Z",
       "updated_at": "2024-03-22T07:15:06.180Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "male",
       "prayer_part1": "Dua 2 rakat",
       "prayer_part2": "At the end of the prayer, it is advisable to raise both hands to chest level. Leave a little space between them. Don't keep your hands too close to each other and don't hold them too far apart. The inside of the palms should be facing the face. Raising your hands in this way, it is advisable to say dua-istighfar .",
@@ -271,11 +271,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 127,
+    "pk": 163,
     "fields": {
       "created_at": "2024-03-21T06:40:48.616Z",
       "updated_at": "2024-03-21T10:14:48.260Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "female",
       "prayer_part1": "Takbiratul Ihram 1 rakat",
       "prayer_part2": "Turning in the direction of the qibla, the Muslim raises his palms to ear level and pronounces the first takbir:",
@@ -286,11 +286,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 128,
+    "pk": 164,
     "fields": {
       "created_at": "2024-03-21T08:19:13.999Z",
       "updated_at": "2024-03-21T10:15:06.657Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "female",
       "prayer_part1": "Standing (Al-Qayyam) 1 rakat",
       "prayer_part2": "In this position, the opening dua \" sana \" (\" Subhanaka \") is recited first. Then you should recite the formula for asking for protection from Satan. Then  the basmala is read.",
@@ -301,11 +301,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 129,
+    "pk": 165,
     "fields": {
       "created_at": "2024-03-21T08:22:16.625Z",
       "updated_at": "2024-03-21T10:15:23.806Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "female",
       "prayer_part1": "Reading (qiraat) 1 rakat",
       "prayer_part2": "Then the worshiper recites Surah Al-Fatiha . At the end of Surah Al-Fatiha, the worshiper says \u201cAmin\u201d ( \u201cAmin\u201d  is pronounced quietly ).",
@@ -316,11 +316,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 130,
+    "pk": 166,
     "fields": {
       "created_at": "2024-03-21T08:24:31.003Z",
       "updated_at": "2024-03-21T10:15:45.968Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "female",
       "prayer_part1": "Bowing (ruku) 1 rakat",
       "prayer_part2": "At the end of the reading of the additional sura, the worshiper pronounces the takbir: \u201cAllahu Akbar\u201d , and makes a bow - ruk . While in the hand, it is advisable to quietly pronounce the praise of Allah three times: \u201cSubhana robbiyal-\u02bcazim . \u201d",
@@ -331,11 +331,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 131,
+    "pk": 167,
     "fields": {
       "created_at": "2024-03-21T08:27:12.429Z",
       "updated_at": "2024-03-21T10:16:08.400Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "female",
       "prayer_part1": "Straightening 1 rakat",
       "prayer_part2": "Starting to straighten up after bowing from the waist, the worshiper says: \u201cSami Allahu liman hamidah\u201d until he returns to a vertical position. Having straightened up completely, he says: \u201cRobbana (ua) lakal-hamd . \u201d",
@@ -346,11 +346,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 132,
+    "pk": 168,
     "fields": {
       "created_at": "2024-03-21T08:29:04.002Z",
       "updated_at": "2024-03-21T10:16:26.215Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "female",
       "prayer_part1": "Prostration (sujood) 1 rukat",
       "prayer_part2": "The person praying says the takbir: \u201cAllahu Akbar ,\u201d and first kneels down, then puts his palms down, then touches the floor with the tip of his nose, and then with his forehead. In this position, it is advisable to quietly pronounce the words of praise to Allah three times: \u201cSubhana robbiyal-a\u02bcla\u201d , calmly and without haste.",
@@ -361,11 +361,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 133,
+    "pk": 169,
     "fields": {
       "created_at": "2024-03-21T08:36:22.505Z",
       "updated_at": "2024-03-21T12:06:28.281Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "female",
       "prayer_part1": "Seat 1 rukat",
       "prayer_part2": "After the sajdah, the worshiper sits down, saying \u201cAllahu Akbar\u201d , and remains in this position for some time.",
@@ -376,11 +376,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 134,
+    "pk": 170,
     "fields": {
       "created_at": "2024-03-21T08:38:12.589Z",
       "updated_at": "2024-03-21T10:17:52.176Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "female",
       "prayer_part1": "Second prostration (sujood) 1 rakat",
       "prayer_part2": "Then the worshiper again pronounces the takbir \u201cAllahu Akbar\u201d and performs the second sujud. It is performed exactly the same as the first one.\u2028After the second bow to the ground, the worshiper returns to a vertical position.",
@@ -391,11 +391,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 135,
+    "pk": 171,
     "fields": {
       "created_at": "2024-03-22T07:04:24.131Z",
       "updated_at": "2024-03-22T07:04:24.131Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "female",
       "prayer_part1": "Standing (Al-Qayyam) 2 rakat",
       "prayer_part2": "Returning to the qyyama position, you should read:",
@@ -406,11 +406,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 136,
+    "pk": 172,
     "fields": {
       "created_at": "2024-03-22T07:05:24.147Z",
       "updated_at": "2024-03-22T07:05:24.147Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "female",
       "prayer_part1": "Reading (qiraat) 2 rakat",
       "prayer_part2": "After this, you need to read Surah Al-Fatiha , and after it - any surah or verses of the Koran.",
@@ -421,11 +421,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 137,
+    "pk": 173,
     "fields": {
       "created_at": "2024-03-22T07:06:27.079Z",
       "updated_at": "2024-03-22T07:06:27.079Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "female",
       "prayer_part1": "Bowing (ruka) 2 rakat",
       "prayer_part2": "Having completed the reading of the second sura, the worshiper pronounces the takbir: \u201cAllahu Akbar\u201d , and makes a bow (hand). In the ruku position, the worshiper says three times:",
@@ -436,11 +436,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 138,
+    "pk": 174,
     "fields": {
       "created_at": "2024-03-22T07:07:44.087Z",
       "updated_at": "2024-03-22T07:07:44.087Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "female",
       "prayer_part1": "Straightening 2 rakat",
       "prayer_part2": "Starting to straighten up after bowing from the waist, the worshiper says: \u201cSami Allahu liman hamidah\u201d until he returns to a vertical position.   Having straightened up completely, he says: \u201cRobbana (ua) lakal-hamd . \u201d",
@@ -451,11 +451,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 139,
+    "pk": 175,
     "fields": {
       "created_at": "2024-03-22T07:09:25.929Z",
       "updated_at": "2024-03-22T07:09:25.929Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "female",
       "prayer_part1": "Prostration (sujood) 2 rakat",
       "prayer_part2": "Then the worshiper bows to the ground (sajdah). In this position he says three times:",
@@ -466,11 +466,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 140,
+    "pk": 176,
     "fields": {
       "created_at": "2024-03-22T07:10:19.485Z",
       "updated_at": "2024-03-22T07:10:19.485Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "female",
       "prayer_part1": "Seat 2 rakat",
       "prayer_part2": "After the sajdah, the worshiper sits down, saying \u201cAllahu Akbar\u201d , and remains in this position for some time.",
@@ -481,11 +481,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 141,
+    "pk": 177,
     "fields": {
       "created_at": "2024-03-22T07:11:34.028Z",
       "updated_at": "2024-03-22T07:11:34.028Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "female",
       "prayer_part1": "Second prostration (sujood) 1 rakat",
       "prayer_part2": "Then the worshiper again pronounces the takbir \u201cAllahu Akbar\u201d and performs the second sujud. It is performed exactly the same as the first one.\u2028\u2028After the second bow to the ground, the worshiper returns to a vertical position.",
@@ -496,11 +496,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 142,
+    "pk": 178,
     "fields": {
       "created_at": "2024-03-22T07:12:34.980Z",
       "updated_at": "2024-03-22T07:12:34.980Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "female",
       "prayer_part1": "Tashahhud 2 rakat",
       "prayer_part2": "After making the second sajdah, the worshiper sits on his hips in the same way as in the interval between two prostrations and reads tashahhud . After reciting the tashahhud, the worshiper recites salavat . Then it is advisable to make dua in Arabic without raising your hands.   While reading the Tashahhud with the words: \u201c Ashhadu alla ilaha ,\u201d the worshiper raises the index finger of his right hand and points it towards the qibla (but not up!), and lowers it with the words \u201c Illallah .\u201d When raising the index finger, the thumb and middle fingers close into a ring, and the little finger and ring finger bend. When the finger is lowered, the palm should be straightened and placed in the same position (at the edge of the knee) as before the finger was raised. You should not move your index finger or keep it raised throughout the entire recitation of the Tashahhud.",
@@ -511,11 +511,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 143,
+    "pk": 179,
     "fields": {
       "created_at": "2024-03-22T07:13:45.389Z",
       "updated_at": "2024-03-22T07:13:45.389Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "female",
       "prayer_part1": "Salam 2 rakat",
       "prayer_part2": "After reading salawat and dua, the worshiper turns his head to the right and says salam (or taslim ). Then, turning his head to the left, he says salam a second time. At the same time, the worshiper looks at the edge of his shoulder.",
@@ -526,11 +526,11 @@
   },
   {
     "model": "education.namaz",
-    "pk": 144,
+    "pk": 180,
     "fields": {
       "created_at": "2024-03-22T07:15:06.180Z",
       "updated_at": "2024-03-22T07:15:06.180Z",
-      "namaz_type": "MAGHREB",
+      "namaz_type": "ISHA",
       "gender": "female",
       "prayer_part1": "Dua 2 rakat",
       "prayer_part2": "At the end of the prayer, it is advisable to raise both hands to chest level. Leave a little space between them. Don't keep your hands too close to each other and don't hold them too far apart. The inside of the palms should be facing the face. Raising your hands in this way, it is advisable to say dua-istighfar .",
