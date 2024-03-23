@@ -1,5 +1,5 @@
 from drf_yasg.utils import swagger_auto_schema
-from rest_framework import generics, permissions, exceptions
+from rest_framework import exceptions, generics, permissions
 
 from apps.common import IsSuperAdmin
 from apps.education.api.v1.serializers import (
