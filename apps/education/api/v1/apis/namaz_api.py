@@ -1,5 +1,5 @@
 from drf_yasg.utils import swagger_auto_schema
-from rest_framework import generics, permissions
+from rest_framework import generics, permissions, exceptions
 
 from apps.common import IsSuperAdmin
 from apps.education.api.v1.serializers import (
@@ -24,10 +24,10 @@ class NamazListAPI(generics.ListAPIView):
 
         if namaz_type and gender:
             return queryset.filter(namaz_type=namaz_type, gender=gender)
-        elif namaz_type:
-            return queryset.filter(namaz_type=namaz_type)
         elif gender:
-            return queryset.filter(gender=gender)
+            if namaz_type is None:
+                raise exceptions.ValidationError({"error": "namaz_type parameter is required"})
+            return queryset.filter(namaz_type=namaz_type)
         else:
             return queryset
 
