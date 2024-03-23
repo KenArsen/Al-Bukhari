@@ -4,7 +4,7 @@
     "pk": 44,
     "fields": {
       "namaz": 37,
-      "image": "namaz/f1.png"
+      "image": "namaz/m_takbiratul.png"
     }
   },
   {
@@ -12,7 +12,7 @@
     "pk": 45,
     "fields": {
       "namaz": 38,
-      "image": "namaz/f2.png"
+      "image": "namaz/m_standing.png"
     }
   },
   {
@@ -20,7 +20,7 @@
     "pk": 46,
     "fields": {
       "namaz": 39,
-      "image": "namaz/f3.png"
+      "image": "namaz/m_reading.png"
     }
   },
   {
@@ -28,7 +28,7 @@
     "pk": 47,
     "fields": {
       "namaz": 40,
-      "image": "namaz/f4.png"
+      "image": "namaz/m_bowing.png"
     }
   },
   {
@@ -36,7 +36,7 @@
     "pk": 48,
     "fields": {
       "namaz": 41,
-      "image": "namaz/f5.png"
+      "image": "namaz/m_straightening.png"
     }
   },
   {
@@ -44,7 +44,7 @@
     "pk": 49,
     "fields": {
       "namaz": 42,
-      "image": "namaz/f6.png"
+      "image": "namaz/m_prostration.png"
     }
   },
   {
@@ -52,7 +52,7 @@
     "pk": 52,
     "fields": {
       "namaz": 44,
-      "image": "namaz/f9.png"
+      "image": "namaz/m_prostration.png"
     }
   },
   {
@@ -60,7 +60,7 @@
     "pk": 53,
     "fields": {
       "namaz": 43,
-      "image": "namaz/f8_1.png"
+      "image": "namaz/m_seat_1.png"
     }
   },
   {
@@ -68,7 +68,7 @@
     "pk": 54,
     "fields": {
       "namaz": 43,
-      "image": "namaz/f8_2.png"
+      "image": "namaz/m_seat_2.png"
     }
   },
   {
@@ -76,7 +76,7 @@
     "pk": 55,
     "fields": {
       "namaz": 45,
-      "image": "namaz/standing.png"
+      "image": "namaz/m_standing.png"
     }
   },
   {
@@ -84,7 +84,7 @@
     "pk": 56,
     "fields": {
       "namaz": 46,
-      "image": "namaz/reading.png"
+      "image": "namaz/m_reading.png"
     }
   },
   {
@@ -92,7 +92,7 @@
     "pk": 57,
     "fields": {
       "namaz": 47,
-      "image": "namaz/bowing.png"
+      "image": "namaz/m_bowing.png"
     }
   },
   {
@@ -100,7 +100,7 @@
     "pk": 58,
     "fields": {
       "namaz": 48,
-      "image": "namaz/straightening.png"
+      "image": "namaz/m_straightening.png"
     }
   },
   {
@@ -108,7 +108,7 @@
     "pk": 59,
     "fields": {
       "namaz": 49,
-      "image": "namaz/prostration.png"
+      "image": "namaz/m_prostration.png"
     }
   },
   {
@@ -116,7 +116,7 @@
     "pk": 60,
     "fields": {
       "namaz": 50,
-      "image": "namaz/seat_1.png"
+      "image": "namaz/m_seat_1.png"
     }
   },
   {
@@ -124,7 +124,7 @@
     "pk": 61,
     "fields": {
       "namaz": 50,
-      "image": "namaz/seat_2.png"
+      "image": "namaz/m_seat_2.png"
     }
   },
   {
@@ -132,7 +132,7 @@
     "pk": 62,
     "fields": {
       "namaz": 51,
-      "image": "namaz/sujood.png"
+      "image": "namaz/m_prostration.png"
     }
   },
   {
@@ -140,7 +140,7 @@
     "pk": 63,
     "fields": {
       "namaz": 52,
-      "image": "namaz/tashahud_3.png"
+      "image": "namaz/m_tashahud.png"
     }
   },
   {
@@ -148,7 +148,7 @@
     "pk": 64,
     "fields": {
       "namaz": 53,
-      "image": "namaz/salam-right_1.png"
+      "image": "namaz/m_salam-right.png"
     }
   },
   {
@@ -156,7 +156,7 @@
     "pk": 65,
     "fields": {
       "namaz": 53,
-      "image": "namaz/salam-left_1.png"
+      "image": "namaz/m_salam-left.png"
     }
   },
   {
@@ -164,7 +164,7 @@
     "pk": 66,
     "fields": {
       "namaz": 54,
-      "image": "namaz/dua_1.png"
+      "image": "namaz/m_dua.png"
     }
   },
   {
@@ -172,7 +172,7 @@
     "pk": 67,
     "fields": {
       "namaz": 55,
-      "image": "namaz/niet.png"
+      "image": "namaz/f_takbir.png"
     }
   },
   {
@@ -180,7 +180,7 @@
     "pk": 68,
     "fields": {
       "namaz": 56,
-      "image": "namaz/takbir.png"
+      "image": "namaz/f_standing.png"
     }
   },
   {
@@ -188,7 +188,7 @@
     "pk": 69,
     "fields": {
       "namaz": 57,
-      "image": "namaz/standing.png"
+      "image": "namaz/f_reading.png"
     }
   },
   {
@@ -196,7 +196,7 @@
     "pk": 70,
     "fields": {
       "namaz": 58,
-      "image": "namaz/bowing.png"
+      "image": "namaz/f_bowing.png"
     }
   },
   {
@@ -204,7 +204,7 @@
     "pk": 71,
     "fields": {
       "namaz": 59,
-      "image": "namaz/straightening.png"
+      "image": "namaz/f_straightening.png"
     }
   },
   {
@@ -212,7 +212,7 @@
     "pk": 72,
     "fields": {
       "namaz": 60,
-      "image": "namaz/prostration.png"
+      "image": "namaz/f_prostration.png"
     }
   },
   {
@@ -220,7 +220,7 @@
     "pk": 73,
     "fields": {
       "namaz": 61,
-      "image": "namaz/seat_1.png"
+      "image": "namaz/f_seat_1.png"
     }
   },
   {
@@ -228,7 +228,7 @@
     "pk": 74,
     "fields": {
       "namaz": 61,
-      "image": "namaz/seat_2.png"
+      "image": "namaz/f_seat_2.png"
     }
   },
   {
@@ -236,7 +236,7 @@
     "pk": 75,
     "fields": {
       "namaz": 62,
-      "image": "namaz/prostration.png"
+      "image": "namaz/f_prostration.png"
     }
   },
   {
@@ -244,7 +244,7 @@
     "pk": 76,
     "fields": {
       "namaz": 63,
-      "image": "namaz/standing.png"
+      "image": "namaz/f_standing.png"
     }
   },
   {
@@ -252,7 +252,7 @@
     "pk": 77,
     "fields": {
       "namaz": 64,
-      "image": "namaz/reading.png"
+      "image": "namaz/f_reading.png"
     }
   },
   {
@@ -260,7 +260,7 @@
     "pk": 78,
     "fields": {
       "namaz": 65,
-      "image": "namaz/bowing.png"
+      "image": "namaz/f_bowing.png"
     }
   },
   {
@@ -268,7 +268,7 @@
     "pk": 79,
     "fields": {
       "namaz": 66,
-      "image": "namaz/straightening.png"
+      "image": "namaz/f_straightening.png"
     }
   },
   {
@@ -276,7 +276,7 @@
     "pk": 80,
     "fields": {
       "namaz": 67,
-      "image": "namaz/sujood.png"
+      "image": "namaz/f_prostration.png"
     }
   },
   {
@@ -284,7 +284,7 @@
     "pk": 81,
     "fields": {
       "namaz": 68,
-      "image": "namaz/seat_1.png"
+      "image": "namaz/f_seat_1.png"
     }
   },
   {
@@ -292,7 +292,7 @@
     "pk": 82,
     "fields": {
       "namaz": 68,
-      "image": "namaz/seat_2.png"
+      "image": "namaz/f_seat_2.png"
     }
   },
   {
@@ -300,7 +300,7 @@
     "pk": 83,
     "fields": {
       "namaz": 69,
-      "image": "namaz/prostration.png"
+      "image": "namaz/f_prostration.png"
     }
   },
   {
@@ -308,7 +308,7 @@
     "pk": 84,
     "fields": {
       "namaz": 70,
-      "image": "namaz/tashahud.png"
+      "image": "namaz/f_tashahud.png"
     }
   },
   {
@@ -316,7 +316,7 @@
     "pk": 85,
     "fields": {
       "namaz": 71,
-      "image": "namaz/salam-right_2.png"
+      "image": "namaz/f_salam.png"
     }
   },
   {
@@ -324,7 +324,7 @@
     "pk": 86,
     "fields": {
       "namaz": 72,
-      "image": "namaz/dua.png"
+      "image": "namaz/f_dua.png"
     }
   }
 ]
