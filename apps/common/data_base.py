@@ -36,7 +36,7 @@ class DumpDataAPIView(APIView):
         try:
             # Выполнение команды dumpdata
             process = Popen(
-                ["./manage.py", "dumpdata", "--format", "json", "--indent", "4", "education.Namaz"],
+                ["./manage.py", "dumpdata", "--format", "json", "--indent", "4", "education.NamazBegin"],
                 stdout=PIPE,
                 stderr=PIPE,
             )
@@ -90,7 +90,7 @@ class LoadDataAPIView(APIView):
     def get(self, request):
         try:
             # Загрузка данных из файла JSON в базу данных
-            process = Popen(["./manage.py", "loaddata", "namaz.json"], stdout=PIPE, stderr=PIPE)
+            process = Popen(["./manage.py", "loaddata", "namaz_begin.json"], stdout=PIPE, stderr=PIPE)
             stdout, stderr = process.communicate()
             if process.returncode != 0:
                 raise Exception(stderr.decode())

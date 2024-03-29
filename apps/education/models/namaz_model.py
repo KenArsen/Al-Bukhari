@@ -3,6 +3,7 @@ from django_ckeditor_5.fields import CKEditor5Field
 from rest_framework.exceptions import ValidationError
 
 from apps.common.base import BaseModel
+from apps.education.utils import NamazType
 
 
 class GhuslAndTaharat(BaseModel):
@@ -17,21 +18,27 @@ class GhuslAndTaharat(BaseModel):
             raise ValidationError({"audio": "Длина аудиофайла не должна превышать 255 символов."})
 
 
-class Namaz(BaseModel):
-    class NamazType(models.TextChoices):
-        FAJR = "FAJR", "FAJR"
-        ZUHR = "ZUHR", "ZUHR"
-        ASR = "ASR", "ASR"
-        MAGHREB = "MAGHREB", "MAGHREB"
-        ISHA = "ISHA", "ISHA"
-        VITR = "VITR", "VITR"
+class NamazBegin(BaseModel):
+    namaz_type = models.CharField(max_length=255, choices=NamazType.choices, default=NamazType.FAJR)
+    gender = models.CharField(max_length=255, default="male")
+    title = models.CharField(max_length=255)
+    description = models.CharField(max_length=255)
+    prayer_part1 = models.CharField(max_length=255)
+    prayer_part2 = models.TextField()
+    mentally = models.CharField(max_length=255)
+    image = models.ImageField(upload_to="namaz/")
 
+    def __str__(self):
+        return f"{self.namaz_type}"
+
+
+class Namaz(BaseModel):
     namaz_type = models.CharField(max_length=255, choices=NamazType.choices, default=NamazType.FAJR)
     gender = models.CharField(max_length=255, default="male")
     prayer_part1 = models.CharField(max_length=255)
-    prayer_part2 = models.TextField(default="")
-    transcription = models.TextField(default="")
-    arab = models.TextField(default="")
+    prayer_part2 = models.TextField()
+    transcription = models.TextField()
+    arab = models.TextField()
     audio = models.FileField(upload_to="audio/", max_length=255)
 
     def __str__(self):

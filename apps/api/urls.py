@@ -6,7 +6,13 @@ from drf_yasg.views import get_schema_view
 from rest_framework import permissions
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
-# from rest_framework.authentication import SessionAuthentication
+from apps.common.data_base import (
+    DumpDataAPIView,
+    ImageDumpDataAPIView,
+    ImageLoadDataAPIView,
+    LoadDataAPIView,
+    ResizeImagesAPI,
+)
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -18,8 +24,6 @@ schema_view = get_schema_view(
         license=openapi.License(name="BSD License"),
     ),
     public=True,
-    # authentication_classes=[SessionAuthentication],
-    # permission_classes=[permissions.IsAuthenticated],
     permission_classes=[permissions.AllowAny],
 )
 
@@ -31,6 +35,14 @@ urlpatterns = [
     path("v1/educations/", include("apps.education.api.v1.urls", namespace="educations")),
     path("v1/donations/", include("apps.donation.api.v1.urls", namespace="donations")),
     path("v1/us/", include("apps.us.api.v1.urls", namespace="us")),
+]
+
+urlpatterns += [
+    path("resize_images/", ResizeImagesAPI.as_view(), name="namaz-resize-images"),
+    path("dumpdata/", DumpDataAPIView.as_view(), name="dump-data"),
+    path("loaddata/", LoadDataAPIView.as_view(), name="load-data"),
+    path("images/dumpdata/", ImageDumpDataAPIView.as_view(), name="images-dump-data"),
+    path("images/loaddata/", ImageLoadDataAPIView.as_view(), name="images-load-data"),
 ]
 
 # libraries
