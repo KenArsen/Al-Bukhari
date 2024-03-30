@@ -38,11 +38,11 @@ urlpatterns = [
 ]
 
 urlpatterns += [
-    path("resize_images/", ResizeImagesAPI.as_view(), name="namaz-resize-images"),
-    path("dumpdata/", DumpDataAPIView.as_view(), name="dump-data"),
-    path("loaddata/", LoadDataAPIView.as_view(), name="load-data"),
-    path("images/dumpdata/", ImageDumpDataAPIView.as_view(), name="images-dump-data"),
-    path("images/loaddata/", ImageLoadDataAPIView.as_view(), name="images-load-data"),
+    path("v1/resize_images/", ResizeImagesAPI.as_view(), name="namaz-resize-images"),
+    path("v1/dumpdata/", DumpDataAPIView.as_view(), name="dump-data"),
+    path("v1/loaddata/", LoadDataAPIView.as_view(), name="load-data"),
+    path("v1/images/dumpdata/", ImageDumpDataAPIView.as_view(), name="images-dump-data"),
+    path("v1/images/loaddata/", ImageLoadDataAPIView.as_view(), name="images-load-data"),
 ]
 
 # libraries
