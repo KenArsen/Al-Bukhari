@@ -1,0 +1,194 @@
+[
+  {
+    "model": "education.namazbegin",
+    "pk": 1,
+    "fields": {
+      "created_at": "2024-03-30T04:58:02.184Z",
+      "updated_at": "2024-03-30T04:58:02.184Z",
+      "namaz_type": "FAJR",
+      "gender": "male",
+      "title": "Sunnah of morning prayer",
+      "description": "The Sunnah of Fajr is recited exactly like Fajr. So, in the morning, we perform two units of Sunnah prayer and two units of Fard (obligatory) prayer.",
+      "prayer_part1": "Niyyah  rakat",
+      "prayer_part2": "Mentally, intention can be expressed as follows:",
+      "mentally": "I intend to perform (a type of prayer)",
+      "image": "namaz/m_niet.png"
+    }
+  },
+  {
+    "model": "education.namazbegin",
+    "pk": 2,
+    "fields": {
+      "created_at": "2024-03-30T04:59:13.563Z",
+      "updated_at": "2024-03-30T04:59:13.563Z",
+      "namaz_type": "FAJR",
+      "gender": "female",
+      "title": "Sunnah of morning prayer",
+      "description": "The Sunnah of Fajr is read exactly like Fajr. In total, in the morning we read two rakats of sunnah and two rakats of fard.",
+      "prayer_part1": "Niyyah rakat",
+      "prayer_part2": "Mentally, intention can be expressed as follows:",
+      "mentally": "I intend to perform (a type of prayer)",
+      "image": "namaz/f_niet.png"
+    }
+  },
+  {
+    "model": "education.namazbegin",
+    "pk": 3,
+    "fields": {
+      "created_at": "2024-03-30T04:58:02.184Z",
+      "updated_at": "2024-03-30T04:58:02.184Z",
+      "namaz_type": "ZUHR",
+      "gender": "male",
+      "title": "Sunnah of morning prayer",
+      "description": "The Sunnah of ZUHR is recited exactly like ZUHR. So, in the morning, we perform two units of Sunnah prayer and two units of Fard (obligatory) prayer.",
+      "prayer_part1": "Niyyah  rakat",
+      "prayer_part2": "Mentally, intention can be expressed as follows:",
+      "mentally": "I intend to perform (a type of prayer)",
+      "image": "namaz/m_niet.png"
+    }
+  },
+  {
+    "model": "education.namazbegin",
+    "pk": 4,
+    "fields": {
+      "created_at": "2024-03-30T04:59:13.563Z",
+      "updated_at": "2024-03-30T04:59:13.563Z",
+      "namaz_type": "ZUHR",
+      "gender": "female",
+      "title": "Sunnah of morning prayer",
+      "description": "The Sunnah of ZUHR is read exactly like ZUHR. In total, in the morning we read two rakats of sunnah and two rakats of fard.",
+      "prayer_part1": "Niyyah rakat",
+      "prayer_part2": "Mentally, intention can be expressed as follows:",
+      "mentally": "I intend to perform (a type of prayer)",
+      "image": "namaz/f_niet.png"
+    }
+  },
+  {
+    "model": "education.namazbegin",
+    "pk": 5,
+    "fields": {
+      "created_at": "2024-03-30T04:58:02.184Z",
+      "updated_at": "2024-03-30T04:58:02.184Z",
+      "namaz_type": "ASR",
+      "gender": "male",
+      "title": "Sunnah of morning prayer",
+      "description": "The Sunnah of ASR is recited exactly like ASR. So, in the morning, we perform two units of Sunnah prayer and two units of Fard (obligatory) prayer.",
+      "prayer_part1": "Niyyah  rakat",
+      "prayer_part2": "Mentally, intention can be expressed as follows:",
+      "mentally": "I intend to perform (a type of prayer)",
+      "image": "namaz/m_niet.png"
+    }
+  },
+  {
+    "model": "education.namazbegin",
+    "pk": 6,
+    "fields": {
+      "created_at": "2024-03-30T04:59:13.563Z",
+      "updated_at": "2024-03-30T04:59:13.563Z",
+      "namaz_type": "ASR",
+      "gender": "female",
+      "title": "Sunnah of morning prayer",
+      "description": "The Sunnah of ASR is read exactly like ASR. In total, in the morning we read two rakats of sunnah and two rakats of fard.",
+      "prayer_part1": "Niyyah rakat",
+      "prayer_part2": "Mentally, intention can be expressed as follows:",
+      "mentally": "I intend to perform (a type of prayer)",
+      "image": "namaz/f_niet.png"
+    }
+  },
+  {
+    "model": "education.namazbegin",
+    "pk": 7,
+    "fields": {
+      "created_at": "2024-03-30T04:58:02.184Z",
+      "updated_at": "2024-03-30T04:58:02.184Z",
+      "namaz_type": "MAGHREB",
+      "gender": "male",
+      "title": "Sunnah of morning prayer",
+      "description": "The Sunnah of MAGHREB is recited exactly like MAGHREB. So, in the morning, we perform two units of Sunnah prayer and two units of Fard (obligatory) prayer.",
+      "prayer_part1": "Niyyah  rakat",
+      "prayer_part2": "Mentally, intention can be expressed as follows:",
+      "mentally": "I intend to perform (a type of prayer)",
+      "image": "namaz/m_niet.png"
+    }
+  },
+  {
+    "model": "education.namazbegin",
+    "pk": 8,
+    "fields": {
+      "created_at": "2024-03-30T04:59:13.563Z",
+      "updated_at": "2024-03-30T04:59:13.563Z",
+      "namaz_type": "MAGHREB",
+      "gender": "female",
+      "title": "Sunnah of morning prayer",
+      "description": "The Sunnah of MAGHREB is read exactly like MAGHREB. In total, in the morning we read two rakats of sunnah and two rakats of fard.",
+      "prayer_part1": "Niyyah rakat",
+      "prayer_part2": "Mentally, intention can be expressed as follows:",
+      "mentally": "I intend to perform (a type of prayer)",
+      "image": "namaz/f_niet.png"
+    }
+  },
+  {
+    "model": "education.namazbegin",
+    "pk": 9,
+    "fields": {
+      "created_at": "2024-03-30T04:58:02.184Z",
+      "updated_at": "2024-03-30T04:58:02.184Z",
+      "namaz_type": "ISHA",
+      "gender": "male",
+      "title": "Sunnah of morning prayer",
+      "description": "The Sunnah of ISHA is recited exactly like ISHA. So, in the morning, we perform two units of Sunnah prayer and two units of Fard (obligatory) prayer.",
+      "prayer_part1": "Niyyah  rakat",
+      "prayer_part2": "Mentally, intention can be expressed as follows:",
+      "mentally": "I intend to perform (a type of prayer)",
+      "image": "namaz/m_niet.png"
+    }
+  },
+  {
+    "model": "education.namazbegin",
+    "pk": 10,
+    "fields": {
+      "created_at": "2024-03-30T04:59:13.563Z",
+      "updated_at": "2024-03-30T04:59:13.563Z",
+      "namaz_type": "ISHA",
+      "gender": "female",
+      "title": "Sunnah of morning prayer",
+      "description": "The Sunnah of ISHA is read exactly like ISHA. In total, in the morning we read two rakats of sunnah and two rakats of fard.",
+      "prayer_part1": "Niyyah rakat",
+      "prayer_part2": "Mentally, intention can be expressed as follows:",
+      "mentally": "I intend to perform (a type of prayer)",
+      "image": "namaz/f_niet.png"
+    }
+  },
+  {
+    "model": "education.namazbegin",
+    "pk": 11,
+    "fields": {
+      "created_at": "2024-03-30T04:58:02.184Z",
+      "updated_at": "2024-03-30T04:58:02.184Z",
+      "namaz_type": "VITR",
+      "gender": "male",
+      "title": "Sunnah of morning prayer",
+      "description": "The Sunnah of VITR is recited exactly like VITR. So, in the morning, we perform two units of Sunnah prayer and two units of Fard (obligatory) prayer.",
+      "prayer_part1": "Niyyah  rakat",
+      "prayer_part2": "Mentally, intention can be expressed as follows:",
+      "mentally": "I intend to perform (a type of prayer)",
+      "image": "namaz/m_niet.png"
+    }
+  },
+  {
+    "model": "education.namazbegin",
+    "pk": 12,
+    "fields": {
+      "created_at": "2024-03-30T04:59:13.563Z",
+      "updated_at": "2024-03-30T04:59:13.563Z",
+      "namaz_type": "VITR",
+      "gender": "female",
+      "title": "Sunnah of morning prayer",
+      "description": "The Sunnah of VITR is read exactly like VITR. In total, in the morning we read two rakats of sunnah and two rakats of fard.",
+      "prayer_part1": "Niyyah rakat",
+      "prayer_part2": "Mentally, intention can be expressed as follows:",
+      "mentally": "I intend to perform (a type of prayer)",
+      "image": "namaz/f_niet.png"
+    }
+  }
+]
