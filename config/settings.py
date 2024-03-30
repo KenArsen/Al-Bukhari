@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "apps.education.apps.EducationConfig",
     "apps.donation.apps.DonationConfig",
     "apps.us.apps.UsConfig",
+    "apps.menu.apps.MenuConfig",
 ]
 
 MIDDLEWARE = [

@@ -35,6 +35,7 @@ urlpatterns = [
     path("v1/educations/", include("apps.education.api.v1.urls", namespace="educations")),
     path("v1/donations/", include("apps.donation.api.v1.urls", namespace="donations")),
     path("v1/us/", include("apps.us.api.v1.urls", namespace="us")),
+    path("v1/menus/", include("apps.menu.urls", namespace="menus")),
 ]
 
 urlpatterns += [
