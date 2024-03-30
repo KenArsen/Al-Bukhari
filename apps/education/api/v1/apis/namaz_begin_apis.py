@@ -20,10 +20,10 @@ class NamazBeginListAPI(generics.ListAPIView):
 
         if namaz_type and gender:
             return queryset.filter(namaz_type=namaz_type, gender=gender)
-        elif gender:
-            if namaz_type is None:
-                raise exceptions.ValidationError({"error": "namaz_type parameter is required"})
+        elif namaz_type and gender is None:
             return queryset.filter(namaz_type=namaz_type)
+        elif gender and namaz_type is None:
+            raise exceptions.ValidationError({"error": "namaz_type parameter is required"})
         else:
             return queryset
 
