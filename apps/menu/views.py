@@ -2,8 +2,9 @@ from drf_yasg.utils import swagger_auto_schema
 from rest_framework import generics, permissions
 
 from apps.common import IsSuperAdmin
-from .serializers import MenuSerializer
+
 from .models import Menu
+from .serializers import MenuSerializer
 
 
 class MenuListAPI(generics.ListAPIView):

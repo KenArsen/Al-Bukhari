@@ -6,13 +6,11 @@ from apps.education.api.v1.apis import (
     EducationDetailAPI,
     EducationListAPI,
     EducationUpdateAPI,
-
     GhuslAndTaharatCreateAPI,
     GhuslAndTaharatDeleteAPI,
     GhuslAndTaharatDetailAPI,
     GhuslAndTaharatListAPI,
     GhuslAndTaharatUpdateAPI,
-
     NamazCreateAPI,
     NamazDeleteAPI,
     NamazDetailAPI,

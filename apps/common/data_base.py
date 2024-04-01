@@ -106,7 +106,9 @@ class ImageLoadDataAPIView(APIView):
     def get(self, request):
         try:
             # Загрузка данных из файла JSON в базу данных
-            process = Popen(["./manage.py", "loaddata", "apps/education/fixtures/images.json"], stdout=PIPE, stderr=PIPE)
+            process = Popen(
+                ["./manage.py", "loaddata", "apps/education/fixtures/images.json"], stdout=PIPE, stderr=PIPE
+            )
             stdout, stderr = process.communicate()
             if process.returncode != 0:
                 raise Exception(stderr.decode())
