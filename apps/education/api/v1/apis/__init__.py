@@ -19,10 +19,3 @@ from .namaz_api import (
     NamazListAPI,
     NamazUpdateAPI,
 )
-from .namaz_begin_apis import (
-    NamazBeginListAPI,
-    NamazBeginCreateAPI,
-    NamazBeginDetailAPI,
-    NamazBeginUpdateAPI,
-    NamazBeginDeleteAPI
-)

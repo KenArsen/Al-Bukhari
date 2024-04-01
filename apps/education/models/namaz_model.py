@@ -18,28 +18,23 @@ class GhuslAndTaharat(BaseModel):
             raise ValidationError({"audio": "Длина аудиофайла не должна превышать 255 символов."})
 
 
-class NamazBegin(BaseModel):
-    namaz_type = models.CharField(max_length=255, choices=NamazType.choices, default=NamazType.FAJR)
-    gender = models.CharField(max_length=255, default="male")
-    title = models.CharField(max_length=255)
-    description = models.CharField(max_length=255)
-    prayer_part1 = models.CharField(max_length=255)
-    prayer_part2 = models.TextField()
-    mentally = models.CharField(max_length=255)
-    image = models.ImageField(upload_to="namaz/")
-
-    def __str__(self):
-        return f"{self.namaz_type}"
-
-
 class Namaz(BaseModel):
     namaz_type = models.CharField(max_length=255, choices=NamazType.choices, default=NamazType.FAJR)
     gender = models.CharField(max_length=255, default="male")
-    prayer_part1 = models.CharField(max_length=255)
-    prayer_part2 = models.TextField()
-    transcription = models.TextField()
-    arab = models.TextField()
-    audio = models.FileField(upload_to="audio/", max_length=255)
+
+    namaz_number = models.SmallIntegerField(default=1)
+
+    title = models.CharField(max_length=255, blank=True, null=True)
+    description = models.CharField(max_length=255, blank=True, null=True)
+
+    prayer_part1 = models.CharField(max_length=255, blank=True, null=True)
+    prayer_part2 = models.TextField(blank=True, null=True)
+
+    transcription = models.TextField(blank=True, null=True)
+    arab = models.TextField(blank=True, null=True)
+    mentally = models.TextField(max_length=255, blank=True, null=True)
+
+    audio = models.FileField(upload_to="audio/", max_length=255, blank=True, null=True)
 
     def __str__(self):
         return f"{self.namaz_type}"

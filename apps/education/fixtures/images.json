@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
       "namaz": 1,
-      "image": "namaz/m_takbiratul.png"
+      "image": "namaz/m_niet.png"
     }
   },
   {
@@ -12,7 +12,7 @@
     "pk": 2,
     "fields": {
       "namaz": 2,
-      "image": "namaz/m_standing.png"
+      "image": "namaz/m_takbiratul.png"
     }
   },
   {
@@ -20,7 +20,7 @@
     "pk": 3,
     "fields": {
       "namaz": 3,
-      "image": "namaz/m_reading.png"
+      "image": "namaz/m_standing.png"
     }
   },
   {
@@ -28,7 +28,7 @@
     "pk": 4,
     "fields": {
       "namaz": 4,
-      "image": "namaz/m_bowing.png"
+      "image": "namaz/m_reading.png"
     }
   },
   {
@@ -36,7 +36,7 @@
     "pk": 5,
     "fields": {
       "namaz": 5,
-      "image": "namaz/m_straightening.png"
+      "image": "namaz/m_bowing.png"
     }
   },
   {
@@ -44,7 +44,23 @@
     "pk": 6,
     "fields": {
       "namaz": 6,
+      "image": "namaz/m_straightening.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 7,
+    "fields": {
+      "namaz": 7,
       "image": "namaz/m_prostration.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 8,
+    "fields": {
+      "namaz": 8,
+      "image": "namaz/m_seat_1.png"
     }
   },
   {
@@ -52,126 +68,126 @@
     "pk": 9,
     "fields": {
       "namaz": 8,
-      "image": "namaz/m_prostration.png"
+      "image": "namaz/m_seat_2.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 10,
     "fields": {
-      "namaz": 7,
-      "image": "namaz/m_seat_1.png"
+      "namaz": 9,
+      "image": "namaz/m_prostration.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 11,
     "fields": {
-      "namaz": 7,
-      "image": "namaz/m_seat_2.png"
+      "namaz": 10,
+      "image": "namaz/m_standing.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 12,
     "fields": {
-      "namaz": 9,
-      "image": "namaz/m_standing.png"
+      "namaz": 11,
+      "image": "namaz/m_reading.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 13,
     "fields": {
-      "namaz": 10,
-      "image": "namaz/m_reading.png"
+      "namaz": 12,
+      "image": "namaz/m_bowing.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 14,
     "fields": {
-      "namaz": 11,
-      "image": "namaz/m_bowing.png"
+      "namaz": 13,
+      "image": "namaz/m_straightening.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 15,
     "fields": {
-      "namaz": 12,
-      "image": "namaz/m_straightening.png"
+      "namaz": 14,
+      "image": "namaz/m_prostration.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 16,
     "fields": {
-      "namaz": 13,
-      "image": "namaz/m_prostration.png"
+      "namaz": 15,
+      "image": "namaz/m_seat_1.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 17,
     "fields": {
-      "namaz": 14,
-      "image": "namaz/m_seat_1.png"
+      "namaz": 15,
+      "image": "namaz/m_seat_2.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 18,
     "fields": {
-      "namaz": 14,
-      "image": "namaz/m_seat_2.png"
+      "namaz": 16,
+      "image": "namaz/m_prostration.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 19,
     "fields": {
-      "namaz": 15,
-      "image": "namaz/m_prostration.png"
+      "namaz": 17,
+      "image": "namaz/m_tashahud.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 20,
     "fields": {
-      "namaz": 16,
-      "image": "namaz/m_tashahud.png"
+      "namaz": 18,
+      "image": "namaz/m_salam-right.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 21,
     "fields": {
-      "namaz": 17,
-      "image": "namaz/m_salam-right.png"
+      "namaz": 18,
+      "image": "namaz/m_salam-left.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 22,
     "fields": {
-      "namaz": 17,
-      "image": "namaz/m_salam-left.png"
+      "namaz": 19,
+      "image": "namaz/m_dua.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 23,
     "fields": {
-      "namaz": 18,
-      "image": "namaz/m_dua.png"
+      "namaz": 20,
+      "image": "namaz/f_niet.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 24,
     "fields": {
-      "namaz": 19,
+      "namaz": 21,
       "image": "namaz/f_takbir.png"
     }
   },
@@ -179,7 +195,7 @@
     "model": "education.namazimage",
     "pk": 25,
     "fields": {
-      "namaz": 20,
+      "namaz": 22,
       "image": "namaz/f_standing.png"
     }
   },
@@ -187,7 +203,7 @@
     "model": "education.namazimage",
     "pk": 26,
     "fields": {
-      "namaz": 21,
+      "namaz": 23,
       "image": "namaz/f_reading.png"
     }
   },
@@ -195,7 +211,7 @@
     "model": "education.namazimage",
     "pk": 27,
     "fields": {
-      "namaz": 22,
+      "namaz": 24,
       "image": "namaz/f_bowing.png"
     }
   },
@@ -203,7 +219,7 @@
     "model": "education.namazimage",
     "pk": 28,
     "fields": {
-      "namaz": 23,
+      "namaz": 25,
       "image": "namaz/f_straightening.png"
     }
   },
@@ -211,7 +227,7 @@
     "model": "education.namazimage",
     "pk": 29,
     "fields": {
-      "namaz": 24,
+      "namaz": 26,
       "image": "namaz/f_prostration.png"
     }
   },
@@ -219,7 +235,7 @@
     "model": "education.namazimage",
     "pk": 30,
     "fields": {
-      "namaz": 25,
+      "namaz": 27,
       "image": "namaz/f_seat_1.png"
     }
   },
@@ -227,7 +243,7 @@
     "model": "education.namazimage",
     "pk": 31,
     "fields": {
-      "namaz": 25,
+      "namaz": 27,
       "image": "namaz/f_seat_2.png"
     }
   },
@@ -235,7 +251,7 @@
     "model": "education.namazimage",
     "pk": 32,
     "fields": {
-      "namaz": 26,
+      "namaz": 28,
       "image": "namaz/f_prostration.png"
     }
   },
@@ -243,7 +259,7 @@
     "model": "education.namazimage",
     "pk": 33,
     "fields": {
-      "namaz": 27,
+      "namaz": 29,
       "image": "namaz/f_standing.png"
     }
   },
@@ -251,7 +267,7 @@
     "model": "education.namazimage",
     "pk": 34,
     "fields": {
-      "namaz": 28,
+      "namaz": 30,
       "image": "namaz/f_reading.png"
     }
   },
@@ -259,7 +275,7 @@
     "model": "education.namazimage",
     "pk": 35,
     "fields": {
-      "namaz": 29,
+      "namaz": 31,
       "image": "namaz/f_bowing.png"
     }
   },
@@ -267,7 +283,7 @@
     "model": "education.namazimage",
     "pk": 36,
     "fields": {
-      "namaz": 30,
+      "namaz": 32,
       "image": "namaz/f_straightening.png"
     }
   },
@@ -275,7 +291,7 @@
     "model": "education.namazimage",
     "pk": 37,
     "fields": {
-      "namaz": 31,
+      "namaz": 33,
       "image": "namaz/f_prostration.png"
     }
   },
@@ -283,7 +299,7 @@
     "model": "education.namazimage",
     "pk": 38,
     "fields": {
-      "namaz": 32,
+      "namaz": 34,
       "image": "namaz/f_seat_1.png"
     }
   },
@@ -291,7 +307,7 @@
     "model": "education.namazimage",
     "pk": 39,
     "fields": {
-      "namaz": 32,
+      "namaz": 34,
       "image": "namaz/f_seat_2.png"
     }
   },
@@ -299,7 +315,7 @@
     "model": "education.namazimage",
     "pk": 40,
     "fields": {
-      "namaz": 33,
+      "namaz": 35,
       "image": "namaz/f_prostration.png"
     }
   },
@@ -307,7 +323,7 @@
     "model": "education.namazimage",
     "pk": 41,
     "fields": {
-      "namaz": 34,
+      "namaz": 36,
       "image": "namaz/f_tashahud.png"
     }
   },
@@ -315,7 +331,7 @@
     "model": "education.namazimage",
     "pk": 42,
     "fields": {
-      "namaz": 35,
+      "namaz": 37,
       "image": "namaz/f_salam.png"
     }
   },
@@ -323,7 +339,7 @@
     "model": "education.namazimage",
     "pk": 43,
     "fields": {
-      "namaz": 36,
+      "namaz": 38,
       "image": "namaz/f_dua.png"
     }
   },
@@ -331,175 +347,191 @@
     "model": "education.namazimage",
     "pk": 44,
     "fields": {
-      "namaz": 37,
-      "image": "namaz/m_takbiratul.png"
+      "namaz": 39,
+      "image": "namaz/m_niet.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 45,
     "fields": {
-      "namaz": 38,
-      "image": "namaz/m_standing.png"
+      "namaz": 40,
+      "image": "namaz/m_takbiratul.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 46,
     "fields": {
-      "namaz": 39,
-      "image": "namaz/m_reading.png"
+      "namaz": 41,
+      "image": "namaz/m_standing.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 47,
     "fields": {
-      "namaz": 40,
-      "image": "namaz/m_bowing.png"
+      "namaz": 42,
+      "image": "namaz/m_reading.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 48,
     "fields": {
-      "namaz": 41,
-      "image": "namaz/m_straightening.png"
+      "namaz": 43,
+      "image": "namaz/m_bowing.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 49,
     "fields": {
-      "namaz": 42,
+      "namaz": 44,
+      "image": "namaz/m_straightening.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 50,
+    "fields": {
+      "namaz": 45,
       "image": "namaz/m_prostration.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 51,
+    "fields": {
+      "namaz": 46,
+      "image": "namaz/m_seat_1.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 52,
     "fields": {
-      "namaz": 44,
-      "image": "namaz/m_prostration.png"
+      "namaz": 46,
+      "image": "namaz/m_seat_2.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 53,
     "fields": {
-      "namaz": 43,
-      "image": "namaz/m_seat_1.png"
+      "namaz": 47,
+      "image": "namaz/m_prostration.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 54,
     "fields": {
-      "namaz": 43,
-      "image": "namaz/m_seat_2.png"
+      "namaz": 48,
+      "image": "namaz/m_standing.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 55,
     "fields": {
-      "namaz": 45,
-      "image": "namaz/m_standing.png"
+      "namaz": 49,
+      "image": "namaz/m_reading.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 56,
     "fields": {
-      "namaz": 46,
-      "image": "namaz/m_reading.png"
+      "namaz": 50,
+      "image": "namaz/m_bowing.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 57,
     "fields": {
-      "namaz": 47,
-      "image": "namaz/m_bowing.png"
+      "namaz": 51,
+      "image": "namaz/m_straightening.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 58,
     "fields": {
-      "namaz": 48,
-      "image": "namaz/m_straightening.png"
+      "namaz": 52,
+      "image": "namaz/m_prostration.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 59,
     "fields": {
-      "namaz": 49,
-      "image": "namaz/m_prostration.png"
+      "namaz": 53,
+      "image": "namaz/m_seat_1.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 60,
     "fields": {
-      "namaz": 50,
-      "image": "namaz/m_seat_1.png"
+      "namaz": 53,
+      "image": "namaz/m_seat_2.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 61,
     "fields": {
-      "namaz": 50,
-      "image": "namaz/m_seat_2.png"
+      "namaz": 54,
+      "image": "namaz/m_prostration.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 62,
     "fields": {
-      "namaz": 51,
-      "image": "namaz/m_prostration.png"
+      "namaz": 55,
+      "image": "namaz/m_tashahud.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 63,
     "fields": {
-      "namaz": 52,
-      "image": "namaz/m_tashahud.png"
+      "namaz": 56,
+      "image": "namaz/m_salam-right.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 64,
     "fields": {
-      "namaz": 53,
-      "image": "namaz/m_salam-right.png"
+      "namaz": 56,
+      "image": "namaz/m_salam-left.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 65,
     "fields": {
-      "namaz": 53,
-      "image": "namaz/m_salam-left.png"
+      "namaz": 57,
+      "image": "namaz/m_dua.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 66,
     "fields": {
-      "namaz": 54,
-      "image": "namaz/m_dua.png"
+      "namaz": 58,
+      "image": "namaz/f_niet.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 67,
     "fields": {
-      "namaz": 55,
+      "namaz": 59,
       "image": "namaz/f_takbir.png"
     }
   },
@@ -507,7 +539,7 @@
     "model": "education.namazimage",
     "pk": 68,
     "fields": {
-      "namaz": 56,
+      "namaz": 60,
       "image": "namaz/f_standing.png"
     }
   },
@@ -515,7 +547,7 @@
     "model": "education.namazimage",
     "pk": 69,
     "fields": {
-      "namaz": 57,
+      "namaz": 61,
       "image": "namaz/f_reading.png"
     }
   },
@@ -523,7 +555,7 @@
     "model": "education.namazimage",
     "pk": 70,
     "fields": {
-      "namaz": 58,
+      "namaz": 62,
       "image": "namaz/f_bowing.png"
     }
   },
@@ -531,7 +563,7 @@
     "model": "education.namazimage",
     "pk": 71,
     "fields": {
-      "namaz": 59,
+      "namaz": 63,
       "image": "namaz/f_straightening.png"
     }
   },
@@ -539,7 +571,7 @@
     "model": "education.namazimage",
     "pk": 72,
     "fields": {
-      "namaz": 60,
+      "namaz": 64,
       "image": "namaz/f_prostration.png"
     }
   },
@@ -547,7 +579,7 @@
     "model": "education.namazimage",
     "pk": 73,
     "fields": {
-      "namaz": 61,
+      "namaz": 65,
       "image": "namaz/f_seat_1.png"
     }
   },
@@ -555,7 +587,7 @@
     "model": "education.namazimage",
     "pk": 74,
     "fields": {
-      "namaz": 61,
+      "namaz": 65,
       "image": "namaz/f_seat_2.png"
     }
   },
@@ -563,7 +595,7 @@
     "model": "education.namazimage",
     "pk": 75,
     "fields": {
-      "namaz": 62,
+      "namaz": 66,
       "image": "namaz/f_prostration.png"
     }
   },
@@ -571,7 +603,7 @@
     "model": "education.namazimage",
     "pk": 76,
     "fields": {
-      "namaz": 63,
+      "namaz": 67,
       "image": "namaz/f_standing.png"
     }
   },
@@ -579,7 +611,7 @@
     "model": "education.namazimage",
     "pk": 77,
     "fields": {
-      "namaz": 64,
+      "namaz": 68,
       "image": "namaz/f_reading.png"
     }
   },
@@ -587,7 +619,7 @@
     "model": "education.namazimage",
     "pk": 78,
     "fields": {
-      "namaz": 65,
+      "namaz": 69,
       "image": "namaz/f_bowing.png"
     }
   },
@@ -595,7 +627,7 @@
     "model": "education.namazimage",
     "pk": 79,
     "fields": {
-      "namaz": 66,
+      "namaz": 70,
       "image": "namaz/f_straightening.png"
     }
   },
@@ -603,7 +635,7 @@
     "model": "education.namazimage",
     "pk": 80,
     "fields": {
-      "namaz": 67,
+      "namaz": 71,
       "image": "namaz/f_prostration.png"
     }
   },
@@ -611,7 +643,7 @@
     "model": "education.namazimage",
     "pk": 81,
     "fields": {
-      "namaz": 68,
+      "namaz": 72,
       "image": "namaz/f_seat_1.png"
     }
   },
@@ -619,7 +651,7 @@
     "model": "education.namazimage",
     "pk": 82,
     "fields": {
-      "namaz": 68,
+      "namaz": 72,
       "image": "namaz/f_seat_2.png"
     }
   },
@@ -627,7 +659,7 @@
     "model": "education.namazimage",
     "pk": 83,
     "fields": {
-      "namaz": 69,
+      "namaz": 73,
       "image": "namaz/f_prostration.png"
     }
   },
@@ -635,7 +667,7 @@
     "model": "education.namazimage",
     "pk": 84,
     "fields": {
-      "namaz": 70,
+      "namaz": 74,
       "image": "namaz/f_tashahud.png"
     }
   },
@@ -643,7 +675,7 @@
     "model": "education.namazimage",
     "pk": 85,
     "fields": {
-      "namaz": 71,
+      "namaz": 75,
       "image": "namaz/f_salam.png"
     }
   },
@@ -651,7 +683,7 @@
     "model": "education.namazimage",
     "pk": 86,
     "fields": {
-      "namaz": 72,
+      "namaz": 76,
       "image": "namaz/f_dua.png"
     }
   },
@@ -659,109 +691,77 @@
     "model": "education.namazimage",
     "pk": 87,
     "fields": {
-      "namaz": 73,
-      "image": "namaz/m_takbiratul.png"
+      "namaz": 77,
+      "image": "namaz/m_niet.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 88,
     "fields": {
-      "namaz": 74,
-      "image": "namaz/m_standing.png"
+      "namaz": 78,
+      "image": "namaz/m_takbiratul.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 89,
     "fields": {
-      "namaz": 75,
-      "image": "namaz/m_reading.png"
+      "namaz": 79,
+      "image": "namaz/m_standing.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 90,
     "fields": {
-      "namaz": 76,
-      "image": "namaz/m_bowing.png"
+      "namaz": 80,
+      "image": "namaz/m_reading.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 91,
     "fields": {
-      "namaz": 77,
-      "image": "namaz/m_straightening.png"
+      "namaz": 81,
+      "image": "namaz/m_bowing.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 92,
     "fields": {
-      "namaz": 78,
+      "namaz": 82,
+      "image": "namaz/m_straightening.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 93,
+    "fields": {
+      "namaz": 83,
       "image": "namaz/m_prostration.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 94,
+    "fields": {
+      "namaz": 84,
+      "image": "namaz/m_seat_1.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 95,
     "fields": {
-      "namaz": 80,
-      "image": "namaz/m_prostration.png"
-    }
-  },
-  {
-    "model": "education.namazimage",
-    "pk": 96,
-    "fields": {
-      "namaz": 79,
-      "image": "namaz/m_seat_1.png"
-    }
-  },
-  {
-    "model": "education.namazimage",
-    "pk": 97,
-    "fields": {
-      "namaz": 79,
+      "namaz": 84,
       "image": "namaz/m_seat_2.png"
     }
   },
   {
     "model": "education.namazimage",
-    "pk": 98,
-    "fields": {
-      "namaz": 81,
-      "image": "namaz/m_standing.png"
-    }
-  },
-  {
-    "model": "education.namazimage",
-    "pk": 99,
-    "fields": {
-      "namaz": 82,
-      "image": "namaz/m_reading.png"
-    }
-  },
-  {
-    "model": "education.namazimage",
-    "pk": 100,
-    "fields": {
-      "namaz": 83,
-      "image": "namaz/m_bowing.png"
-    }
-  },
-  {
-    "model": "education.namazimage",
-    "pk": 101,
-    "fields": {
-      "namaz": 84,
-      "image": "namaz/m_straightening.png"
-    }
-  },
-  {
-    "model": "education.namazimage",
-    "pk": 102,
+    "pk": 96,
     "fields": {
       "namaz": 85,
       "image": "namaz/m_prostration.png"
@@ -769,65 +769,113 @@
   },
   {
     "model": "education.namazimage",
-    "pk": 103,
+    "pk": 97,
     "fields": {
       "namaz": 86,
+      "image": "namaz/m_standing.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 98,
+    "fields": {
+      "namaz": 87,
+      "image": "namaz/m_reading.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 99,
+    "fields": {
+      "namaz": 88,
+      "image": "namaz/m_bowing.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 100,
+    "fields": {
+      "namaz": 89,
+      "image": "namaz/m_straightening.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 101,
+    "fields": {
+      "namaz": 90,
+      "image": "namaz/m_prostration.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 102,
+    "fields": {
+      "namaz": 91,
       "image": "namaz/m_seat_1.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 103,
+    "fields": {
+      "namaz": 91,
+      "image": "namaz/m_seat_2.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 104,
     "fields": {
-      "namaz": 86,
-      "image": "namaz/m_seat_2.png"
+      "namaz": 92,
+      "image": "namaz/m_prostration.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 105,
     "fields": {
-      "namaz": 87,
-      "image": "namaz/m_prostration.png"
+      "namaz": 93,
+      "image": "namaz/m_tashahud.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 106,
     "fields": {
-      "namaz": 88,
-      "image": "namaz/m_tashahud.png"
+      "namaz": 94,
+      "image": "namaz/m_salam-right.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 107,
     "fields": {
-      "namaz": 89,
-      "image": "namaz/m_salam-right.png"
+      "namaz": 94,
+      "image": "namaz/m_salam-left.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 108,
     "fields": {
-      "namaz": 89,
-      "image": "namaz/m_salam-left.png"
+      "namaz": 95,
+      "image": "namaz/m_dua.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 109,
     "fields": {
-      "namaz": 90,
-      "image": "namaz/m_dua.png"
+      "namaz": 96,
+      "image": "namaz/f_niet.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 110,
     "fields": {
-      "namaz": 91,
+      "namaz": 97,
       "image": "namaz/f_takbir.png"
     }
   },
@@ -835,7 +883,7 @@
     "model": "education.namazimage",
     "pk": 111,
     "fields": {
-      "namaz": 92,
+      "namaz": 98,
       "image": "namaz/f_standing.png"
     }
   },
@@ -843,7 +891,7 @@
     "model": "education.namazimage",
     "pk": 112,
     "fields": {
-      "namaz": 93,
+      "namaz": 99,
       "image": "namaz/f_reading.png"
     }
   },
@@ -851,7 +899,7 @@
     "model": "education.namazimage",
     "pk": 113,
     "fields": {
-      "namaz": 94,
+      "namaz": 100,
       "image": "namaz/f_bowing.png"
     }
   },
@@ -859,7 +907,7 @@
     "model": "education.namazimage",
     "pk": 114,
     "fields": {
-      "namaz": 95,
+      "namaz": 101,
       "image": "namaz/f_straightening.png"
     }
   },
@@ -867,7 +915,7 @@
     "model": "education.namazimage",
     "pk": 115,
     "fields": {
-      "namaz": 96,
+      "namaz": 102,
       "image": "namaz/f_prostration.png"
     }
   },
@@ -875,7 +923,7 @@
     "model": "education.namazimage",
     "pk": 116,
     "fields": {
-      "namaz": 97,
+      "namaz": 103,
       "image": "namaz/f_seat_1.png"
     }
   },
@@ -883,7 +931,7 @@
     "model": "education.namazimage",
     "pk": 117,
     "fields": {
-      "namaz": 97,
+      "namaz": 103,
       "image": "namaz/f_seat_2.png"
     }
   },
@@ -891,7 +939,7 @@
     "model": "education.namazimage",
     "pk": 118,
     "fields": {
-      "namaz": 98,
+      "namaz": 104,
       "image": "namaz/f_prostration.png"
     }
   },
@@ -899,7 +947,7 @@
     "model": "education.namazimage",
     "pk": 119,
     "fields": {
-      "namaz": 99,
+      "namaz": 105,
       "image": "namaz/f_standing.png"
     }
   },
@@ -907,7 +955,7 @@
     "model": "education.namazimage",
     "pk": 120,
     "fields": {
-      "namaz": 100,
+      "namaz": 106,
       "image": "namaz/f_reading.png"
     }
   },
@@ -915,7 +963,7 @@
     "model": "education.namazimage",
     "pk": 121,
     "fields": {
-      "namaz": 101,
+      "namaz": 107,
       "image": "namaz/f_bowing.png"
     }
   },
@@ -923,7 +971,7 @@
     "model": "education.namazimage",
     "pk": 122,
     "fields": {
-      "namaz": 102,
+      "namaz": 108,
       "image": "namaz/f_straightening.png"
     }
   },
@@ -931,7 +979,7 @@
     "model": "education.namazimage",
     "pk": 123,
     "fields": {
-      "namaz": 103,
+      "namaz": 109,
       "image": "namaz/f_prostration.png"
     }
   },
@@ -939,7 +987,7 @@
     "model": "education.namazimage",
     "pk": 124,
     "fields": {
-      "namaz": 104,
+      "namaz": 110,
       "image": "namaz/f_seat_1.png"
     }
   },
@@ -947,7 +995,7 @@
     "model": "education.namazimage",
     "pk": 125,
     "fields": {
-      "namaz": 104,
+      "namaz": 110,
       "image": "namaz/f_seat_2.png"
     }
   },
@@ -955,7 +1003,7 @@
     "model": "education.namazimage",
     "pk": 126,
     "fields": {
-      "namaz": 105,
+      "namaz": 111,
       "image": "namaz/f_prostration.png"
     }
   },
@@ -963,7 +1011,7 @@
     "model": "education.namazimage",
     "pk": 127,
     "fields": {
-      "namaz": 106,
+      "namaz": 112,
       "image": "namaz/f_tashahud.png"
     }
   },
@@ -971,7 +1019,7 @@
     "model": "education.namazimage",
     "pk": 128,
     "fields": {
-      "namaz": 107,
+      "namaz": 113,
       "image": "namaz/f_salam.png"
     }
   },
@@ -979,7 +1027,7 @@
     "model": "education.namazimage",
     "pk": 129,
     "fields": {
-      "namaz": 108,
+      "namaz": 114,
       "image": "namaz/f_dua.png"
     }
   },
@@ -987,77 +1035,21 @@
     "model": "education.namazimage",
     "pk": 130,
     "fields": {
-      "namaz": 109,
-      "image": "namaz/m_takbiratul.png"
+      "namaz": 115,
+      "image": "namaz/m_niet.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 131,
     "fields": {
-      "namaz": 110,
-      "image": "namaz/m_standing.png"
+      "namaz": 116,
+      "image": "namaz/m_takbiratul.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 132,
-    "fields": {
-      "namaz": 111,
-      "image": "namaz/m_reading.png"
-    }
-  },
-  {
-    "model": "education.namazimage",
-    "pk": 133,
-    "fields": {
-      "namaz": 112,
-      "image": "namaz/m_bowing.png"
-    }
-  },
-  {
-    "model": "education.namazimage",
-    "pk": 134,
-    "fields": {
-      "namaz": 113,
-      "image": "namaz/m_straightening.png"
-    }
-  },
-  {
-    "model": "education.namazimage",
-    "pk": 135,
-    "fields": {
-      "namaz": 114,
-      "image": "namaz/m_prostration.png"
-    }
-  },
-  {
-    "model": "education.namazimage",
-    "pk": 138,
-    "fields": {
-      "namaz": 116,
-      "image": "namaz/m_prostration.png"
-    }
-  },
-  {
-    "model": "education.namazimage",
-    "pk": 139,
-    "fields": {
-      "namaz": 115,
-      "image": "namaz/m_seat_1.png"
-    }
-  },
-  {
-    "model": "education.namazimage",
-    "pk": 140,
-    "fields": {
-      "namaz": 115,
-      "image": "namaz/m_seat_2.png"
-    }
-  },
-  {
-    "model": "education.namazimage",
-    "pk": 141,
     "fields": {
       "namaz": 117,
       "image": "namaz/m_standing.png"
@@ -1065,7 +1057,7 @@
   },
   {
     "model": "education.namazimage",
-    "pk": 142,
+    "pk": 133,
     "fields": {
       "namaz": 118,
       "image": "namaz/m_reading.png"
@@ -1073,7 +1065,7 @@
   },
   {
     "model": "education.namazimage",
-    "pk": 143,
+    "pk": 134,
     "fields": {
       "namaz": 119,
       "image": "namaz/m_bowing.png"
@@ -1081,7 +1073,7 @@
   },
   {
     "model": "education.namazimage",
-    "pk": 144,
+    "pk": 135,
     "fields": {
       "namaz": 120,
       "image": "namaz/m_straightening.png"
@@ -1089,7 +1081,7 @@
   },
   {
     "model": "education.namazimage",
-    "pk": 145,
+    "pk": 136,
     "fields": {
       "namaz": 121,
       "image": "namaz/m_prostration.png"
@@ -1097,7 +1089,7 @@
   },
   {
     "model": "education.namazimage",
-    "pk": 146,
+    "pk": 137,
     "fields": {
       "namaz": 122,
       "image": "namaz/m_seat_1.png"
@@ -1105,7 +1097,7 @@
   },
   {
     "model": "education.namazimage",
-    "pk": 147,
+    "pk": 138,
     "fields": {
       "namaz": 122,
       "image": "namaz/m_seat_2.png"
@@ -1113,7 +1105,7 @@
   },
   {
     "model": "education.namazimage",
-    "pk": 148,
+    "pk": 139,
     "fields": {
       "namaz": 123,
       "image": "namaz/m_prostration.png"
@@ -1121,41 +1113,113 @@
   },
   {
     "model": "education.namazimage",
-    "pk": 149,
+    "pk": 140,
     "fields": {
       "namaz": 124,
+      "image": "namaz/m_standing.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 141,
+    "fields": {
+      "namaz": 125,
+      "image": "namaz/m_reading.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 142,
+    "fields": {
+      "namaz": 126,
+      "image": "namaz/m_bowing.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 143,
+    "fields": {
+      "namaz": 127,
+      "image": "namaz/m_straightening.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 144,
+    "fields": {
+      "namaz": 128,
+      "image": "namaz/m_prostration.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 145,
+    "fields": {
+      "namaz": 129,
+      "image": "namaz/m_seat_1.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 146,
+    "fields": {
+      "namaz": 129,
+      "image": "namaz/m_seat_2.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 147,
+    "fields": {
+      "namaz": 130,
+      "image": "namaz/m_prostration.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 148,
+    "fields": {
+      "namaz": 131,
       "image": "namaz/m_tashahud.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 149,
+    "fields": {
+      "namaz": 132,
+      "image": "namaz/m_salam-right.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 150,
     "fields": {
-      "namaz": 125,
-      "image": "namaz/m_salam-right.png"
+      "namaz": 132,
+      "image": "namaz/m_salam-left.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 151,
     "fields": {
-      "namaz": 125,
-      "image": "namaz/m_salam-left.png"
+      "namaz": 133,
+      "image": "namaz/m_dua.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 152,
     "fields": {
-      "namaz": 126,
-      "image": "namaz/m_dua.png"
+      "namaz": 134,
+      "image": "namaz/f_niet.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 153,
     "fields": {
-      "namaz": 127,
+      "namaz": 135,
       "image": "namaz/f_takbir.png"
     }
   },
@@ -1163,7 +1227,7 @@
     "model": "education.namazimage",
     "pk": 154,
     "fields": {
-      "namaz": 128,
+      "namaz": 136,
       "image": "namaz/f_standing.png"
     }
   },
@@ -1171,7 +1235,7 @@
     "model": "education.namazimage",
     "pk": 155,
     "fields": {
-      "namaz": 129,
+      "namaz": 137,
       "image": "namaz/f_reading.png"
     }
   },
@@ -1179,7 +1243,7 @@
     "model": "education.namazimage",
     "pk": 156,
     "fields": {
-      "namaz": 130,
+      "namaz": 138,
       "image": "namaz/f_bowing.png"
     }
   },
@@ -1187,7 +1251,7 @@
     "model": "education.namazimage",
     "pk": 157,
     "fields": {
-      "namaz": 131,
+      "namaz": 139,
       "image": "namaz/f_straightening.png"
     }
   },
@@ -1195,7 +1259,7 @@
     "model": "education.namazimage",
     "pk": 158,
     "fields": {
-      "namaz": 132,
+      "namaz": 140,
       "image": "namaz/f_prostration.png"
     }
   },
@@ -1203,7 +1267,7 @@
     "model": "education.namazimage",
     "pk": 159,
     "fields": {
-      "namaz": 133,
+      "namaz": 141,
       "image": "namaz/f_seat_1.png"
     }
   },
@@ -1211,7 +1275,7 @@
     "model": "education.namazimage",
     "pk": 160,
     "fields": {
-      "namaz": 133,
+      "namaz": 141,
       "image": "namaz/f_seat_2.png"
     }
   },
@@ -1219,7 +1283,7 @@
     "model": "education.namazimage",
     "pk": 161,
     "fields": {
-      "namaz": 134,
+      "namaz": 142,
       "image": "namaz/f_prostration.png"
     }
   },
@@ -1227,7 +1291,7 @@
     "model": "education.namazimage",
     "pk": 162,
     "fields": {
-      "namaz": 135,
+      "namaz": 143,
       "image": "namaz/f_standing.png"
     }
   },
@@ -1235,7 +1299,7 @@
     "model": "education.namazimage",
     "pk": 163,
     "fields": {
-      "namaz": 136,
+      "namaz": 144,
       "image": "namaz/f_reading.png"
     }
   },
@@ -1243,7 +1307,7 @@
     "model": "education.namazimage",
     "pk": 164,
     "fields": {
-      "namaz": 137,
+      "namaz": 145,
       "image": "namaz/f_bowing.png"
     }
   },
@@ -1251,7 +1315,7 @@
     "model": "education.namazimage",
     "pk": 165,
     "fields": {
-      "namaz": 138,
+      "namaz": 146,
       "image": "namaz/f_straightening.png"
     }
   },
@@ -1259,7 +1323,7 @@
     "model": "education.namazimage",
     "pk": 166,
     "fields": {
-      "namaz": 139,
+      "namaz": 147,
       "image": "namaz/f_prostration.png"
     }
   },
@@ -1267,7 +1331,7 @@
     "model": "education.namazimage",
     "pk": 167,
     "fields": {
-      "namaz": 140,
+      "namaz": 148,
       "image": "namaz/f_seat_1.png"
     }
   },
@@ -1275,7 +1339,7 @@
     "model": "education.namazimage",
     "pk": 168,
     "fields": {
-      "namaz": 140,
+      "namaz": 148,
       "image": "namaz/f_seat_2.png"
     }
   },
@@ -1283,7 +1347,7 @@
     "model": "education.namazimage",
     "pk": 169,
     "fields": {
-      "namaz": 141,
+      "namaz": 149,
       "image": "namaz/f_prostration.png"
     }
   },
@@ -1291,7 +1355,7 @@
     "model": "education.namazimage",
     "pk": 170,
     "fields": {
-      "namaz": 142,
+      "namaz": 150,
       "image": "namaz/f_tashahud.png"
     }
   },
@@ -1299,7 +1363,7 @@
     "model": "education.namazimage",
     "pk": 171,
     "fields": {
-      "namaz": 143,
+      "namaz": 151,
       "image": "namaz/f_salam.png"
     }
   },
@@ -1307,7 +1371,7 @@
     "model": "education.namazimage",
     "pk": 172,
     "fields": {
-      "namaz": 144,
+      "namaz": 152,
       "image": "namaz/f_dua.png"
     }
   },
@@ -1315,133 +1379,53 @@
     "model": "education.namazimage",
     "pk": 173,
     "fields": {
-      "namaz": 145,
-      "image": "namaz/m_takbiratul.png"
+      "namaz": 153,
+      "image": "namaz/m_niet.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 174,
     "fields": {
-      "namaz": 146,
-      "image": "namaz/m_standing.png"
+      "namaz": 154,
+      "image": "namaz/m_takbiratul.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 175,
     "fields": {
-      "namaz": 147,
-      "image": "namaz/m_reading.png"
+      "namaz": 155,
+      "image": "namaz/m_standing.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 176,
     "fields": {
-      "namaz": 148,
-      "image": "namaz/m_bowing.png"
+      "namaz": 156,
+      "image": "namaz/m_reading.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 177,
     "fields": {
-      "namaz": 149,
-      "image": "namaz/m_straightening.png"
+      "namaz": 157,
+      "image": "namaz/m_bowing.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 178,
     "fields": {
-      "namaz": 150,
-      "image": "namaz/m_prostration.png"
-    }
-  },
-  {
-    "model": "education.namazimage",
-    "pk": 181,
-    "fields": {
-      "namaz": 152,
-      "image": "namaz/m_prostration.png"
-    }
-  },
-  {
-    "model": "education.namazimage",
-    "pk": 182,
-    "fields": {
-      "namaz": 151,
-      "image": "namaz/m_seat_1.png"
-    }
-  },
-  {
-    "model": "education.namazimage",
-    "pk": 183,
-    "fields": {
-      "namaz": 151,
-      "image": "namaz/m_seat_2.png"
-    }
-  },
-  {
-    "model": "education.namazimage",
-    "pk": 184,
-    "fields": {
-      "namaz": 153,
-      "image": "namaz/m_standing.png"
-    }
-  },
-  {
-    "model": "education.namazimage",
-    "pk": 185,
-    "fields": {
-      "namaz": 154,
-      "image": "namaz/m_reading.png"
-    }
-  },
-  {
-    "model": "education.namazimage",
-    "pk": 186,
-    "fields": {
-      "namaz": 155,
-      "image": "namaz/m_bowing.png"
-    }
-  },
-  {
-    "model": "education.namazimage",
-    "pk": 187,
-    "fields": {
-      "namaz": 156,
+      "namaz": 158,
       "image": "namaz/m_straightening.png"
     }
   },
   {
     "model": "education.namazimage",
-    "pk": 188,
-    "fields": {
-      "namaz": 157,
-      "image": "namaz/m_prostration.png"
-    }
-  },
-  {
-    "model": "education.namazimage",
-    "pk": 189,
-    "fields": {
-      "namaz": 158,
-      "image": "namaz/m_seat_1.png"
-    }
-  },
-  {
-    "model": "education.namazimage",
-    "pk": 190,
-    "fields": {
-      "namaz": 158,
-      "image": "namaz/m_seat_2.png"
-    }
-  },
-  {
-    "model": "education.namazimage",
-    "pk": 191,
+    "pk": 179,
     "fields": {
       "namaz": 159,
       "image": "namaz/m_prostration.png"
@@ -1449,41 +1433,137 @@
   },
   {
     "model": "education.namazimage",
-    "pk": 192,
+    "pk": 180,
     "fields": {
       "namaz": 160,
+      "image": "namaz/m_seat_1.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 181,
+    "fields": {
+      "namaz": 160,
+      "image": "namaz/m_seat_2.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 182,
+    "fields": {
+      "namaz": 161,
+      "image": "namaz/m_prostration.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 183,
+    "fields": {
+      "namaz": 162,
+      "image": "namaz/m_standing.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 184,
+    "fields": {
+      "namaz": 163,
+      "image": "namaz/m_reading.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 185,
+    "fields": {
+      "namaz": 164,
+      "image": "namaz/m_bowing.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 186,
+    "fields": {
+      "namaz": 165,
+      "image": "namaz/m_straightening.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 187,
+    "fields": {
+      "namaz": 166,
+      "image": "namaz/m_prostration.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 188,
+    "fields": {
+      "namaz": 167,
+      "image": "namaz/m_seat_1.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 189,
+    "fields": {
+      "namaz": 167,
+      "image": "namaz/m_seat_2.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 190,
+    "fields": {
+      "namaz": 168,
+      "image": "namaz/m_prostration.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 191,
+    "fields": {
+      "namaz": 169,
       "image": "namaz/m_tashahud.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 192,
+    "fields": {
+      "namaz": 170,
+      "image": "namaz/m_salam-right.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 193,
     "fields": {
-      "namaz": 161,
-      "image": "namaz/m_salam-right.png"
+      "namaz": 170,
+      "image": "namaz/m_salam-left.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 194,
     "fields": {
-      "namaz": 161,
-      "image": "namaz/m_salam-left.png"
+      "namaz": 171,
+      "image": "namaz/m_dua.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 195,
     "fields": {
-      "namaz": 162,
-      "image": "namaz/m_dua.png"
+      "namaz": 172,
+      "image": "namaz/f_niet.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 196,
     "fields": {
-      "namaz": 163,
+      "namaz": 173,
       "image": "namaz/f_takbir.png"
     }
   },
@@ -1491,7 +1571,7 @@
     "model": "education.namazimage",
     "pk": 197,
     "fields": {
-      "namaz": 164,
+      "namaz": 174,
       "image": "namaz/f_standing.png"
     }
   },
@@ -1499,7 +1579,7 @@
     "model": "education.namazimage",
     "pk": 198,
     "fields": {
-      "namaz": 165,
+      "namaz": 175,
       "image": "namaz/f_reading.png"
     }
   },
@@ -1507,7 +1587,7 @@
     "model": "education.namazimage",
     "pk": 199,
     "fields": {
-      "namaz": 166,
+      "namaz": 176,
       "image": "namaz/f_bowing.png"
     }
   },
@@ -1515,7 +1595,7 @@
     "model": "education.namazimage",
     "pk": 200,
     "fields": {
-      "namaz": 167,
+      "namaz": 177,
       "image": "namaz/f_straightening.png"
     }
   },
@@ -1523,7 +1603,7 @@
     "model": "education.namazimage",
     "pk": 201,
     "fields": {
-      "namaz": 168,
+      "namaz": 178,
       "image": "namaz/f_prostration.png"
     }
   },
@@ -1531,7 +1611,7 @@
     "model": "education.namazimage",
     "pk": 202,
     "fields": {
-      "namaz": 169,
+      "namaz": 179,
       "image": "namaz/f_seat_1.png"
     }
   },
@@ -1539,7 +1619,7 @@
     "model": "education.namazimage",
     "pk": 203,
     "fields": {
-      "namaz": 169,
+      "namaz": 179,
       "image": "namaz/f_seat_2.png"
     }
   },
@@ -1547,7 +1627,7 @@
     "model": "education.namazimage",
     "pk": 204,
     "fields": {
-      "namaz": 170,
+      "namaz": 180,
       "image": "namaz/f_prostration.png"
     }
   },
@@ -1555,7 +1635,7 @@
     "model": "education.namazimage",
     "pk": 205,
     "fields": {
-      "namaz": 171,
+      "namaz": 181,
       "image": "namaz/f_standing.png"
     }
   },
@@ -1563,7 +1643,7 @@
     "model": "education.namazimage",
     "pk": 206,
     "fields": {
-      "namaz": 172,
+      "namaz": 182,
       "image": "namaz/f_reading.png"
     }
   },
@@ -1571,7 +1651,7 @@
     "model": "education.namazimage",
     "pk": 207,
     "fields": {
-      "namaz": 173,
+      "namaz": 183,
       "image": "namaz/f_bowing.png"
     }
   },
@@ -1579,7 +1659,7 @@
     "model": "education.namazimage",
     "pk": 208,
     "fields": {
-      "namaz": 174,
+      "namaz": 184,
       "image": "namaz/f_straightening.png"
     }
   },
@@ -1587,7 +1667,7 @@
     "model": "education.namazimage",
     "pk": 209,
     "fields": {
-      "namaz": 175,
+      "namaz": 185,
       "image": "namaz/f_prostration.png"
     }
   },
@@ -1595,7 +1675,7 @@
     "model": "education.namazimage",
     "pk": 210,
     "fields": {
-      "namaz": 176,
+      "namaz": 186,
       "image": "namaz/f_seat_1.png"
     }
   },
@@ -1603,7 +1683,7 @@
     "model": "education.namazimage",
     "pk": 211,
     "fields": {
-      "namaz": 176,
+      "namaz": 186,
       "image": "namaz/f_seat_2.png"
     }
   },
@@ -1611,7 +1691,7 @@
     "model": "education.namazimage",
     "pk": 212,
     "fields": {
-      "namaz": 177,
+      "namaz": 187,
       "image": "namaz/f_prostration.png"
     }
   },
@@ -1619,7 +1699,7 @@
     "model": "education.namazimage",
     "pk": 213,
     "fields": {
-      "namaz": 178,
+      "namaz": 188,
       "image": "namaz/f_tashahud.png"
     }
   },
@@ -1627,7 +1707,7 @@
     "model": "education.namazimage",
     "pk": 214,
     "fields": {
-      "namaz": 179,
+      "namaz": 189,
       "image": "namaz/f_salam.png"
     }
   },
@@ -1635,7 +1715,7 @@
     "model": "education.namazimage",
     "pk": 215,
     "fields": {
-      "namaz": 180,
+      "namaz": 190,
       "image": "namaz/f_dua.png"
     }
   },
@@ -1643,175 +1723,191 @@
     "model": "education.namazimage",
     "pk": 216,
     "fields": {
-      "namaz": 181,
-      "image": "namaz/m_takbiratul.png"
+      "namaz": 191,
+      "image": "namaz/m_niet.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 217,
     "fields": {
-      "namaz": 182,
-      "image": "namaz/m_standing.png"
+      "namaz": 192,
+      "image": "namaz/m_takbiratul.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 218,
     "fields": {
-      "namaz": 183,
-      "image": "namaz/m_reading.png"
+      "namaz": 193,
+      "image": "namaz/m_standing.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 219,
     "fields": {
-      "namaz": 184,
-      "image": "namaz/m_bowing.png"
+      "namaz": 194,
+      "image": "namaz/m_reading.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 220,
     "fields": {
-      "namaz": 185,
-      "image": "namaz/m_straightening.png"
+      "namaz": 195,
+      "image": "namaz/m_bowing.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 221,
     "fields": {
-      "namaz": 186,
+      "namaz": 196,
+      "image": "namaz/m_straightening.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 222,
+    "fields": {
+      "namaz": 197,
       "image": "namaz/m_prostration.png"
+    }
+  },
+  {
+    "model": "education.namazimage",
+    "pk": 223,
+    "fields": {
+      "namaz": 198,
+      "image": "namaz/m_seat_1.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 224,
     "fields": {
-      "namaz": 188,
-      "image": "namaz/m_prostration.png"
+      "namaz": 198,
+      "image": "namaz/m_seat_2.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 225,
     "fields": {
-      "namaz": 187,
-      "image": "namaz/m_seat_1.png"
+      "namaz": 199,
+      "image": "namaz/m_prostration.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 226,
     "fields": {
-      "namaz": 187,
-      "image": "namaz/m_seat_2.png"
+      "namaz": 200,
+      "image": "namaz/m_standing.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 227,
     "fields": {
-      "namaz": 189,
-      "image": "namaz/m_standing.png"
+      "namaz": 201,
+      "image": "namaz/m_reading.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 228,
     "fields": {
-      "namaz": 190,
-      "image": "namaz/m_reading.png"
+      "namaz": 202,
+      "image": "namaz/m_bowing.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 229,
     "fields": {
-      "namaz": 191,
-      "image": "namaz/m_bowing.png"
+      "namaz": 203,
+      "image": "namaz/m_straightening.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 230,
     "fields": {
-      "namaz": 192,
-      "image": "namaz/m_straightening.png"
+      "namaz": 204,
+      "image": "namaz/m_prostration.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 231,
     "fields": {
-      "namaz": 193,
-      "image": "namaz/m_prostration.png"
+      "namaz": 205,
+      "image": "namaz/m_seat_1.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 232,
     "fields": {
-      "namaz": 194,
-      "image": "namaz/m_seat_1.png"
+      "namaz": 205,
+      "image": "namaz/m_seat_2.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 233,
     "fields": {
-      "namaz": 194,
-      "image": "namaz/m_seat_2.png"
+      "namaz": 206,
+      "image": "namaz/m_prostration.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 234,
     "fields": {
-      "namaz": 195,
-      "image": "namaz/m_prostration.png"
+      "namaz": 207,
+      "image": "namaz/m_tashahud.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 235,
     "fields": {
-      "namaz": 196,
-      "image": "namaz/m_tashahud.png"
+      "namaz": 208,
+      "image": "namaz/m_salam-right.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 236,
     "fields": {
-      "namaz": 197,
-      "image": "namaz/m_salam-right.png"
+      "namaz": 208,
+      "image": "namaz/m_salam-left.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 237,
     "fields": {
-      "namaz": 197,
-      "image": "namaz/m_salam-left.png"
+      "namaz": 209,
+      "image": "namaz/m_dua.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 238,
     "fields": {
-      "namaz": 198,
-      "image": "namaz/m_dua.png"
+      "namaz": 210,
+      "image": "namaz/f_niet.png"
     }
   },
   {
     "model": "education.namazimage",
     "pk": 239,
     "fields": {
-      "namaz": 199,
+      "namaz": 211,
       "image": "namaz/f_takbir.png"
     }
   },
@@ -1819,7 +1915,7 @@
     "model": "education.namazimage",
     "pk": 240,
     "fields": {
-      "namaz": 200,
+      "namaz": 212,
       "image": "namaz/f_standing.png"
     }
   },
@@ -1827,7 +1923,7 @@
     "model": "education.namazimage",
     "pk": 241,
     "fields": {
-      "namaz": 201,
+      "namaz": 213,
       "image": "namaz/f_reading.png"
     }
   },
@@ -1835,7 +1931,7 @@
     "model": "education.namazimage",
     "pk": 242,
     "fields": {
-      "namaz": 202,
+      "namaz": 214,
       "image": "namaz/f_bowing.png"
     }
   },
@@ -1843,7 +1939,7 @@
     "model": "education.namazimage",
     "pk": 243,
     "fields": {
-      "namaz": 203,
+      "namaz": 215,
       "image": "namaz/f_straightening.png"
     }
   },
@@ -1851,7 +1947,7 @@
     "model": "education.namazimage",
     "pk": 244,
     "fields": {
-      "namaz": 204,
+      "namaz": 216,
       "image": "namaz/f_prostration.png"
     }
   },
@@ -1859,7 +1955,7 @@
     "model": "education.namazimage",
     "pk": 245,
     "fields": {
-      "namaz": 205,
+      "namaz": 217,
       "image": "namaz/f_seat_1.png"
     }
   },
@@ -1867,7 +1963,7 @@
     "model": "education.namazimage",
     "pk": 246,
     "fields": {
-      "namaz": 205,
+      "namaz": 217,
       "image": "namaz/f_seat_2.png"
     }
   },
@@ -1875,7 +1971,7 @@
     "model": "education.namazimage",
     "pk": 247,
     "fields": {
-      "namaz": 206,
+      "namaz": 218,
       "image": "namaz/f_prostration.png"
     }
   },
@@ -1883,7 +1979,7 @@
     "model": "education.namazimage",
     "pk": 248,
     "fields": {
-      "namaz": 207,
+      "namaz": 219,
       "image": "namaz/f_standing.png"
     }
   },
@@ -1891,7 +1987,7 @@
     "model": "education.namazimage",
     "pk": 249,
     "fields": {
-      "namaz": 208,
+      "namaz": 220,
       "image": "namaz/f_reading.png"
     }
   },
@@ -1899,7 +1995,7 @@
     "model": "education.namazimage",
     "pk": 250,
     "fields": {
-      "namaz": 209,
+      "namaz": 221,
       "image": "namaz/f_bowing.png"
     }
   },
@@ -1907,7 +2003,7 @@
     "model": "education.namazimage",
     "pk": 251,
     "fields": {
-      "namaz": 210,
+      "namaz": 222,
       "image": "namaz/f_straightening.png"
     }
   },
@@ -1915,7 +2011,7 @@
     "model": "education.namazimage",
     "pk": 252,
     "fields": {
-      "namaz": 211,
+      "namaz": 223,
       "image": "namaz/f_prostration.png"
     }
   },
@@ -1923,7 +2019,7 @@
     "model": "education.namazimage",
     "pk": 253,
     "fields": {
-      "namaz": 212,
+      "namaz": 224,
       "image": "namaz/f_seat_1.png"
     }
   },
@@ -1931,7 +2027,7 @@
     "model": "education.namazimage",
     "pk": 254,
     "fields": {
-      "namaz": 212,
+      "namaz": 224,
       "image": "namaz/f_seat_2.png"
     }
   },
@@ -1939,7 +2035,7 @@
     "model": "education.namazimage",
     "pk": 255,
     "fields": {
-      "namaz": 213,
+      "namaz": 225,
       "image": "namaz/f_prostration.png"
     }
   },
@@ -1947,7 +2043,7 @@
     "model": "education.namazimage",
     "pk": 256,
     "fields": {
-      "namaz": 214,
+      "namaz": 226,
       "image": "namaz/f_tashahud.png"
     }
   },
@@ -1955,7 +2051,7 @@
     "model": "education.namazimage",
     "pk": 257,
     "fields": {
-      "namaz": 215,
+      "namaz": 227,
       "image": "namaz/f_salam.png"
     }
   },
@@ -1963,7 +2059,7 @@
     "model": "education.namazimage",
     "pk": 258,
     "fields": {
-      "namaz": 216,
+      "namaz": 228,
       "image": "namaz/f_dua.png"
     }
   }

@@ -18,12 +18,6 @@ from apps.education.api.v1.apis import (
     NamazDetailAPI,
     NamazListAPI,
     NamazUpdateAPI,
-
-    NamazBeginListAPI,
-    NamazBeginCreateAPI,
-    NamazBeginDetailAPI,
-    NamazBeginUpdateAPI,
-    NamazBeginDeleteAPI,
 )
 
 app_name = "educations"
@@ -44,15 +38,6 @@ urlpatterns += [
     path("ghusl_and_taharat/<int:pk>/", GhuslAndTaharatDetailAPI.as_view(), name="ghusl_and_taharat-detail"),
     path("ghusl_and_taharat/<int:pk>/update/", GhuslAndTaharatUpdateAPI.as_view(), name="ghusl_and_taharat-update"),
     path("ghusl_and_taharat/<int:pk>/delete/", GhuslAndTaharatDeleteAPI.as_view(), name="ghusl_and_taharat-delete"),
-]
-
-# Namaz begin
-urlpatterns = [
-    path("namaz_begin/", NamazBeginListAPI.as_view(), name="namaz_begin-list"),
-    path("namaz_begin/create/", NamazBeginCreateAPI.as_view(), name="namaz_begin-create"),
-    path("namaz_begin/<int:pk>/", NamazBeginDetailAPI.as_view(), name="namaz_begin-detail"),
-    path("namaz_begin/<int:pk>/update/", NamazBeginUpdateAPI.as_view(), name="namaz_begin-update"),
-    path("namaz_begin/<int:pk>/delete/", NamazBeginDeleteAPI.as_view(), name="namaz_begin-delete")
 ]
 
 # Namaz
