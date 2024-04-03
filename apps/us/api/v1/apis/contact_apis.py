@@ -18,11 +18,6 @@ class ContactListAPI(generics.ListAPIView):
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
 
-    @swagger_auto_schema(
-        responses={200: ContactSerializer(many=True)},
-        tags=["Contact"],
-        operation_summary="List all contacts",
-    )
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)
 
@@ -32,11 +27,6 @@ class ContactCreateAPI(generics.CreateAPIView):
     serializer_class = ContactSerializer
     permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
-    @swagger_auto_schema(
-        responses={201: ContactSerializer()},
-        tags=["Contact"],
-        operation_summary="Create a new contact",
-    )
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
 
@@ -45,11 +35,6 @@ class ContactDetailAPI(generics.RetrieveAPIView):
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
 
-    @swagger_auto_schema(
-        responses={200: ContactSerializer()},
-        tags=["Contact"],
-        operation_summary="Retrieve contact details",
-    )
     def get(self, request, *args, **kwargs):
         return self.retrieve(request, *args, **kwargs)
 
@@ -59,19 +44,9 @@ class ContactUpdateAPI(generics.UpdateAPIView):
     serializer_class = ContactSerializer
     permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
-    @swagger_auto_schema(
-        responses={200: ContactSerializer()},
-        tags=["Contact"],
-        operation_summary="Update existing contact",
-    )
     def put(self, request, *args, **kwargs):
         return self.update(request, *args, **kwargs)
 
-    @swagger_auto_schema(
-        responses={200: ContactSerializer()},
-        tags=["Contact"],
-        operation_summary="Partially update existing contact",
-    )
     def patch(self, request, *args, **kwargs):
         return self.partial_update(request, *args, **kwargs)
 
@@ -81,11 +56,6 @@ class ContactDeleteAPI(generics.DestroyAPIView):
     serializer_class = ContactSerializer
     permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
-    @swagger_auto_schema(
-        responses={204: "No content"},
-        tags=["Contact"],
-        operation_summary="Delete existing contact",
-    )
     def delete(self, request, *args, **kwargs):
         return self.destroy(request, *args, **kwargs)
 
@@ -94,7 +64,6 @@ class SendEmailAPI(views.APIView):
     from drf_yasg import openapi
 
     @swagger_auto_schema(
-        tags=["Contact"],
         operation_summary="Sending email",
         request_body=openapi.Schema(
             type=openapi.TYPE_OBJECT,

@@ -3,16 +3,8 @@ from django.urls import include, path, re_path
 from django.views.static import serve
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
-from rest_framework import permissions
+from rest_framework import permissions, response, status, views
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
-
-from apps.common.data_base import (
-    DumpDataAPIView,
-    ImageDumpDataAPIView,
-    ImageLoadDataAPIView,
-    LoadDataAPIView,
-    ResizeImagesAPI,
-)
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -29,7 +21,14 @@ schema_view = get_schema_view(
 
 app_name = "api"
 
+
+class HealthCheckView(views.APIView):
+    def get(self, request, *args, **kwargs):
+        return response.Response({"status": "ok"}, status=status.HTTP_200_OK)
+
+
 urlpatterns = [
+    path("v1/healthcheck/", HealthCheckView.as_view(), name="healthcheck"),
     path("v1/us/", include("apps.us.api.v1.urls", namespace="us")),
     path("v1/menus/", include("apps.menu.urls", namespace="menu")),
     path("v1/users/", include("apps.user.api.v1.urls", namespace="user")),
@@ -37,14 +36,6 @@ urlpatterns = [
     path("v1/services/", include("apps.service.api.v1.urls", namespace="service")),
     path("v1/donations/", include("apps.donation.api.v1.urls", namespace="donation")),
     path("v1/educations/", include("apps.education.api.v1.urls", namespace="education")),
-]
-
-urlpatterns += [
-    path("v1/resize_images/", ResizeImagesAPI.as_view(), name="namaz-resize-images"),
-    path("v1/dumpdata/", DumpDataAPIView.as_view(), name="dump-data"),
-    path("v1/loaddata/", LoadDataAPIView.as_view(), name="load-data"),
-    path("v1/images/dumpdata/", ImageDumpDataAPIView.as_view(), name="images-dump-data"),
-    path("v1/images/loaddata/", ImageLoadDataAPIView.as_view(), name="images-load-data"),
 ]
 
 # libraries
