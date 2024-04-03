@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "apps.donation.apps.DonationConfig",
     "apps.us.apps.UsConfig",
     "apps.menu.apps.MenuConfig",
+    "apps.service.apps.ServiceConfig",
 ]
 
 MIDDLEWARE = [

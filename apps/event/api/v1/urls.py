@@ -8,7 +8,7 @@ from apps.event.api.v1.apis import (
     EventUpdateAPI,
 )
 
-app_name = "events"
+app_name = "event"
 
 urlpatterns = [
     path("", EventListAPI.as_view(), name="event-list"),

@@ -8,7 +8,7 @@ from .views import (
     MenuUpdateAPI,
 )
 
-app_name = "menus"
+app_name = "menu"
 
 urlpatterns = [
     path("", MenuListAPI.as_view(), name="menu-list"),

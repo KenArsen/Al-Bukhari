@@ -9,7 +9,7 @@ from .apis import (
     ForumView,
 )
 
-app_name = "donations"
+app_name = "donation"
 
 urlpatterns = [
     path("", ForumView.as_view(), name="index"),

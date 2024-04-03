@@ -30,12 +30,13 @@ schema_view = get_schema_view(
 app_name = "api"
 
 urlpatterns = [
-    path("v1/users/", include("apps.user.api.v1.urls", namespace="users")),
-    path("v1/events/", include("apps.event.api.v1.urls", namespace="events")),
-    path("v1/educations/", include("apps.education.api.v1.urls", namespace="educations")),
-    path("v1/donations/", include("apps.donation.api.v1.urls", namespace="donations")),
     path("v1/us/", include("apps.us.api.v1.urls", namespace="us")),
-    path("v1/menus/", include("apps.menu.urls", namespace="menus")),
+    path("v1/menus/", include("apps.menu.urls", namespace="menu")),
+    path("v1/users/", include("apps.user.api.v1.urls", namespace="user")),
+    path("v1/events/", include("apps.event.api.v1.urls", namespace="event")),
+    path("v1/services/", include("apps.service.api.v1.urls", namespace="service")),
+    path("v1/donations/", include("apps.donation.api.v1.urls", namespace="donation")),
+    path("v1/educations/", include("apps.education.api.v1.urls", namespace="education")),
 ]
 
 urlpatterns += [

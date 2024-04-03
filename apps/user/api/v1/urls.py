@@ -13,7 +13,7 @@ from apps.user.api.v1.apis import (
     UserUpdateAPI,
 )
 
-app_name = "users"
+app_name = "user"
 
 urlpatterns = [
     path("", UserListAPI.as_view(), name="user-list"),

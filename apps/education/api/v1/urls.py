@@ -18,7 +18,7 @@ from apps.education.api.v1.apis import (
     NamazUpdateAPI,
 )
 
-app_name = "educations"
+app_name = "education"
 
 # educations
 urlpatterns = [

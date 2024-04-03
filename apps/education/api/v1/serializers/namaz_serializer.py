@@ -37,22 +37,23 @@ class NamazCreateUpdateSerializer(serializers.ModelSerializer):
         model = Namaz
         exclude = ("id", "created_at", "updated_at")
 
-    def create(self, validated_data):
+    def save_images(self, instance, is_update=False):
         request = self.context.get("request")
         images_data = request.FILES.getlist("images", [])
-        namaz = Namaz.objects.create(**validated_data)
+
+        if is_update:
+            instance.images.all().delete()
         for image_data in images_data:
-            NamazImage.objects.create(namaz=namaz, image=image_data)
+            NamazImage.objects.create(namaz=instance, image=image_data)
+
+    def create(self, validated_data):
+        namaz = Namaz.objects.create(**validated_data)
+        self.save_images(namaz)
         return namaz
 
     def update(self, instance, validated_data):
-        request = self.context.get("request")
-        images_data = request.FILES.getlist("images", [])
         instance = super().update(instance, validated_data)
-
-        instance.images.all().delete()
-        for image_data in images_data:
-            NamazImage.objects.create(namaz=instance, image=image_data)
+        self.save_images(instance, is_update=True)
         return instance
 
     def validate(self, data):
