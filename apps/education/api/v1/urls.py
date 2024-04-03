@@ -33,8 +33,9 @@ urlpatterns = [
     path("<int:pk>/update/", EducationUpdateAPI.as_view(), name="education-update"),
     path("<int:pk>/delete/", EducationDeleteAPI.as_view(), name="education-delete"),
 ]
+
 # education_list
-urlpatterns = [
+urlpatterns += [
     path("list/", EducationListListAPI.as_view(), name="education_list-list"),
     path("list/create/", EducationListCreateAPI.as_view(), name="education_list-create"),
     path("list/<int:pk>/", EducationListDetailAPI.as_view(), name="education_list-detail"),
