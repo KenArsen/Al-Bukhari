@@ -12,7 +12,7 @@ def send(service, name, email, message):
         logging.info(f"Sending email to {email}")
         send_mail(
             subject=name,
-            message=f'Your service {service} - \n {message}',
+            message=f"Your service {service} - \n {message}",
             from_email=settings.EMAIL_HOST_USER,
             recipient_list=[f"{email}"],
         )

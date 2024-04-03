@@ -1,4 +1,4 @@
-from rest_framework import generics, permissions, views, status
+from rest_framework import generics, permissions, status, views
 from rest_framework.response import Response
 
 from apps.common import IsSuperAdmin

@@ -1,12 +1,12 @@
 from django.urls import path
 
 from apps.service.api.v1.apis import (
+    SendEmailAPI,
     ServiceCreateAPI,
     ServiceDeleteAPI,
     ServiceDetailAPI,
     ServiceListAPI,
     ServiceUpdateAPI,
-    SendEmailAPI,
 )
 
 app_name = "service"
