@@ -31,7 +31,7 @@ class EducationListCreateAPI(generics.CreateAPIView):
 
 
 class EducationListUpdateAPI(generics.UpdateAPIView):
-    queryset = Education.objects.all()
+    queryset = EducationList.objects.all()
     serializer_class = EducationListSerializer
     permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
