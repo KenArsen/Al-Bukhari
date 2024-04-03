@@ -6,6 +6,7 @@ from apps.service.api.v1.apis import (
     ServiceDetailAPI,
     ServiceListAPI,
     ServiceUpdateAPI,
+    SendEmailAPI,
 )
 
 app_name = "service"
@@ -16,4 +17,5 @@ urlpatterns = [
     path("<int:pk>/", ServiceDetailAPI.as_view(), name="service-detail"),
     path("<int:pk>/update/", ServiceUpdateAPI.as_view(), name="service-update"),
     path("<int:pk>/delete/", ServiceDeleteAPI.as_view(), name="service-delete"),
+    path("send/", SendEmailAPI.as_view(), name="send-email"),
 ]

@@ -1,4 +1,3 @@
-from drf_yasg.utils import swagger_auto_schema
 from rest_framework import generics, permissions, status, views, viewsets
 from rest_framework.response import Response
 
@@ -62,6 +61,7 @@ class ContactDeleteAPI(generics.DestroyAPIView):
 
 class SendEmailAPI(views.APIView):
     from drf_yasg import openapi
+    from drf_yasg.utils import swagger_auto_schema
 
     @swagger_auto_schema(
         operation_summary="Sending email",

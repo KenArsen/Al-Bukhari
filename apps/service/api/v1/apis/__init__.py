@@ -4,4 +4,5 @@ from .service_apis import (
     ServiceDetailAPI,
     ServiceListAPI,
     ServiceUpdateAPI,
+    SendEmailAPI,
 )
