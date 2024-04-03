@@ -1,3 +1,3 @@
-from .educaton_serializer import EducationSerializer
+from .educaton_serializer import EducationListSerializer, EducationSerializer
 from .ghusl_taharat_serializer import GhuslAndTaharatSerializer
 from .namaz_serializer import NamazCreateUpdateSerializer, NamazSerializer

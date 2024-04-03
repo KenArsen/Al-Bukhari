@@ -1,9 +1,16 @@
-from .education_api import (
+from .education_apis import (
     EducationCreateAPI,
     EducationDeleteAPI,
     EducationDetailAPI,
     EducationListAPI,
     EducationUpdateAPI,
+)
+from .education_list_apis import (
+    EducationListCreateAPI,
+    EducationListDeleteAPI,
+    EducationListDetailAPI,
+    EducationListListAPI,
+    EducationListUpdateAPI,
 )
 from .ghusl_and_taharat_apis import (
     GhuslAndTaharatCreateAPI,

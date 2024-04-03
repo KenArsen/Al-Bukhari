@@ -5,6 +5,11 @@ from apps.education.api.v1.apis import (
     EducationDeleteAPI,
     EducationDetailAPI,
     EducationListAPI,
+    EducationListCreateAPI,
+    EducationListDeleteAPI,
+    EducationListDetailAPI,
+    EducationListListAPI,
+    EducationListUpdateAPI,
     EducationUpdateAPI,
     GhuslAndTaharatCreateAPI,
     GhuslAndTaharatDeleteAPI,
@@ -27,6 +32,14 @@ urlpatterns = [
     path("<int:pk>/", EducationDetailAPI.as_view(), name="education-detail"),
     path("<int:pk>/update/", EducationUpdateAPI.as_view(), name="education-update"),
     path("<int:pk>/delete/", EducationDeleteAPI.as_view(), name="education-delete"),
+]
+# education_list
+urlpatterns = [
+    path("list/", EducationListListAPI.as_view(), name="education_list-list"),
+    path("list/create/", EducationListCreateAPI.as_view(), name="education_list-create"),
+    path("list/<int:pk>/", EducationListDetailAPI.as_view(), name="education_list-detail"),
+    path("list/<int:pk>/update/", EducationListUpdateAPI.as_view(), name="education_list-update"),
+    path("list/<int:pk>/delete/", EducationListDeleteAPI.as_view(), name="education_list-delete"),
 ]
 
 # GhuslAndTahara
