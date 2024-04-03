@@ -8,9 +8,6 @@ class ImageSerializer(serializers.ModelSerializer):
         model = ServiceImage
         fields = "__all__"
 
-    def get_image_url(self, obj):
-        return obj.image.url if obj.image else None
-
 
 class ServiceSerializer(serializers.ModelSerializer):
     class Meta:
@@ -19,7 +16,7 @@ class ServiceSerializer(serializers.ModelSerializer):
 
 
 class ServiceReadSerializer(serializers.ModelSerializer):
-    images = ImageSerializer(many=True, read_only=True)
+    images = serializers.ListField(child=serializers.ImageField(), read_only=True, required=False)
 
     class Meta:
         model = Service
@@ -27,7 +24,7 @@ class ServiceReadSerializer(serializers.ModelSerializer):
 
 
 class ServiceWriteSerializer(serializers.ModelSerializer):
-    images = ImageSerializer(many=True, read_only=True)
+    images = serializers.ListField(child=serializers.ImageField(), write_only=True, required=False)
 
     class Meta:
         model = Service

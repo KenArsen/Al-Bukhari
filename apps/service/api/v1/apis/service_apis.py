@@ -27,7 +27,7 @@ class ServiceDetailAPI(generics.RetrieveAPIView):
 class ServiceCreateAPI(generics.CreateAPIView):
     queryset = Service.objects.all()
     serializer_class = ServiceWriteSerializer
-    # permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
+    permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
