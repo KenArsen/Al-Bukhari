@@ -6,7 +6,6 @@ sudo apt autoremove
 
 python manage.py migrate
 python manage.py collectstatic --no-input
-#celery -A config worker -l info &
 
 #python manage.py shell -c "from apps.user.models import User; \
 #User.objects.create_superuser(email='admin@gmail.com', password='admin') if not User.objects.filter(email='admin@gmail.com').exists() else None"

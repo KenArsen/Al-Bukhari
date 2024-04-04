@@ -1,12 +1,12 @@
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 
-from apps.education.models import GhuslAndTaharat
+from apps.education.models import Taharat
 
 
-class GhuslAndTaharatSerializer(serializers.ModelSerializer):
+class TaharatSerializer(serializers.ModelSerializer):
     class Meta:
-        model = GhuslAndTaharat
+        model = Taharat
         fields = ("id", "content", "audio")
 
     def validate(self, data):

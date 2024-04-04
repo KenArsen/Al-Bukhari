@@ -11,16 +11,21 @@ from apps.education.api.v1.apis import (
     EducationListListAPI,
     EducationListUpdateAPI,
     EducationUpdateAPI,
-    GhuslAndTaharatCreateAPI,
-    GhuslAndTaharatDeleteAPI,
-    GhuslAndTaharatDetailAPI,
-    GhuslAndTaharatListAPI,
-    GhuslAndTaharatUpdateAPI,
+    GhuslCreateAPI,
+    GhuslDeleteAPI,
+    GhuslDetailAPI,
+    GhuslListAPI,
+    GhuslUpdateAPI,
     NamazCreateAPI,
     NamazDeleteAPI,
     NamazDetailAPI,
     NamazListAPI,
     NamazUpdateAPI,
+    TaharatCreateAPI,
+    TaharatDeleteAPI,
+    TaharatDetailAPI,
+    TaharatListAPI,
+    TaharatUpdateAPI,
 )
 
 app_name = "education"
@@ -43,13 +48,22 @@ urlpatterns += [
     path("list/<int:pk>/delete/", EducationListDeleteAPI.as_view(), name="education_list-delete"),
 ]
 
-# GhuslAndTahara
+# Ghusl
 urlpatterns += [
-    path("ghusl_and_taharat/", GhuslAndTaharatListAPI.as_view(), name="ghusl_and_taharat-list"),
-    path("ghusl_and_taharat/create/", GhuslAndTaharatCreateAPI.as_view(), name="ghusl_and_taharat-create"),
-    path("ghusl_and_taharat/<int:pk>/", GhuslAndTaharatDetailAPI.as_view(), name="ghusl_and_taharat-detail"),
-    path("ghusl_and_taharat/<int:pk>/update/", GhuslAndTaharatUpdateAPI.as_view(), name="ghusl_and_taharat-update"),
-    path("ghusl_and_taharat/<int:pk>/delete/", GhuslAndTaharatDeleteAPI.as_view(), name="ghusl_and_taharat-delete"),
+    path("ghusl/", GhuslListAPI.as_view(), name="ghusl-list"),
+    path("ghusl/create/", GhuslCreateAPI.as_view(), name="ghusl-create"),
+    path("ghusl/<int:pk>/", GhuslDetailAPI.as_view(), name="ghusl-detail"),
+    path("ghusl/<int:pk>/update/", GhuslUpdateAPI.as_view(), name="ghusl-update"),
+    path("ghusl/<int:pk>/delete/", GhuslDeleteAPI.as_view(), name="ghusl-delete"),
+]
+
+# Taharat
+urlpatterns += [
+    path("taharat/", TaharatListAPI.as_view(), name="taharat-list"),
+    path("taharat/create/", TaharatCreateAPI.as_view(), name="taharat-create"),
+    path("taharat/<int:pk>/", TaharatDetailAPI.as_view(), name="taharat-detail"),
+    path("taharat/<int:pk>/update/", TaharatUpdateAPI.as_view(), name="taharat-update"),
+    path("taharat/<int:pk>/delete/", TaharatDeleteAPI.as_view(), name="taharat-delete"),
 ]
 
 # Namaz

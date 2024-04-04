@@ -6,7 +6,14 @@ from apps.common.base import BaseModel
 from apps.education.utils import NamazType
 
 
-class GhuslAndTaharat(BaseModel):
+class Ghusl(models.Model):
+    content = CKEditor5Field("Content", config_name="extends")
+
+    def __str__(self):
+        return f"{self.__class__.__name__}"
+
+
+class Taharat(models.Model):
     content = CKEditor5Field("Content", config_name="extends")
     audio = models.FileField(upload_to="audio/", max_length=255, null=True, blank=True)
 

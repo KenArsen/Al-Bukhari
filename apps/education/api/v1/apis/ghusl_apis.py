@@ -1,38 +1,38 @@
 from rest_framework import generics, permissions
 
 from apps.common import IsSuperAdmin
-from apps.education.api.v1.serializers import GhuslAndTaharatSerializer
-from apps.education.models import GhuslAndTaharat
+from apps.education.api.v1.serializers import GhuslSerializer
+from apps.education.models import Ghusl
 
 
-class GhuslAndTaharatListAPI(generics.ListAPIView):
-    queryset = GhuslAndTaharat.objects.all()
-    serializer_class = GhuslAndTaharatSerializer
+class GhuslListAPI(generics.ListAPIView):
+    queryset = Ghusl.objects.all()
+    serializer_class = GhuslSerializer
 
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)
 
 
-class GhuslAndTaharatCreateAPI(generics.CreateAPIView):
-    queryset = GhuslAndTaharat.objects.all()
-    serializer_class = GhuslAndTaharatSerializer
+class GhuslCreateAPI(generics.CreateAPIView):
+    queryset = Ghusl.objects.all()
+    serializer_class = GhuslSerializer
     permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
 
 
-class GhuslAndTaharatDetailAPI(generics.RetrieveAPIView):
-    queryset = GhuslAndTaharat.objects.all()
-    serializer_class = GhuslAndTaharatSerializer
+class GhuslDetailAPI(generics.RetrieveAPIView):
+    queryset = Ghusl.objects.all()
+    serializer_class = GhuslSerializer
 
     def get(self, request, *args, **kwargs):
         return self.retrieve(request, *args, **kwargs)
 
 
-class GhuslAndTaharatUpdateAPI(generics.UpdateAPIView):
-    queryset = GhuslAndTaharat.objects.all()
-    serializer_class = GhuslAndTaharatSerializer
+class GhuslUpdateAPI(generics.UpdateAPIView):
+    queryset = Ghusl.objects.all()
+    serializer_class = GhuslSerializer
     permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     def put(self, request, *args, **kwargs):
@@ -42,9 +42,9 @@ class GhuslAndTaharatUpdateAPI(generics.UpdateAPIView):
         return self.partial_update(request, *args, **kwargs)
 
 
-class GhuslAndTaharatDeleteAPI(generics.DestroyAPIView):
-    queryset = GhuslAndTaharat.objects.all()
-    serializer_class = GhuslAndTaharatSerializer
+class GhuslDeleteAPI(generics.DestroyAPIView):
+    queryset = Ghusl.objects.all()
+    serializer_class = GhuslSerializer
     permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     def delete(self, request, *args, **kwargs):
