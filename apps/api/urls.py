@@ -33,6 +33,7 @@ urlpatterns = [
     path("v1/menus/", include("apps.menu.urls", namespace="menu")),
     path("v1/users/", include("apps.user.api.v1.urls", namespace="user")),
     path("v1/events/", include("apps.event.api.v1.urls", namespace="event")),
+    path("v1/updates/", include("apps.update.api.v1.urls", namespace="update")),
     path("v1/services/", include("apps.service.api.v1.urls", namespace="service")),
     path("v1/donations/", include("apps.donation.api.v1.urls", namespace="donation")),
     path("v1/educations/", include("apps.education.api.v1.urls", namespace="education")),
