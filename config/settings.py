@@ -166,6 +166,9 @@ if USE_S3:
 
     DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
     MEDIA_URL = f"https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/media/"
+
+    AWS_QUERYSTRING_AUTH = False
+    AWS_DEFAULT_ACL = 'public-read'
 else:
     STATIC_URL = "static/"
     STATIC_ROOT = BASE_DIR / "staticfiles"
@@ -186,7 +189,7 @@ customColorPalette = [
 ]
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
-CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_5_FILE_STORAGE = 'apps.common.utils.CkeditorCustomStorage'
 CKEDITOR_5_CONFIGS = {
     "default": {
         "toolbar": [
