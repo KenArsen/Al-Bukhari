@@ -184,8 +184,8 @@ customColorPalette = [
     {"color": "hsl(207, 90%, 54%)", "label": "Blue"},
 ]
 
-CKEDITOR_5_CUSTOM_CSS = None
-CKEDITOR_5_FILE_STORAGE = None
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_IMAGE_BACKEND = "pillow"
 CKEDITOR_5_CONFIGS = {
     "default": {
         "toolbar": [
