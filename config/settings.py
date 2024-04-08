@@ -192,6 +192,8 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_5_FILE_STORAGE = 'apps.common.utils.CkeditorCustomStorage'
 CKEDITOR_5_CONFIGS = {
     "default": {
+        'uploadUrl': '/admin/ckeditor5/upload/',
+        'uploadPath': 'uploads/',
         "toolbar": [
             "heading",
             "|",
@@ -290,6 +292,7 @@ CKEDITOR_5_CONFIGS = {
         }
     },
 }
+
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = env.str("EMAIL_HOST")
 EMAIL_PORT = env.str("EMAIL_PORT")
