@@ -1,1 +1,1 @@
-from .update_serializer import UpdateModelSerializer
+from .update_serializer import UpdateSerializer

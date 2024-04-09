@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from apps.update.models import UpdateModel
+from apps.update.models import Update
 
 
-class UpdateModelSerializer(serializers.ModelSerializer):
+class UpdateSerializer(serializers.ModelSerializer):
     class Meta:
-        model = UpdateModel
+        model = Update
         fields = '__all__'

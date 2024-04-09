@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import UpdateModel
+from .models import Update
 
-admin.site.register(UpdateModel)
+admin.site.register(Update)

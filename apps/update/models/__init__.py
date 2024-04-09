@@ -1,1 +1,1 @@
-from .update_model import UpdateModel
+from .update_model import Update
