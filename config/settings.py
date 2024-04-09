@@ -168,8 +168,6 @@ if USE_S3:
     MEDIA_URL = f"https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/media/"
 
     AWS_QUERYSTRING_AUTH = False
-    AWS_DEFAULT_ACL = 'public-read'
-    CKEDITOR_5_FILE_STORAGE = STATICFILES_STORAGE
 
 else:
     STATIC_URL = "/static/"
