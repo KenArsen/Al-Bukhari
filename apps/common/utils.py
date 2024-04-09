@@ -18,6 +18,11 @@ class CkeditorCustomStorage(FileSystemStorage):
 
     def _save(self, name, content):
         folder_name = self.get_folder_name()
+        # Проверяем существование директории
+        directory = os.path.join(settings.MEDIA_ROOT, folder_name)
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+        # Сохраняем файл
         name = os.path.join(folder_name, self.get_valid_name(name))
         return super()._save(name, content)
 

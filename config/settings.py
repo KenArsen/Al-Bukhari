@@ -189,6 +189,7 @@ customColorPalette = [
     {"color": "hsl(207, 90%, 54%)", "label": "Blue"},
 ]
 
+AWS_DEFAULT_ACL = 'public-read'
 AWS_QUERYSTRING_AUTH = False
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_5_FILE_STORAGE = 'apps.common.utils.CkeditorCustomStorage'

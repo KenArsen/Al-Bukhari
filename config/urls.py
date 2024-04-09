@@ -4,9 +4,9 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path("ckeditor5/", include("django_ckeditor_5.urls")),
     path("admin/", admin.site.urls),
     path("api/", include("apps.api.urls", namespace="api")),
+    path("ckeditor5/", include('django_ckeditor_5.urls'), name="ck_editor_5_upload_file"),
 ]
 
 if settings.DEBUG:
