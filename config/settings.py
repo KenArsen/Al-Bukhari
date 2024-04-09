@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "apps.menu.apps.MenuConfig",
     "apps.service.apps.ServiceConfig",
     "apps.update.apps.UpdateConfig",
+    "apps.faq.apps.FaqConfig",
 ]
 
 MIDDLEWARE = [

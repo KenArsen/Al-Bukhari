@@ -30,6 +30,7 @@ class HealthCheckView(views.APIView):
 urlpatterns = [
     path("v1/healthcheck/", HealthCheckView.as_view(), name="healthcheck"),
     path("v1/us/", include("apps.us.api.v1.urls", namespace="us")),
+    path("v1/faqs/", include("apps.faq.api.v1.urls", namespace="faq")),
     path("v1/menus/", include("apps.menu.urls", namespace="menu")),
     path("v1/users/", include("apps.user.api.v1.urls", namespace="user")),
     path("v1/events/", include("apps.event.api.v1.urls", namespace="event")),
