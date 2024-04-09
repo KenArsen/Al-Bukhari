@@ -40,19 +40,6 @@ urlpatterns = [
     path("v1/educations/", include("apps.education.api.v1.urls", namespace="education")),
 ]
 
-# libraries
-urlpatterns += [
-    re_path(
-        r"^static/(?P<path>.*)$",
-        serve,
-        {"document_root": settings.STATIC_ROOT, "show_indexes": settings.DEBUG},
-    ),
-    re_path(
-        r"^api/v1/media/(?P<path>.*)$",
-        serve,
-        {"document_root": settings.MEDIA_ROOT, "show_indexes": settings.DEBUG},
-    ),
-]
 
 # token
 urlpatterns += [

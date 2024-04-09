@@ -45,7 +45,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -170,13 +169,14 @@ if USE_S3:
 
     AWS_QUERYSTRING_AUTH = False
     AWS_DEFAULT_ACL = 'public-read'
-else:
-    STATIC_URL = "static/"
-    STATIC_ROOT = BASE_DIR / "staticfiles"
-    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+    CKEDITOR_5_FILE_STORAGE = STATICFILES_STORAGE
 
-    MEDIA_URL = "media/"
-    MEDIA_ROOT = BASE_DIR / "media"
+else:
+    STATIC_URL = "/static/"
+    STATIC_ROOT = BASE_DIR / "staticfiles"
+
+    MEDIA_URL = "/media/"
+    MEDIA_ROOT = BASE_DIR / "media/"
 
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
@@ -190,7 +190,6 @@ customColorPalette = [
 ]
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
-CKEDITOR_5_FILE_STORAGE = 'apps.common.utils.CkeditorCustomStorage'
 CKEDITOR_5_CONFIGS = {
     "default": {
         'uploadUrl': '/admin/ckeditor5/upload/',
