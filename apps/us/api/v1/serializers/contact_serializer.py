@@ -6,7 +6,7 @@ from apps.us.models import Contact, Url
 class UrlSerializer(serializers.ModelSerializer):
     class Meta:
         model = Url
-        fields = ("id", "title", "url", "icon", "contact")
+        fields = ("id", "type_url", "title", "url", "icon", "contact")
         read_only_fields = ("id",)
 
 
@@ -15,5 +15,5 @@ class ContactSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Contact
-        fields = ("id", "image1", "image2", "urls")
+        fields = ("id", "image1", "urls")
         read_only_fields = ("id", "created_at", "updated_at")
