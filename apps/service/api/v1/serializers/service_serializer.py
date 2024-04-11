@@ -7,20 +7,17 @@ class ImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = ServiceImage
         fields = "__all__"
-
-
-class ServiceSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Service
-        fields = "__all__"
+        ref_name = "ServiceImage"
 
 
 class ServiceReadSerializer(serializers.ModelSerializer):
-    images = serializers.ListField(child=serializers.ImageField(), read_only=True, required=False)
+
+    images = ImageSerializer(many=True, read_only=True)
 
     class Meta:
         model = Service
-        exclude = ("created_at", "updated_at")
+        fields = "__all__"
+        ref_name = "ServiceRead"
 
 
 class ServiceWriteSerializer(serializers.ModelSerializer):
@@ -29,6 +26,7 @@ class ServiceWriteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Service
         exclude = ("created_at", "updated_at", "id")
+        ref_name = "ServiceWrite"
 
     def save_images(self, instance, is_update=False):
         request = self.context.get("request")

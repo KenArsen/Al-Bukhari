@@ -17,4 +17,4 @@ class ServiceImage(models.Model):
     image = models.ImageField(upload_to="services/")
 
     def __str__(self):
-        return f"{self.service}"
+        return f"Image ID: {self.id}"
