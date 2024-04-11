@@ -10,7 +10,7 @@ class Ghusl(models.Model):
     content = CKEditor5Field("Content", config_name="extends")
 
     def __str__(self):
-        return f"{self.__class__.__name__}"
+        return f'Ghysl ID: {self.id}'
 
 
 class Taharat(models.Model):
@@ -18,7 +18,7 @@ class Taharat(models.Model):
     audio = models.FileField(upload_to="audio/", max_length=255, null=True, blank=True)
 
     def __str__(self):
-        return f"{self.__class__.__name__}"
+        return f'Taharat ID: {self.id}'
 
     def clean(self):
         if len(str(self.audio)) > 10:
