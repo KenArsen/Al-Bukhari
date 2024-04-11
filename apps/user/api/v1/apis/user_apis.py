@@ -31,6 +31,7 @@ def get_tokens_for_user(user):
 class UserListAPI(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserListSerializer
+    permission_classes = [IsAuthenticated, IsSuperAdmin]
 
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)
@@ -39,6 +40,7 @@ class UserListAPI(generics.ListAPIView):
 class UserDetailAPI(generics.RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserDetailSerializer
+    permission_classes = [IsAuthenticated, IsSuperAdmin]
 
     def get(self, request, *args, **kwargs):
         return self.retrieve(request, *args, **kwargs)
@@ -47,6 +49,7 @@ class UserDetailAPI(generics.RetrieveAPIView):
 class UserUpdateAPI(generics.UpdateAPIView):
     queryset = User.objects.all()
     serializer_class = UserUpdateSerializer
+    permission_classes = [IsAuthenticated, IsSuperAdmin]
 
     def put(self, request, *args, **kwargs):
         return self.update(request, *args, **kwargs)
@@ -58,6 +61,7 @@ class UserUpdateAPI(generics.UpdateAPIView):
 class UserDeleteAPI(generics.DestroyAPIView):
     queryset = User.objects.all()
     serializer_class = None
+    permission_classes = [IsAuthenticated, IsSuperAdmin]
 
     def delete(self, request, *args, **kwargs):
         return self.destroy(request, *args, **kwargs)
