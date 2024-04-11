@@ -7,7 +7,7 @@ from django.core.mail import send_mail
 
 
 @shared_task
-def send(name, email, message):
+def send(name, email, message=None):
     try:
         logging.info(f"Sending email to {email}")
         send_mail(
