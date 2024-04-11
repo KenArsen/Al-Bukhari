@@ -6,4 +6,4 @@ class Faq(models.Model):
     answer = models.TextField()
 
     def __str__(self):
-        return f'{self.question[:30]}'
+        return f'FAQ ID: {self.id}'

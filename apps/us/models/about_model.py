@@ -7,4 +7,4 @@ class About(BaseModel):
     content = CKEditor5Field("Content", config_name="extends")
 
     def __str__(self):
-        return f"{self.id}"
+        return f"About ID: {self.id}"
