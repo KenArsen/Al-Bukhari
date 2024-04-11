@@ -1,15 +1,12 @@
 from rest_framework import exceptions, generics, permissions
 
 from apps.common import IsSuperAdmin
-from apps.education.api.v1.serializers import (
-    NamazCreateUpdateSerializer,
-    NamazSerializer,
-)
+from apps.education.api.v1.serializers import NamazReadSerializer, NamazWriteSerializer
 from apps.education.models import Namaz
 
 
 class NamazListAPI(generics.ListAPIView):
-    serializer_class = NamazSerializer
+    serializer_class = NamazReadSerializer
 
     def get_queryset(self):
         queryset = Namaz.objects.all()
@@ -28,7 +25,7 @@ class NamazListAPI(generics.ListAPIView):
 
 class NamazCreateAPI(generics.CreateAPIView):
     queryset = Namaz.objects.all()
-    serializer_class = NamazCreateUpdateSerializer
+    serializer_class = NamazWriteSerializer
     permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     def post(self, request, *args, **kwargs):
@@ -37,7 +34,7 @@ class NamazCreateAPI(generics.CreateAPIView):
 
 class NamazDetailAPI(generics.RetrieveAPIView):
     queryset = Namaz.objects.all()
-    serializer_class = NamazSerializer
+    serializer_class = NamazReadSerializer
 
     def get(self, request, *args, **kwargs):
         return self.retrieve(request, *args, **kwargs)
@@ -45,7 +42,7 @@ class NamazDetailAPI(generics.RetrieveAPIView):
 
 class NamazUpdateAPI(generics.UpdateAPIView):
     queryset = Namaz.objects.all()
-    serializer_class = NamazCreateUpdateSerializer
+    serializer_class = NamazWriteSerializer
     permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     def put(self, request, *args, **kwargs):
@@ -57,7 +54,7 @@ class NamazUpdateAPI(generics.UpdateAPIView):
 
 class NamazDeleteAPI(generics.DestroyAPIView):
     queryset = Namaz.objects.all()
-    serializer_class = NamazSerializer
+    serializer_class = NamazReadSerializer
     permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     def delete(self, request, *args, **kwargs):

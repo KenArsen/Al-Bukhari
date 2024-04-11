@@ -1,4 +1,4 @@
 from .educaton_serializer import EducationListSerializer, EducationSerializer
 from .ghusl_serializer import GhuslSerializer
-from .namaz_serializer import NamazCreateUpdateSerializer, NamazSerializer
+from .namaz_serializer import NamazReadSerializer, NamazWriteSerializer
 from .taharat_serializer import TaharatSerializer

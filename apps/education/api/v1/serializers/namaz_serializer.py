@@ -4,38 +4,32 @@ from rest_framework.exceptions import ValidationError
 from apps.education.models import Namaz, NamazImage
 
 
-class ImageReadSerializer(serializers.ModelSerializer):
+class ImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = NamazImage
         fields = "__all__"
+        ref_name = "NamazImage"
 
     def get_image_url(self, obj):
         return obj.image.url if obj.image else None
 
 
-class ImageWriteSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = NamazImage
-        fields = "__all__"
-
-    def get_image_url(self, obj):
-        return obj.image.url if obj.image else None
-
-
-class NamazSerializer(serializers.ModelSerializer):
-    images = ImageReadSerializer(many=True, read_only=True)
+class NamazReadSerializer(serializers.ModelSerializer):
+    images = ImageSerializer(many=True, read_only=True)
 
     class Meta:
         model = Namaz
         exclude = ("created_at", "updated_at")
+        ref_name = "NamazRead"
 
 
-class NamazCreateUpdateSerializer(serializers.ModelSerializer):
-    images = ImageWriteSerializer(many=True, read_only=True)
+class NamazWriteSerializer(serializers.ModelSerializer):
+    images = serializers.ListField(child=serializers.ImageField(), write_only=True, required=False)
 
     class Meta:
         model = Namaz
         exclude = ("id", "created_at", "updated_at")
+        ref_name = "NamazWrite"
 
     def save_images(self, instance, is_update=False):
         request = self.context.get("request")
@@ -43,6 +37,7 @@ class NamazCreateUpdateSerializer(serializers.ModelSerializer):
 
         if is_update:
             instance.images.all().delete()
+
         for image_data in images_data:
             NamazImage.objects.create(namaz=instance, image=image_data)
 

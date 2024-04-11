@@ -10,12 +10,12 @@ class ServiceImageInline(admin.TabularInline):
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title')
-    list_display_links = ('id', 'title')
+    list_display = ("id", "title")
+    list_display_links = ("id", "title")
     inlines = [ServiceImageInline]
 
 
 @admin.register(ServiceImage)
 class ServiceImageAdmin(admin.ModelAdmin):
-    list_display = ('id', 'service')
-    list_display_links = ('id', 'service')
+    list_display = ("id", "service")
+    list_display_links = ("id", "service")

@@ -1,13 +1,13 @@
 from rest_framework import generics, permissions
 
 from apps.common.permissions import IsSuperAdmin
-from apps.event.api.v1.serializers import EventCreateUpdateSerializer, EventSerializer
+from apps.event.api.v1.serializers import EventReadSerializer, EventWriteSerializer
 from apps.event.models import Event
 
 
 class EventListAPI(generics.ListAPIView):
     queryset = Event.objects.all()
-    serializer_class = EventSerializer
+    serializer_class = EventReadSerializer
 
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)
@@ -15,7 +15,7 @@ class EventListAPI(generics.ListAPIView):
 
 class EventCreateAPI(generics.CreateAPIView):
     queryset = Event.objects.all()
-    serializer_class = EventCreateUpdateSerializer
+    serializer_class = EventWriteSerializer
     permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     def post(self, request, *args, **kwargs):
@@ -24,7 +24,7 @@ class EventCreateAPI(generics.CreateAPIView):
 
 class EventRetrieveAPI(generics.RetrieveAPIView):
     queryset = Event.objects.all()
-    serializer_class = EventSerializer
+    serializer_class = EventReadSerializer
 
     def get(self, request, *args, **kwargs):
         return self.retrieve(request, *args, **kwargs)
@@ -32,7 +32,7 @@ class EventRetrieveAPI(generics.RetrieveAPIView):
 
 class EventUpdateAPI(generics.UpdateAPIView):
     queryset = Event.objects.all()
-    serializer_class = EventCreateUpdateSerializer
+    serializer_class = EventWriteSerializer
     permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     def put(self, request, *args, **kwargs):
@@ -44,7 +44,7 @@ class EventUpdateAPI(generics.UpdateAPIView):
 
 class EventDeleteAPI(generics.DestroyAPIView):
     queryset = Event.objects.all()
-    serializer_class = EventSerializer
+    serializer_class = EventReadSerializer
     permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     def delete(self, request, *args, **kwargs):

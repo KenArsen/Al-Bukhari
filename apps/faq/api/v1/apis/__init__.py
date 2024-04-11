@@ -1,7 +1,1 @@
-from .faq_apis import (
-    FaqListAPI,
-    FaqCreateAPI,
-    FaqDetailAPI,
-    FaqUpdateAPI,
-    FaqDeleteAPI,
-)
+from .faq_apis import FaqCreateAPI, FaqDeleteAPI, FaqDetailAPI, FaqListAPI, FaqUpdateAPI

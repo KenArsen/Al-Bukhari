@@ -5,5 +5,5 @@ from .models import Menu
 
 @admin.register(Menu)
 class MenuAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name')
-    list_display_links = ('id', 'name')
+    list_display = ("id", "name")
+    list_display_links = ("id", "name")

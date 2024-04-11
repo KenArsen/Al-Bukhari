@@ -8,6 +8,7 @@ class UrlSerializer(serializers.ModelSerializer):
         model = Url
         fields = ("id", "type_url", "title", "url", "icon", "contact")
         read_only_fields = ("id",)
+        ref_name = "ContactUrlUs"
 
 
 class ContactSerializer(serializers.ModelSerializer):
@@ -17,3 +18,4 @@ class ContactSerializer(serializers.ModelSerializer):
         model = Contact
         fields = ("id", "image1", "urls")
         read_only_fields = ("id", "created_at", "updated_at")
+        ref_name = "ContactUS"

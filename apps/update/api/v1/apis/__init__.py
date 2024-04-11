@@ -1,7 +1,7 @@
 from .update_api import (
-    UpdateListAPI,
-    UpdateDetailAPI,
     CreateUpdateAPI,
+    DeleteUpdateAPI,
+    UpdateDetailAPI,
+    UpdateListAPI,
     UpdateUpdateAPI,
-    DeleteUpdateAPI
 )

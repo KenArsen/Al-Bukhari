@@ -8,6 +8,7 @@ class GhuslSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ghusl
         fields = ("id", "content")
+        ref_name = "Ghusl"
 
     def validate(self, data):
         if len(str(data.get("audio"))) > 255:

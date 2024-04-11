@@ -17,5 +17,5 @@ class ContactAdmin(admin.ModelAdmin):
 
 @admin.register(Url)
 class UrlAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'type_url')
-    list_display_links = ('id', 'title')
+    list_display = ("id", "title", "type_url")
+    list_display_links = ("id", "title")

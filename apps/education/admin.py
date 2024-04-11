@@ -10,7 +10,7 @@ admin.site.register(EducationList)
 
 @admin.register(Education)
 class EducationAdmin(admin.ModelAdmin):
-    list_display = ('id', 'category')
+    list_display = ("id", "category")
 
 
 class NamazImageInline(admin.TabularInline):

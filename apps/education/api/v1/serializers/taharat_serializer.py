@@ -8,6 +8,7 @@ class TaharatSerializer(serializers.ModelSerializer):
     class Meta:
         model = Taharat
         fields = ("id", "content", "audio")
+        ref_name = "Taharat"
 
     def validate(self, data):
         if len(str(data.get("audio"))) > 255:

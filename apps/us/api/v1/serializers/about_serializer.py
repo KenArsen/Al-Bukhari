@@ -8,3 +8,4 @@ class AboutUsSerializer(serializers.ModelSerializer):
         model = About
         read_only_fields = ["id", "created_at", "updated_at"]
         fields = "__all__"
+        ref_name = "AboutUs"

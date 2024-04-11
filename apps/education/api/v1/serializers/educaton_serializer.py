@@ -7,6 +7,7 @@ class EducationListSerializer(serializers.ModelSerializer):
     class Meta:
         model = EducationList
         fields = "__all__"
+        ref_name = "EducationList"
 
 
 class EducationSerializer(serializers.ModelSerializer):
@@ -15,3 +16,4 @@ class EducationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Education
         fields = "__all__"
+        ref_name = "Education"
