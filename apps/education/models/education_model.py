@@ -15,4 +15,4 @@ class EducationList(models.Model):
     image = models.ImageField(upload_to="education/", null=True, blank=True)
 
     def __str__(self):
-        return f"{self.education.category}"
+        return f"ID: {self.id} - CATEGORY - {self.education.category}"
