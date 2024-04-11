@@ -4,6 +4,7 @@ from apps.common.base import BaseModel
 
 
 class Url(models.Model):
+    type_url = models.CharField(max_length=255, blank=True, null=True)
     title = models.CharField(max_length=255)
     url = models.URLField(max_length=255, blank=True, null=True)
     icon = models.ImageField(upload_to="icons/", blank=True, null=True)
