@@ -11,7 +11,6 @@ class ImageSerializer(serializers.ModelSerializer):
 
 
 class ServiceReadSerializer(serializers.ModelSerializer):
-
     images = ImageSerializer(many=True, read_only=True)
 
     class Meta:
@@ -21,7 +20,7 @@ class ServiceReadSerializer(serializers.ModelSerializer):
 
 
 class ServiceWriteSerializer(serializers.ModelSerializer):
-    images = serializers.ListField(child=serializers.ImageField(), write_only=True, required=False)
+    images = ImageSerializer(many=True)
 
     class Meta:
         model = Service

@@ -24,7 +24,7 @@ class NamazReadSerializer(serializers.ModelSerializer):
 
 
 class NamazWriteSerializer(serializers.ModelSerializer):
-    images = serializers.ListField(child=serializers.ImageField(), write_only=True, required=False)
+    images = ImageSerializer(many=True, write_only=True)
 
     class Meta:
         model = Namaz

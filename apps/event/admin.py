@@ -18,5 +18,11 @@ class AdminEvent(admin.ModelAdmin):
 
 @admin.register(EventImage)
 class EventImageAdmin(admin.ModelAdmin):
-    list_display = ("id", "event",)
-    list_display_links = ("id", "event",)
+    list_display = (
+        "id",
+        "event",
+    )
+    list_display_links = (
+        "id",
+        "event",
+    )
