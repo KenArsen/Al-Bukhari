@@ -24,7 +24,7 @@ class EventReadSerializer(serializers.ModelSerializer):
 
 
 class EventWriteSerializer(serializers.ModelSerializer):
-    images = ImageSerializer(many=True, write_only=True)
+    images = ImageSerializer(many=True)
 
     class Meta:
         model = Event
