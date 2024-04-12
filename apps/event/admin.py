@@ -10,8 +10,13 @@ class EventImageInline(admin.TabularInline):
 
 @admin.register(Event)
 class AdminEvent(admin.ModelAdmin):
-    list_display = ("id", "title")
-    list_display_links = ("title",)
-    fields = ("title", "organizer", "email", "phone", "more", "date", "address")
+    list_display = ("id", "title", "email")
+    list_display_links = ("id", "title", "email")
     readonly_fields = ("created_at", "updated_at")
     inlines = [EventImageInline]
+
+
+@admin.register(EventImage)
+class EventImageAdmin(admin.ModelAdmin):
+    list_display = ("id", "event",)
+    list_display_links = ("id", "event",)
