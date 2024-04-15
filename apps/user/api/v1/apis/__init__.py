@@ -5,6 +5,7 @@ from .user_apis import (
     UserDetailAPI,
     UserListAPI,
     UserLoginAPI,
+    UserLogoutAPI,
     UserPasswordResetAPI,
     UserProfileView,
     UserRegistrationAPI,

@@ -86,6 +86,26 @@ class UserLoginAPI(generics.GenericAPIView):
             )
 
 
+class UserLogoutAPI(generics.GenericAPIView):
+    permission_classes = [IsAuthenticated, IsSuperAdmin]
+
+    def post(self, request):
+        try:
+            refresh_token = request.data.get("refresh_token")
+            access_token = request.data.get("access_token")
+            if not refresh_token or not access_token:
+                return Response(
+                    {"error": "Refresh token and access token is required"}, status=status.HTTP_400_BAD_REQUEST
+                )
+            token = RefreshToken(refresh_token)
+            token.blacklist()
+            token = RefreshToken(access_token)
+            token.blacklist()
+            return Response({"message": "Logout successful"}, status=status.HTTP_205_RESET_CONTENT)
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+
 class UserRegistrationAPI(generics.GenericAPIView):
     queryset = None
     serializer_class = UserRegistrationSerializer

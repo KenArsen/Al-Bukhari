@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "django_ckeditor_5",
     "celery",
+    "rest_framework_simplejwt.token_blacklist",
     # apps
     "apps.event.apps.EventConfig",
     "apps.user.apps.UserConfig",
