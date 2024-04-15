@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 var formData = new FormData(form);
                 formData.set('payment_method_id', result.paymentMethod.id);
 
-                fetch('http://127.0.0.1:8000/api/v1/donations/create/', {
+                fetch('https://albukhari.inclusivetec.com/api/v1/donations/create/', {
                     method: 'POST',
                     body: formData
                 }).then(function (response) {
