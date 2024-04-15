@@ -21,7 +21,7 @@ class Taharat(models.Model):
         return f"Taharat ID: {self.id}"
 
     def clean(self):
-        if len(str(self.audio)) > 10:
+        if len(str(self.audio)) > 255:
             raise ValidationError({"audio": "Длина аудиофайла не должна превышать 255 символов."})
 
 
