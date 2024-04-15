@@ -1,11 +1,11 @@
 from django.contrib import admin
 
-from apps.education.models.education_model import Education, EducationList
+from apps.education.models.education_model import Education, EducationCategory
 from apps.education.models.namaz_model import Ghusl, Namaz, NamazImage, Taharat
 
 admin.site.register(Ghusl)
 admin.site.register(Taharat)
-admin.site.register(EducationList)
+admin.site.register(EducationCategory)
 
 
 @admin.register(Education)

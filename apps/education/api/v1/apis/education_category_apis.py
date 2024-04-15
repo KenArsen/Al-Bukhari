@@ -1,38 +1,38 @@
 from rest_framework import generics, permissions
 
 from apps.common.permissions import IsSuperAdmin
-from apps.education.api.v1.serializers import EducationListSerializer
-from apps.education.models import EducationList
+from apps.education.api.v1.serializers import EducationCategorySerializer
+from apps.education.models import EducationCategory
 
 
-class EducationListListAPI(generics.ListAPIView):
-    queryset = EducationList.objects.all()
-    serializer_class = EducationListSerializer
+class EducationCategoryListAPI(generics.ListAPIView):
+    queryset = EducationCategory.objects.all()
+    serializer_class = EducationCategorySerializer
 
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)
 
 
-class EducationListDetailAPI(generics.RetrieveAPIView):
-    queryset = EducationList.objects.all()
-    serializer_class = EducationListSerializer
+class EducationCategoryDetailAPI(generics.RetrieveAPIView):
+    queryset = EducationCategory.objects.all()
+    serializer_class = EducationCategorySerializer
 
     def get(self, request, *args, **kwargs):
         return self.retrieve(request, *args, **kwargs)
 
 
-class EducationListCreateAPI(generics.CreateAPIView):
-    queryset = EducationList.objects.all()
-    serializer_class = EducationListSerializer
+class EducationCategoryCreateAPI(generics.CreateAPIView):
+    queryset = EducationCategory.objects.all()
+    serializer_class = EducationCategorySerializer
     permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
 
 
-class EducationListUpdateAPI(generics.UpdateAPIView):
-    queryset = EducationList.objects.all()
-    serializer_class = EducationListSerializer
+class EducationCategoryUpdateAPI(generics.UpdateAPIView):
+    queryset = EducationCategory.objects.all()
+    serializer_class = EducationCategorySerializer
     permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     def put(self, request, *args, **kwargs):
@@ -42,9 +42,9 @@ class EducationListUpdateAPI(generics.UpdateAPIView):
         return self.partial_update(request, *args, **kwargs)
 
 
-class EducationListDeleteAPI(generics.DestroyAPIView):
-    queryset = EducationList.objects.all()
-    serializer_class = EducationListSerializer
+class EducationCategoryDeleteAPI(generics.DestroyAPIView):
+    queryset = EducationCategory.objects.all()
+    serializer_class = EducationCategorySerializer
     permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     def delete(self, request, *args, **kwargs):

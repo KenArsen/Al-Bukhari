@@ -1,5 +1,5 @@
 from django.contrib.auth import authenticate
-from rest_framework import generics, status
+from rest_framework import generics, status, views
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -86,7 +86,7 @@ class UserLoginAPI(generics.GenericAPIView):
             )
 
 
-class UserLogoutAPI(generics.GenericAPIView):
+class UserLogoutAPI(views.APIView):
     permission_classes = [IsAuthenticated, IsSuperAdmin]
 
     def post(self, request):

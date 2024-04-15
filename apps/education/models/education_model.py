@@ -9,7 +9,7 @@ class Education(models.Model):
         return f"{self.category}"
 
 
-class EducationList(models.Model):
+class EducationCategory(models.Model):
     education = models.ForeignKey(Education, on_delete=models.CASCADE, related_name="list")
     description = models.TextField()
     image = models.ImageField(upload_to="education/", null=True, blank=True)

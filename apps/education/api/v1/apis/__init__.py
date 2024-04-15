@@ -5,12 +5,12 @@ from .education_apis import (
     EducationListAPI,
     EducationUpdateAPI,
 )
-from .education_list_apis import (
-    EducationListCreateAPI,
-    EducationListDeleteAPI,
-    EducationListDetailAPI,
-    EducationListListAPI,
-    EducationListUpdateAPI,
+from .education_category_apis import (
+    EducationCategoryCreateAPI,
+    EducationCategoryDeleteAPI,
+    EducationCategoryDetailAPI,
+    EducationCategoryListAPI,
+    EducationCategoryUpdateAPI,
 )
 from .ghusl_apis import (
     GhuslCreateAPI,

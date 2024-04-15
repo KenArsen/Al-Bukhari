@@ -1,15 +1,15 @@
 from django.urls import path
 
 from apps.education.api.v1.apis import (
+    EducationCategoryCreateAPI,
+    EducationCategoryDeleteAPI,
+    EducationCategoryDetailAPI,
+    EducationCategoryListAPI,
+    EducationCategoryUpdateAPI,
     EducationCreateAPI,
     EducationDeleteAPI,
     EducationDetailAPI,
     EducationListAPI,
-    EducationListCreateAPI,
-    EducationListDeleteAPI,
-    EducationListDetailAPI,
-    EducationListListAPI,
-    EducationListUpdateAPI,
     EducationUpdateAPI,
     GhuslCreateAPI,
     GhuslDeleteAPI,
@@ -41,11 +41,11 @@ urlpatterns = [
 
 # education_list
 urlpatterns += [
-    path("list/", EducationListListAPI.as_view(), name="education_list-list"),
-    path("list/create/", EducationListCreateAPI.as_view(), name="education_list-create"),
-    path("list/<int:pk>/", EducationListDetailAPI.as_view(), name="education_list-detail"),
-    path("list/<int:pk>/update/", EducationListUpdateAPI.as_view(), name="education_list-update"),
-    path("list/<int:pk>/delete/", EducationListDeleteAPI.as_view(), name="education_list-delete"),
+    path("categories/", EducationCategoryListAPI.as_view(), name="education_list-list"),
+    path("categories/create/", EducationCategoryCreateAPI.as_view(), name="education_list-create"),
+    path("categories/<int:pk>/", EducationCategoryDetailAPI.as_view(), name="education_list-detail"),
+    path("categories/<int:pk>/update/", EducationCategoryUpdateAPI.as_view(), name="education_list-update"),
+    path("categories/<int:pk>/delete/", EducationCategoryDeleteAPI.as_view(), name="education_list-delete"),
 ]
 
 # Ghusl

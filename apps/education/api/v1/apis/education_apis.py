@@ -1,7 +1,11 @@
 from rest_framework import generics, permissions
 
 from apps.common.permissions import IsSuperAdmin
-from apps.education.api.v1.serializers.educaton_serializer import EducationSerializer
+from apps.education.api.v1.serializers.educaton_serializer import (
+    EducationDetailSerializer,
+    EducationSerializer,
+    EducationWriteSerializer,
+)
 from apps.education.models import Education
 
 
@@ -15,7 +19,7 @@ class EducationListAPI(generics.ListAPIView):
 
 class EducationDetailAPI(generics.RetrieveAPIView):
     queryset = Education.objects.all()
-    serializer_class = EducationSerializer
+    serializer_class = EducationDetailSerializer
 
     def get(self, request, *args, **kwargs):
         return self.retrieve(request, *args, **kwargs)
@@ -23,7 +27,7 @@ class EducationDetailAPI(generics.RetrieveAPIView):
 
 class EducationCreateAPI(generics.CreateAPIView):
     queryset = Education.objects.all()
-    serializer_class = EducationSerializer
+    serializer_class = EducationWriteSerializer
     permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     def post(self, request, *args, **kwargs):
@@ -32,7 +36,7 @@ class EducationCreateAPI(generics.CreateAPIView):
 
 class EducationUpdateAPI(generics.UpdateAPIView):
     queryset = Education.objects.all()
-    serializer_class = EducationSerializer
+    serializer_class = EducationWriteSerializer
     permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
 
     def put(self, request, *args, **kwargs):
