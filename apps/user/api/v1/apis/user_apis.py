@@ -95,7 +95,10 @@ class UserRegistrationAPI(generics.GenericAPIView):
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
         token = get_tokens_for_user(user)
-        return Response({"token": token, "msg": "Registration Success"}, status=status.HTTP_201_CREATED)
+        return Response(
+            {"token": token, "msg": "Registration Success", "user": UserDetailSerializer(user).data},
+            status=status.HTTP_201_CREATED,
+        )
 
 
 class UserProfileView(generics.GenericAPIView):
@@ -103,8 +106,11 @@ class UserProfileView(generics.GenericAPIView):
     serializer_class = UserProfileSerializer
 
     def get(self, request):
-        serializer = UserProfileSerializer(request.user)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        if request.user.is_authenticated:
+            serializer = UserProfileSerializer(request.user)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        else:
+            return Response({"detail": "User is not authenticated."}, status=status.HTTP_401_UNAUTHORIZED)
 
 
 class UserChangePasswordAPI(generics.GenericAPIView):

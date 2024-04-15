@@ -191,8 +191,8 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 # CKEDITOR_5_FILE_STORAGE = 'apps.common.utils.CustomStorage'
 CKEDITOR_5_CONFIGS = {
     "default": {
-        'uploadUrl': '/admin/ckeditor5/upload/',
-        'uploadPath': 'uploads/',
+        "uploadUrl": "/admin/ckeditor5/upload/",
+        "uploadPath": "uploads/",
         "toolbar": [
             "heading",
             "|",

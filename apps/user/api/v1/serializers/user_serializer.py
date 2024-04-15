@@ -83,7 +83,7 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        ref_name = "CustomMeUser"
+        ref_name = "ProfileUser"
         exclude = ("password", "is_staff", "groups", "user_permissions")
 
 
