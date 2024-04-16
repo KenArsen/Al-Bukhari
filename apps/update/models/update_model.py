@@ -6,7 +6,7 @@ class Update(models.Model):
     image = models.ImageField(upload_to="updates/", null=True, blank=True)
     title = models.CharField(max_length=100, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
-    content = CKEditor5Field("Content", config_name="extends", default='')
+    content = CKEditor5Field("Content", config_name="extends", blank=True, null=True)
 
     def __str__(self):
         return self.title[:30]
