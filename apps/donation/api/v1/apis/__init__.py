@@ -1,8 +1,2 @@
-from .donate_apis import (
-    CustomerDetailAPI,
-    CustomerListAPI,
-    CustomerPaymentAPI,
-    DonateCreateAPI,
-    DonateListAPI,
-    ForumView,
-)
+from .customer_apis import CustomerDetailAPI, CustomerListAPI, CustomerPaymentListAPI
+from .donation_apis import DonateCreateAPI, ForumView

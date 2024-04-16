@@ -304,4 +304,6 @@ EMAIL_USE_SSL = env.bool("EMAIL_USE_SSL")
 CELERY_BROKER_URL = env.str("REDIS_HOST")
 CELERY_RESULT_BACKEND = env.str("REDIS_HOST")
 
+STRIPE_SECRET_KEY = env.str('STRIPE_KEY')
+
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
