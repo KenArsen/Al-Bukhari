@@ -91,15 +91,13 @@ class UserLogoutAPI(views.APIView):
 
     def post(self, request):
         try:
+
             refresh_token = request.data.get("refresh_token")
-            access_token = request.data.get("access_token")
-            if not refresh_token or not access_token:
+            if not refresh_token:
                 return Response(
-                    {"error": "Refresh token and access token is required"}, status=status.HTTP_400_BAD_REQUEST
+                    {"error": "Refresh token is required"}, status=status.HTTP_400_BAD_REQUEST
                 )
             token = RefreshToken(refresh_token)
-            token.blacklist()
-            token = RefreshToken(access_token)
             token.blacklist()
             return Response({"message": "Logout successful"}, status=status.HTTP_205_RESET_CONTENT)
         except Exception as e:
