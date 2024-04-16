@@ -6,12 +6,14 @@ from .apis import (
     CustomerPaymentListAPI,
     DonateCreateAPI,
     ForumView,
+    MyBalanceAPI,
 )
 
 app_name = "donation"
 
 urlpatterns = [
     path("", ForumView.as_view(), name="index"),
+    path("my_balance/", MyBalanceAPI.as_view(), name="my-balance"),
     path("create/", DonateCreateAPI.as_view(), name="donate-create"),
 ]
 

@@ -1,10 +1,16 @@
 import stripe
 from drf_yasg.utils import swagger_auto_schema
-from rest_framework import generics, status
+from rest_framework import generics, status, views
 from rest_framework.response import Response
 
 from apps.donation.api.v1.serializers import CustomerSerializer
 from apps.donation.models import Customer
+
+
+class MyBalanceAPI(views.APIView):
+    def get(self, request):
+        balance = stripe.Balance.retrieve()
+        return Response({"balance": balance})
 
 
 class CustomerListAPI(generics.ListAPIView):
