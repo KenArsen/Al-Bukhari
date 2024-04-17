@@ -305,5 +305,6 @@ CELERY_BROKER_URL = env.str("REDIS_HOST")
 CELERY_RESULT_BACKEND = env.str("REDIS_HOST")
 
 STRIPE_SECRET_KEY = env.str('STRIPE_KEY')
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51OjhrkFtBaQUT0WNipAlcuy2nFmBLzxKCboFhxqufitRYvpYe2gzkO0lBGvUbqd0T1fZ4FlmVvFXlwoJcyb7Rb1300YZNsnz3f'
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
