@@ -19,7 +19,7 @@ class EventReadSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Event
-        fields = ("id", "title", "organizer", "email", "phone", "more", "date", "address", "images")
+        fields = ("id", "title", "organizer", "email", "phone", "more", "start_date", "end_date", "address", "images")
         ref_name = "EventRead"
 
 
@@ -28,7 +28,7 @@ class EventWriteSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Event
-        fields = ("id", "title", "organizer", "email", "phone", "more", "date", "address", "images")
+        fields = ("id", "title", "organizer", "email", "phone", "more", "start_date", "end_date", "address", "images")
         ref_name = "EventWrite"
 
     def save_images(self, instance, is_update=False):
