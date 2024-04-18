@@ -9,7 +9,8 @@ class Event(BaseModel):
     email = models.EmailField(blank=True, null=True, verbose_name="Contact Email")
     phone = models.CharField(max_length=20, blank=True, null=True, verbose_name="Contact Phone")
     more = models.TextField(blank=True, null=True, verbose_name="More")
-    date = models.DateTimeField(blank=True, null=True, verbose_name="Date")
+    start_date = models.DateTimeField(blank=True, null=True, verbose_name="Start Date")
+    end_date = models.DateTimeField(blank=True, null=True, verbose_name="End Date")
     address = models.CharField(max_length=255, blank=True, null=True, verbose_name="Address")
 
     def __str__(self):

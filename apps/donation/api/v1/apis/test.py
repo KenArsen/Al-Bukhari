@@ -1,14 +1,17 @@
 from django.conf import settings
-from django.views.decorators.csrf import csrf_exempt  # new
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework.decorators import api_view
 from django.http.response import JsonResponse, HttpResponse
+from rest_framework.response import Response
 
 import stripe
+import json
 
 from django.views.generic.base import TemplateView
 
 
 class HomePageView(TemplateView):
-    template_name = 'donation/test.html'
+    template_name = 'donation/express.html'
 
 
 class SuccessView(TemplateView):
@@ -20,39 +23,30 @@ class CancelledView(TemplateView):
 
 
 @csrf_exempt
-def stripe_config(request):
-    if request.method == 'GET':
-        stripe_config = {'publicKey': settings.STRIPE_PUBLISHABLE_KEY}
-        return JsonResponse(stripe_config, safe=False)
-
-
-@csrf_exempt
+@api_view(['POST'])
 def create_checkout_session(request):
-    if request.method == 'GET':
-        domain_url = 'http://localhost:8000/'
+    try:
         stripe.api_key = settings.STRIPE_SECRET_KEY
-        try:
-            checkout_session = stripe.checkout.Session.create(
-                success_url=domain_url + 'success?session_id={CHECKOUT_SESSION_ID}',
-                cancel_url=domain_url + 'cancelled/',
-                payment_method_types=['card'],
-                mode='payment',
-                line_items=[
-                    {
-                        'price_data': {
-                            'currency': 'usd',
-                            'unit_amount': 25000,
-                            'product_data': {
-                                'name': 'Google Pixel 6',
-                            },
-                        },
-                        'quantity': 1,
-                    }
-                ]
-            )
-            return JsonResponse({'sessionId': checkout_session['id']})
-        except Exception as e:
-            return JsonResponse({'error': str(e)})
+        data = json.loads(request.body)
+        # intent = stripe.PaymentIntent.create(
+        #     amount=calculate_order_amount(data['items']),
+        #     currency='usd',
+        #     automatic_payment_methods={
+        #         'enabled': True,
+        #     },
+        # )
+        # return Response({
+        #     'clientSecret': intent.client_secret
+        # })
+        return Response({
+            'clientSecret': 'pi_3P6UvZFtBaQUT0WN0bmsddH1_secret_anbvbJZOpU8RnRV4QrgLPN7tB'
+        })
+    except Exception as e:
+        return Response({'error': str(e)}, status=403)
+
+
+def calculate_order_amount(items):
+    return 1400
 
 
 @csrf_exempt

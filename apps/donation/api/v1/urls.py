@@ -24,11 +24,10 @@ urlpatterns += [
     path("customers/<int:pk>/payments/", CustomerPaymentListAPI.as_view(), name="customer-payments"),
 ]
 
-from apps.donation.api.v1.apis.test import create_checkout_session, stripe_config, HomePageView, SuccessView, \
+from apps.donation.api.v1.apis.test import create_checkout_session, HomePageView, SuccessView, \
     CancelledView, stripe_webhook
 
 urlpatterns += [
-    path('config/', stripe_config),
     path('create-checkout-session/', create_checkout_session),
     path('home/', HomePageView.as_view(), name='home'),
     path('success/', SuccessView.as_view()),  # new
