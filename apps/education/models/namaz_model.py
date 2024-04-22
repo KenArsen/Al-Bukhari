@@ -1,5 +1,5 @@
 from django.db import models
-from django_ckeditor_5.fields import CKEditor5Field
+from ckeditor_uploader.fields import RichTextUploadingField
 from rest_framework.exceptions import ValidationError
 
 from apps.common.base import BaseModel
@@ -7,14 +7,14 @@ from apps.education.utils import NamazType
 
 
 class Ghusl(models.Model):
-    content = CKEditor5Field("Content", config_name="extends")
+    content = RichTextUploadingField()
 
     def __str__(self):
         return f"Ghysl ID: {self.id}"
 
 
 class Taharat(models.Model):
-    content = CKEditor5Field("Content", config_name="extends")
+    content = RichTextUploadingField()
     audio = models.FileField(upload_to="audio/", max_length=255, null=True, blank=True)
 
     def __str__(self):
