@@ -58,6 +58,11 @@ MIDDLEWARE = [
 ROOT_URLCONF = "config.urls"
 AUTH_USER_MODEL = "user.User"
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://albukhari.inclusivetec.com",
+    "https://*.127.0.0.1",
+]
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
