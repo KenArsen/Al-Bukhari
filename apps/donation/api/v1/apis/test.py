@@ -26,8 +26,8 @@ class CancelledView(TemplateView):
 @api_view(['POST'])
 def create_checkout_session(request):
     try:
-        stripe.api_key = settings.STRIPE_SECRET_KEY
-        data = json.loads(request.body)
+        # stripe.api_key = settings.STRIPE_SECRET_KEY
+        # data = json.loads(request.body)
         # intent = stripe.PaymentIntent.create(
         #     amount=calculate_order_amount(data['items']),
         #     currency='usd',
@@ -39,7 +39,7 @@ def create_checkout_session(request):
         #     'clientSecret': intent.client_secret
         # })
         return Response({
-            'clientSecret': 'pi_3P6UvZFtBaQUT0WN0bmsddH1_secret_anbvbJZOpU8RnRV4QrgLPN7tB'
+            'clientSecret': 'pi_3P6syyFtBaQUT0WN0s3NaF9z_secret_onmlwq9Uvm8uIZi58V1tCanBX'
         })
     except Exception as e:
         return Response({'error': str(e)}, status=403)

@@ -1,31 +1,3 @@
-{#{% load static %}#}
-{##}
-{#<!DOCTYPE html>#}
-{#<html lang="en">#}
-{#<head>#}
-{#    <meta charset="utf-8"/>#}
-{#    <title>Accept a payment</title>#}
-{#    <meta name="description" content="A demo of a payment on Stripe"/>#}
-{#    <meta name="viewport" content="width=device-width, initial-scale=1"/>#}
-{#    <link rel="stylesheet" href="{% static 'css/express.css' %}"/>#}
-{#    <script src="https://js.stripe.com/v3/"></script>#}
-{#    <script src="{% static 'js/express.js' %}" defer></script>#}
-{#</head>#}
-{#<body>#}
-{#<!-- Display a payment form -->#}
-{#<form id="payment-form">#}
-{#    <div id="payment-element">#}
-{#        <!--Stripe.js injects the Payment Element-->#}
-{#    </div>#}
-{#    <button id="submit">#}
-{#        <div class="spinner hidden" id="spinner"></div>#}
-{#        <span id="button-text">Pay now</span>#}
-{#    </button>#}
-{#    <div id="payment-message" class="hidden"></div>#}
-{#</form>#}
-{#</body>#}
-{#</html>#}
-
 {% load static %}
 
 <!DOCTYPE html>
@@ -42,7 +14,7 @@
 <body>
 <!-- Display a payment form -->
 <form id="payment-form">
-    <div id="express-checkout-element">
+    <div id="payment-element">
         <!--Stripe.js injects the Payment Element-->
     </div>
     <button id="submit">
@@ -53,3 +25,33 @@
 </form>
 </body>
 </html>
+
+
+
+{#{% load static %}#}
+{##}
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="utf-8"/>#}
+{#    <title>Accept a payment</title>#}
+{#    <meta name="description" content="A demo of a payment on Stripe"/>#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1"/>#}
+{#    <link rel="stylesheet" href="{% static 'css/express.css' %}"/>#}
+{#    <script src="https://js.stripe.com/v3/"></script>#}
+{#    <script src="{% static 'js/express.js' %}" defer></script>#}
+{#</head>#}
+{#<body>#}
+{#<!-- Display a payment form -->#}
+{#<form id="payment-form">#}
+{#    <div id="express-checkout-element">#}
+{#        <!--Stripe.js injects the Payment Element-->#}
+{#    </div>#}
+{#    <button id="submit">#}
+{#        <div class="spinner hidden" id="spinner"></div>#}
+{#        <span id="button-text">Pay now</span>#}
+{#    </button>#}
+{#    <div id="payment-message" class="hidden"></div>#}
+{#</form>#}
+{#</body>#}
+{#</html>#}
