@@ -1,9 +1,5 @@
 #!/bin/sh
 
-# Очистка кэша APT
-sudo apt autoclean
-sudo apt autoremove
-
 python manage.py migrate
 python manage.py collectstatic --no-input
 

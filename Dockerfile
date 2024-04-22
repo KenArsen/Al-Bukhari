@@ -10,8 +10,8 @@ WORKDIR /albukhari
 RUN pip install --upgrade pip && \
     apt-get update
 
-COPY requirements/base.txt /albukhari/
-RUN pip install -r /albukhari/base.txt
+COPY requirements.txt /albukhari/
+RUN pip install -r /albukhari/requirements.txt
 
 COPY . .
 

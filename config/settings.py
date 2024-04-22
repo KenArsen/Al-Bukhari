@@ -25,14 +25,14 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # libs
-    "rest_framework",
+
+    "celery",
+    "ckeditor",
     "drf_yasg",
     "corsheaders",
-    "django_ckeditor_5",
-    "celery",
+    "rest_framework",
     "rest_framework_simplejwt.token_blacklist",
-    # apps
+
     "apps.event.apps.EventConfig",
     "apps.user.apps.UserConfig",
     "apps.education.apps.EducationConfig",
@@ -54,15 +54,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-if DEBUG:
-    INSTALLED_APPS += ["debug_toolbar", "silk"]
-    MIDDLEWARE += [
-        "silk.middleware.SilkyMiddleware",
-        "debug_toolbar.middleware.DebugToolbarMiddleware",
-    ]
-    INTERNAL_IPS = [
-        "127.0.0.1",
-    ]
 
 ROOT_URLCONF = "config.urls"
 AUTH_USER_MODEL = "user.User"
@@ -146,11 +137,6 @@ CORS_ALLOW_HEADERS = (
     "Timezone",
 )
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://albukhari.inclusivetec.com",
-    "https://*.127.0.0.1",
-]
-
 LANGUAGE_CODE = "en-us"
 
 TIME_ZONE = "UTC"
@@ -179,118 +165,17 @@ else:
 
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
-customColorPalette = [
-    {"color": "hsl(4, 90%, 58%)", "label": "Red"},
-    {"color": "hsl(340, 82%, 52%)", "label": "Pink"},
-    {"color": "hsl(291, 64%, 42%)", "label": "Purple"},
-    {"color": "hsl(262, 52%, 47%)", "label": "Deep Purple"},
-    {"color": "hsl(231, 48%, 48%)", "label": "Indigo"},
-    {"color": "hsl(207, 90%, 54%)", "label": "Blue"},
-]
-
-CKEDITOR_UPLOAD_PATH = "uploads/"
-# CKEDITOR_5_FILE_STORAGE = 'apps.common.utils.CustomStorage'
-CKEDITOR_5_CONFIGS = {
-    "default": {
-        "uploadUrl": "/admin/ckeditor5/upload/",
-        "uploadPath": "uploads/",
-        "toolbar": [
-            "heading",
-            "|",
-            "bold",
-            "italic",
-            "link",
-            "bulletedList",
-            "numberedList",
-            "blockQuote",
-            "imageUpload",
-        ],
-    },
-    "extends": {
-        "blockToolbar": [
-            "paragraph",
-            "heading1",
-            "heading2",
-            "heading3",
-            "|",
-            "bulletedList",
-            "numberedList",
-            "|",
-            "blockQuote",
-        ],
-        "toolbar": [
-            "heading",
-            "|",
-            "outdent",
-            "indent",
-            "|",
-            "bold",
-            "italic",
-            "link",
-            "underline",
-            "strikethrough",
-            "code",
-            "subscript",
-            "superscript",
-            "highlight",
-            "|",
-            "codeBlock",
-            "sourceEditing",
-            "insertImage",
-            "bulletedList",
-            "numberedList",
-            "todoList",
-            "|",
-            "blockQuote",
-            "imageUpload",
-            "|",
-            "fontSize",
-            "fontFamily",
-            "fontColor",
-            "fontBackgroundColor",
-            "mediaEmbed",
-            "removeFormat",
-            "insertTable",
-        ],
-        "image": {
-            "toolbar": [
-                "imageTextAlternative",
-                "|",
-                "imageStyle:alignLeft",
-                "imageStyle:alignRight",
-                "imageStyle:alignCenter",
-                "imageStyle:side",
-                "|",
-            ],
-            "styles": [
-                "full",
-                "side",
-                "alignLeft",
-                "alignRight",
-                "alignCenter",
-            ],
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_CONFIGS = {
+    'default':
+        {
+            'toolbar': 'full',
+            'width': 'auto',
+            'extraPlugins': ','.join([
+                'codesnippet',
+            ]),
         },
-        "table": {
-            "contentToolbar": ["tableColumn", "tableRow", "mergeTableCells", "tableProperties", "tableCellProperties"],
-            "tableProperties": {"borderColors": customColorPalette, "backgroundColors": customColorPalette},
-            "tableCellProperties": {"borderColors": customColorPalette, "backgroundColors": customColorPalette},
-        },
-        "heading": {
-            "options": [
-                {"model": "paragraph", "title": "Paragraph", "class": "ck-heading_paragraph"},
-                {"model": "heading1", "view": "h1", "title": "Heading 1", "class": "ck-heading_heading1"},
-                {"model": "heading2", "view": "h2", "title": "Heading 2", "class": "ck-heading_heading2"},
-                {"model": "heading3", "view": "h3", "title": "Heading 3", "class": "ck-heading_heading3"},
-            ]
-        },
-    },
-    "list": {
-        "properties": {
-            "styles": "true",
-            "startIndex": "true",
-            "reversed": "true",
-        }
-    },
 }
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
