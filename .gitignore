@@ -11,7 +11,7 @@ docker-compose.yml
 
 # Backup files # 
 *.bak
-.albkhri/
+.albkhr/
 staticfiles/
 .jshintrc
 
