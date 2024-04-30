@@ -1,1 +1,1 @@
-from .customer_serializer import CustomerSerializer, DonationSerializer
+from .customer_serializer import CustomerSerializer, PaymentSerializer

@@ -13,14 +13,14 @@ class Education(models.Model):
 
 class EducationCategory(models.Model):
     class Day(models.TextChoices):
-        DEFAULT = 'DEFAULT', 'DEFAULT'
-        MONDAY = 'MONDAY', 'MONDAY'
-        TUESDAY = 'TUESDAY', 'TUESDAY'
-        WEDNESDAY = 'WEDNESDAY', 'WEDNESDAY'
-        THURSDAY = 'THURSDAY', 'THURSDAY'
-        FRIDAY = 'FRIDAY', 'FRIDAY'
-        SATURDAY = 'SATURDAY', 'SATURDAY'
-        SUNDAY = 'SUNDAY', 'SUNDAY'
+        DEFAULT = "DEFAULT", "DEFAULT"
+        MONDAY = "MONDAY", "MONDAY"
+        TUESDAY = "TUESDAY", "TUESDAY"
+        WEDNESDAY = "WEDNESDAY", "WEDNESDAY"
+        THURSDAY = "THURSDAY", "THURSDAY"
+        FRIDAY = "FRIDAY", "FRIDAY"
+        SATURDAY = "SATURDAY", "SATURDAY"
+        SUNDAY = "SUNDAY", "SUNDAY"
 
     education = models.ForeignKey(Education, on_delete=models.CASCADE, related_name="list")
     description = models.TextField(blank=True, null=True)
@@ -35,7 +35,7 @@ class EducationCategory(models.Model):
 
     def save(self, *args, **kwargs):
         try:
-            if self.day != 'DEFAULT':
+            if self.day != "DEFAULT":
                 quran_leaning = EducationCategory.objects.get(day=self.day)
                 quran_leaning.start_time = self.start_time
                 quran_leaning.end_time = self.end_time
