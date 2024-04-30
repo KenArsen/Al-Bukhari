@@ -1,1 +1,1 @@
-from .customer_model import Customer, Donation
+from .payment_model import Customer, Payment

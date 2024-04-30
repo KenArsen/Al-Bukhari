@@ -1,17 +1,17 @@
 from rest_framework import serializers
 
-from apps.donation.models import Customer, Donation
+from apps.donation.models import Customer, Payment
 
 
-class DonationSerializer(serializers.ModelSerializer):
+class PaymentSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Donation
+        model = Payment
         fields = "__all__"
-        ref_name = "Donation"
+        ref_name = "Payment"
 
 
 class CustomerSerializer(serializers.ModelSerializer):
-    donations = DonationSerializer(many=True, read_only=True)
+    payments = PaymentSerializer(many=True, read_only=True)
 
     class Meta:
         model = Customer
