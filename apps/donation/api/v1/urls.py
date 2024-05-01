@@ -9,6 +9,7 @@ from .apis import (
     MyBalanceAPI,
     PaymentView,
     SuccessView,
+    StripeWebhookView,
 )
 
 app_name = "donation"
@@ -19,6 +20,7 @@ urlpatterns = [
     path("create-checkout-session/", PaymentView.as_view(), name="create-checkout-session"),
     path("success/", SuccessView.as_view(), name="success"),
     path("cancelled/", CancelledView.as_view(), name="cancelled"),
+    path("stripe_webhooks/", StripeWebhookView.as_view(), name="webhook"),
 ]
 
 # customer

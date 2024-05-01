@@ -46,8 +46,7 @@ class PaymentView(views.APIView):
                     description="Example charge",
                     payment_method=payment_method_id,
                     confirm=True,
-                    # return_url=f"{settings.DOMAIN_NAME}/api/v1/donations/success/",
-                    return_url="https://albukhari.inclusivetec.com/api/v1/donations/success/",
+                    return_url=f"{settings.DOMAIN_NAME}/api/v1/donations/success/",
                 )
                 create_or_update_customer_in_database(
                     category=category,
@@ -80,26 +79,49 @@ def create_or_update_customer_in_database(category, first_name, last_name, email
         logging.warning("Customer and Payment created")
 
 
-@csrf_exempt
-def stripe_webhook(request):
-    stripe.api_key = settings.STRIPE_SECRET_KEY
-    endpoint_secret = settings.STRIPE_ENDPOINT_SECRET
-    payload = request.body
-    sig_header = request.META["HTTP_STRIPE_SIGNATURE"]
-    event = None
+class StripeWebhookView(views.APIView):
+    def post(self, request):
+        payload = request.body
+        sig_header = request.META["HTTP_STRIPE_SIGNATURE"]
+        endpoint_secret = settings.STRIPE_ENDPOINT_SECRET
 
-    try:
-        event = stripe.Webhook.construct_event(payload, sig_header, endpoint_secret)
-    except ValueError as e:
-        # Invalid payload
-        return HttpResponse(status=400)
-    except stripe.error.SignatureVerificationError as e:
-        # Invalid signature
-        return HttpResponse(status=400)
+        try:
+            event = stripe.Webhook.construct_event(payload, sig_header, endpoint_secret)
+        except ValueError as e:
+            # Invalid payload
+            return HttpResponse(status=400)
+        except stripe.error.SignatureVerificationError as e:
+            # Invalid signature
+            return HttpResponse(status=400)
 
-    # Handle the checkout.session.completed event
-    if event["type"] == "checkout.session.completed":
-        print("Payment was successful.")
-        # TODO: run some custom code here
+        # Обработка события checkout.session.completed
+        if event["type"] == "checkout.session.completed":
+            # Получение данных платежа из события
+            payment_intent_id = event["data"]["object"]["payment_intent"]
+            payment_intent = stripe.PaymentIntent.retrieve(payment_intent_id)
+            payment_method_id = payment_intent["payment_method"]
+            amount = payment_intent["amount"]
+            category = "your_category"  # Здесь укажите категорию по умолчанию или получите ее из других данных
+            first_name = "your_default_first_name"  # Здесь укажите имя по умолчанию или получите его из других данных
+            last_name = "your_default_last_name"  # Здесь укажите фамилию по умолчанию или получите ее из других данных
+            email = "your_default_email@example.com"  # Здесь укажите email по умолчанию или получите его из других данных
 
-    return HttpResponse(status=200)
+            # Вызов метода PaymentView.post() для обработки платежа
+            payment_view = PaymentView()
+            request.data = {
+                "payment_method_id": payment_method_id,
+                "category": category,
+                "first_name": first_name,
+                "last_name": last_name,
+                "email": email,
+                "amount": amount,
+            }
+            response = payment_view.post(request)
+
+            if response.status_code == status.HTTP_200_OK:
+                return HttpResponse(status=200)
+            else:
+                return HttpResponse(status=400)
+        else:
+            # Другие обработки событий Stripe, если необходимо
+            return HttpResponse(status=200)

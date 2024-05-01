@@ -9,7 +9,8 @@ media/
 # Docker
 docker-compose.yml
 
-# Backup files # 
+# Backup files #
+stripe
 *.bak
 .albkhr/
 staticfiles/
