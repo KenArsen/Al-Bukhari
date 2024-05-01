@@ -57,7 +57,7 @@
             } else {
                 var formData = new FormData(form);
                 formData.set('payment_method_id', result.paymentMethod.id);
-                fetch('{% url "https://albukhari.inclusivetec.com/api/v1/donations/create-checkout-session/" %}', {
+                fetch('https://albukhari.inclusivetec.com/api/v1/donations/create-checkout-session/', {
                     method: 'POST',
                     body: formData
                 }).then(function (response) {
