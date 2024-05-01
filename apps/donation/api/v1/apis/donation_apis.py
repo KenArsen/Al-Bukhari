@@ -46,7 +46,8 @@ class PaymentView(views.APIView):
                     description="Example charge",
                     payment_method=payment_method_id,
                     confirm=True,
-                    return_url="http://127.0.0.1:8000/api/v1/donations/success/",
+                    # return_url=f"{settings.DOMAIN_NAME}/api/v1/donations/success/",
+                    return_url="https://albukhari.inclusivetec.com/api/v1/donations/success/",
                 )
                 create_or_update_customer_in_database(
                     category=category,
