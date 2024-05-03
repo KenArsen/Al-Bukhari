@@ -26,6 +26,11 @@ class CancelledView(TemplateView):
     template_name = "donation/cancelled.html"
 
 
+from rest_framework.views import APIView
+from rest_framework.response import Response
+import stripe
+
+
 class PaymentView(views.APIView):
     def post(self, request):
         payment_method_id = request.data["payment_method_id"]

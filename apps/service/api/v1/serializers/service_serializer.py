@@ -3,6 +3,16 @@ from rest_framework import serializers
 from apps.service.models import Service, ServiceImage
 
 
+class ServiceSendSerializer(serializers.Serializer):
+    service = serializers.CharField(max_length=100)
+    name = serializers.CharField(max_length=100)
+    email = serializers.EmailField()
+    message = serializers.CharField(max_length=1000, allow_blank=True)
+
+    class Meta:
+        ref_name = "ServiceSend"
+
+
 class ImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = ServiceImage

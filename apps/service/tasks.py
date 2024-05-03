@@ -4,20 +4,21 @@ from smtplib import SMTPAuthenticationError, SMTPException
 from celery import shared_task
 from django.conf import settings
 from django.core.mail import send_mail
+from rest_framework.exceptions import ValidationError
 
 
 @shared_task
-def send(service, name, email, message):
+def send(**data):
     try:
-        logging.info(f"Sending email to {email}")
+        logging.info(f"Sending email to {data['email']}")
         send_mail(
-            subject=name,
-            message=f"Your service {service} - \n {message}",
+            subject=data['name'],
+            message=f"Your service {data['service']} - \n {data['message']}",
             from_email=settings.EMAIL_HOST_USER,
-            recipient_list=[f"{email}"],
+            recipient_list=[f"{data['email']}"],
         )
-        logging.info(f"Email sent to {email} successfully!")
+        logging.info(f"Email sent to {data['email']} successfully!")
     except (SMTPAuthenticationError, SMTPException) as e:
-        logging.error(f"Error sending mail: {e}")
+        raise ValidationError({'error': str(e)})
     except Exception as e:
-        logging.error(f"Error: {e}")
+        raise ValidationError({'error': str(e)})

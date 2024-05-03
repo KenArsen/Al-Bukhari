@@ -5,6 +5,7 @@ from apps.common import IsSuperAdmin
 from apps.service.api.v1.serializers import (
     ServiceReadSerializer,
     ServiceWriteSerializer,
+    ServiceSendSerializer,
 )
 from apps.service.models import Service
 from apps.service.tasks import send
@@ -76,11 +77,8 @@ class SendEmailAPI(views.APIView):
         ),
     )
     def post(self, request, *args, **kwargs):
-        service = request.data.get("service")
-        name = request.data.get("name")
-        email = request.data.get("email")
-        message = request.data.get("message")
-
-        send.delay(service=service, name=name, email=email, message=message)
-
-        return Response({"success": "OK"}, status=status.HTTP_200_OK)
+        serializer = ServiceSendSerializer(data=request.data)
+        if serializer.is_valid():
+            send.delay(**serializer.validated_data)
+            return Response({"success": "OK"}, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

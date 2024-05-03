@@ -2,7 +2,7 @@ from rest_framework import generics, permissions, status, views, viewsets
 from rest_framework.response import Response
 
 from apps.common import IsSuperAdmin
-from apps.us.api.v1.serializers import ContactSerializer, UrlSerializer
+from apps.us.api.v1.serializers import ContactSerializer, UrlSerializer, ContactSendSerializer
 from apps.us.models import Contact, Url
 from apps.us.tasks import send
 
@@ -78,10 +78,8 @@ class SendEmailAPI(views.APIView):
         ),
     )
     def post(self, request, *args, **kwargs):
-        name = request.data.get("name")
-        email = request.data.get("email")
-        message = request.data.get("message")
-
-        send.delay(name=name, email=email, message=message)
-
-        return Response({"success": "OK"}, status=status.HTTP_200_OK)
+        serializer = ContactSendSerializer(data=request.data)
+        if serializer.is_valid():
+            send.delay(**serializer.validated_data)
+            return Response({"success": "OK"}, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

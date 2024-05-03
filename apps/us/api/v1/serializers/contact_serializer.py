@@ -3,6 +3,15 @@ from rest_framework import serializers
 from apps.us.models import Contact, Url
 
 
+class ContactSendSerializer(serializers.Serializer):
+    name = serializers.CharField(max_length=100)
+    email = serializers.EmailField()
+    message = serializers.CharField(max_length=1000, allow_blank=True)
+
+    class Meta:
+        ref_name = "ContactSend"
+
+
 class UrlSerializer(serializers.ModelSerializer):
     class Meta:
         model = Url

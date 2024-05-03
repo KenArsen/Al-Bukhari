@@ -1,1 +1,1 @@
-from .service_serializer import ServiceReadSerializer, ServiceWriteSerializer
+from .service_serializer import ServiceReadSerializer, ServiceWriteSerializer, ServiceSendSerializer
