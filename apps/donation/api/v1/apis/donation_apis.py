@@ -4,7 +4,6 @@ import stripe
 from django.conf import settings
 from django.db import transaction
 from django.http.response import HttpResponse
-from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.base import TemplateView
 from rest_framework import status, views
 from rest_framework.response import Response
@@ -24,11 +23,6 @@ class SuccessView(TemplateView):
 
 class CancelledView(TemplateView):
     template_name = "donation/cancelled.html"
-
-
-from rest_framework.views import APIView
-from rest_framework.response import Response
-import stripe
 
 
 class PaymentView(views.APIView):
@@ -93,10 +87,8 @@ class StripeWebhookView(views.APIView):
         try:
             event = stripe.Webhook.construct_event(payload, sig_header, endpoint_secret)
         except ValueError as e:
-            # Invalid payload
             return HttpResponse(status=400)
         except stripe.error.SignatureVerificationError as e:
-            # Invalid signature
             return HttpResponse(status=400)
 
         # Обработка события checkout.session.completed
@@ -106,10 +98,10 @@ class StripeWebhookView(views.APIView):
             payment_intent = stripe.PaymentIntent.retrieve(payment_intent_id)
             payment_method_id = payment_intent["payment_method"]
             amount = payment_intent["amount"]
-            category = "your_category"  # Здесь укажите категорию по умолчанию или получите ее из других данных
-            first_name = "your_default_first_name"  # Здесь укажите имя по умолчанию или получите его из других данных
-            last_name = "your_default_last_name"  # Здесь укажите фамилию по умолчанию или получите ее из других данных
-            email = "your_default_email@example.com"  # Здесь укажите email по умолчанию или получите его из других данных
+            category = "your_category"
+            first_name = "your_default_first_name"
+            last_name = "your_default_last_name"
+            email = "your_default_email@example.com"
 
             # Вызов метода PaymentView.post() для обработки платежа
             payment_view = PaymentView()

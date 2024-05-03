@@ -12,13 +12,13 @@ def send(**data):
     try:
         logging.info(f"Sending email to {data['email']}")
         send_mail(
-            subject=data['name'],
+            subject=data["name"],
             message=f"Your service {data['service']} - \n {data['message']}",
             from_email=settings.EMAIL_HOST_USER,
             recipient_list=[f"{data['email']}"],
         )
         logging.info(f"Email sent to {data['email']} successfully!")
     except (SMTPAuthenticationError, SMTPException) as e:
-        raise ValidationError({'error': str(e)})
+        raise ValidationError({"error": str(e)})
     except Exception as e:
-        raise ValidationError({'error': str(e)})
+        raise ValidationError({"error": str(e)})

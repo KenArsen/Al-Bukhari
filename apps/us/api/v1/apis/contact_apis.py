@@ -2,7 +2,11 @@ from rest_framework import generics, permissions, status, views, viewsets
 from rest_framework.response import Response
 
 from apps.common import IsSuperAdmin
-from apps.us.api.v1.serializers import ContactSerializer, UrlSerializer, ContactSendSerializer
+from apps.us.api.v1.serializers import (
+    ContactSendSerializer,
+    ContactSerializer,
+    UrlSerializer,
+)
 from apps.us.models import Contact, Url
 from apps.us.tasks import send
 

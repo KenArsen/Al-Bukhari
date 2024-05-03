@@ -4,4 +4,10 @@ from .customer_apis import (
     CustomerPaymentListAPI,
     MyBalanceAPI,
 )
-from .donation_apis import CancelledView, ForumView, PaymentView, SuccessView, StripeWebhookView
+from .donation_apis import (
+    CancelledView,
+    ForumView,
+    PaymentView,
+    StripeWebhookView,
+    SuccessView,
+)

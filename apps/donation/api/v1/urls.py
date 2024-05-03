@@ -8,8 +8,8 @@ from .apis import (
     ForumView,
     MyBalanceAPI,
     PaymentView,
-    SuccessView,
     StripeWebhookView,
+    SuccessView,
 )
 
 app_name = "donation"
