@@ -33,7 +33,6 @@ class PaymentView(views.APIView):
         last_name = request.data["last_name"]
         email = request.data["email"]
         amount = request.data["amount"]  # Сумма в центах, например, 1000 центов = $10.00
-        print(request.data)
 
         try:
             with transaction.atomic():
