@@ -24,7 +24,7 @@ class EventReadSerializer(serializers.ModelSerializer):
 
 
 class EventWriteSerializer(serializers.ModelSerializer):
-    images = ImageSerializer(many=True)
+    images = ImageSerializer(many=True, read_only=True)
 
     class Meta:
         model = Event
@@ -35,7 +35,7 @@ class EventWriteSerializer(serializers.ModelSerializer):
         request = self.context.get("request")
         images_data = request.FILES.getlist("images", [])
 
-        if is_update:
+        if is_update and images_data:
             instance.images.all().delete()
 
         for image_data in images_data:
